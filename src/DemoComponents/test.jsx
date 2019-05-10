@@ -1,6 +1,6 @@
 import React from 'react';
 
-const name = 'Jim Beam';
+//const name = 'Jim Beam';
 const formatName = (user) => user.firstName + ' ' + user.lastName;
 
 const user = {

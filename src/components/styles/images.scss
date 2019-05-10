@@ -1,0 +1,23 @@
+
+
+.theme-logo {
+     background-image: url('/assets/sl-logo-dark.svg');
+  }
+
+a.sl-logo {
+    display: inline-block;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 100%;
+    width: 360px;
+    height: 20px;
+  }
+
+@keyframes App-logo-spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}

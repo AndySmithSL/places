@@ -1,0 +1,35 @@
+.content-tile {
+    padding: 1vh;
+    width: 250px;
+    // border-bottom: solid 1px;
+    // border-bottom-color: rgba(255,130,255,0.3);
+    display: flex;
+    flex-direction: row;
+}
+
+.content-tile-details {
+    display: flex;
+    flex-direction: column;
+}
+
+.content-tile-title {
+    font-size: 1.25rem;
+}
+
+.content-tile-subtitle {
+    font-size: 0.75rem;
+    opacity: 0.5;
+}
+
+.content-tile-value {
+    font-size: 2rem;
+}
+
+.content-tile-left {
+    margin-left: auto;
+}
+
+.content-tile:hover {
+    opacity: 0.5;
+    background-color: darkslategrey;
+}

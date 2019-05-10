@@ -1,0 +1,23 @@
+.header {
+    background-color: #282c34;
+    display: flex;
+    flex-direction: row;
+    margin: 1vh;
+    border-bottom: solid 1px;
+    border-bottom-color: rgba(255,130,255,0.3);
+    font-size: 2rem;
+  }
+
+.header-title {
+    padding-left: 1vw;
+}
+
+.header-clock {
+    margin-left:auto; 
+}
+
+.header-logo {
+    // animation: App-logo-spin infinite 20s linear;
+    height: 40px;
+    pointer-events: none;
+  }

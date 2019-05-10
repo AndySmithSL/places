@@ -1,0 +1,21 @@
+// @import '../../styles/mixins/grid';
+@import '../../styles/variables/colors';
+@import '../../styles/variables/spacing';
+
+.Footer {
+
+//   @media (min-width: $screen-md-min) {
+//     position: fixed;
+//     left: 0;
+//     bottom: 0;
+//     right: 0;
+//   }
+//   height: $footer-height;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+  
+  margin: 1vh;
+  border-top: solid 1px;
+  border-top-color: rgba(255,130,255,0.3);
+}

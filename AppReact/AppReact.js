@@ -1,18 +1,17 @@
 import React from 'react';
 import logo from './logo.svg';
-import './App.css';
-import Test from './test';
+import './AppReact.css';
 
-function App() {
+function AppReact() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
+    <div className="AppReact">
+      <header className="AppReact-header">
+        <img src={logo} className="AppReact-logo" alt="logo" />
         <p>
           Edit <code>src/App.js</code> and save to reload.
         </p>
         <a
-          className="App-link"
+          className="AppReact-link"
           href="https://reactjs.org"
           target="_blank"
           rel="noopener noreferrer"
@@ -20,9 +19,8 @@ function App() {
           Learn React
         </a>
       </header>
-      <Test />
     </div>
   );
 }
 
-export default App;
+export default AppReact;
