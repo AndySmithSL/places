@@ -3,26 +3,36 @@ import IconBar from './icon-bar/icon-bar';
 import Content from './content/content';
 import './main.scss';
 
-const continents =  
-    [
-        { id: 3002, name: "Antartica", code: "001", parent: {} },
-        { id: 3025, name: "Africa", code: "002", parent: {} },
-        { id: 3028, name: "Asia", code: "142", parent: {} },
-        { id: 3026, name: "Europe", code: "150", parent: {} },
-        { id: 3027, name: "Americas", code: "019", parent: {} },
-        { id: 3029, name: "Oceania", code: "009", parent: {} },
-        { id: 3003, name: "Eastern Africa", code: "014", parent: { id: 3025, name: "Africa", code: "002", parent: {}}},
-        { id: 3008, name: "Western Europe", code: "155", parent: { id: 3026, name: "Europe", code: "150", parent: {}}},
-        { id: 3014, name: "Central America", code: "013", parent: { id: 3027, name: "Americas", code: "019", parent: {}}},
-        { id: 3019, name: "South-Eastern Asia", code: "035", parent: { id: 3028, name: "Asia", code: "142", parent: {}}},
-    ];
+const categories = [
+    { name: "Home", icon: "../assets/home.png" },
+    { name: "Continents", icon: "../assets/america.png" },
+    { name: "Territory Types", icon: "../assets/map.png" },
+    { name: "Territories", icon: "../assets/passport.png" },
+    { name: "Places", icon: "../assets/marker.png" },
+    { name: "Flags", icon: "../assets/flag.png" },
+    { name: "Place Groups", icon: "../assets/picture.png" },
+    { name: "Drives", icon: "../assets/road.png" },
+];
 
 class Main extends React.Component {
+
+    constructor(props) {
+        super(props);
+
+        this.handleIconClick = this.handleIconClick.bind(this);
+        this.state = { selectedCategory: categories[0] };
+    }
+
+    handleIconClick = (category) => {
+        console.log(category);
+        this.setState({ selectedCategory: category })
+    }
+
     render() {
         return (
             <div className="App-main">
-                <IconBar />
-                <Content items={continents} />
+                <IconBar categories={categories} handleClick={ this.handleIconClick } />
+                <Content selectedCategory={this.state.selectedCategory} />
             </div>
         );
     }

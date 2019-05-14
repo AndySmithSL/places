@@ -1,0 +1,17 @@
+.icon-bar-item {
+    display: block; /* Make the links appear below each other instead of side-by-side */
+    text-align: center; /* Center-align text */
+    padding: 1vh; /* Add some padding */
+    transition: all 0.1s ease; /* Add transition for hover effects */
+    color: white; /* White text color */
+}
+
+.icon-bar-item:hover {
+    /* background-color: #000; /* Add a hover color */
+    opacity: 0.5;
+    cursor: pointer;
+}
+
+.icon-bar-image {
+    height: 20px;
+}

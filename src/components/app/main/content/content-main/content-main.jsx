@@ -9,7 +9,7 @@ class ContentMain extends React.Component {
         super(props);
 
         this.handleItemChange = this.handleItemChange.bind(this);
-        this.state = { selectedItemId: this.props.items[0].id }; 
+        this.state = { selectedItemId: this.props.items.length > 0 ? this.props.items[0].id : 0 }; 
     }
 
     handleItemChange = (id) => {
@@ -24,8 +24,8 @@ class ContentMain extends React.Component {
 
         return (
             <div className="content-main">
-                <ContentList items={items} handleItemChange={this.handleItemChange} />
-                <DetailsContinent continent={continent} />
+                {/* <ContentList items={items} handleItemChange={this.handleItemChange} />
+                <DetailsContinent continent={continent} /> */}
             </div>
         );
     }

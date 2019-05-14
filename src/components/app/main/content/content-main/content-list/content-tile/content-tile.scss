@@ -12,6 +12,12 @@
     flex-direction: column;
 }
 
+.content-tile-image {
+    height: 20px;
+    margin-top: 1vh;
+    margin-right: 1vh;
+}
+
 .content-tile-title {
     font-size: 1.25rem;
 }
@@ -32,4 +38,5 @@
 .content-tile:hover {
     opacity: 0.5;
     background-color: darkslategrey;
+    cursor: pointer;
 }

@@ -1,14 +1,13 @@
 import React from 'react';
 import './content-header.scss';
 
-export const ContentTitle = () => (
+export const ContentHeader = (props) => (
     <div className="content-header">
         <div>
-            <a href="~"><img src="../assets/america.png" className="content-header-image" alt="continents"/></a>
+            <img src={props.selectedCategory.icon} className="content-header-image" alt={props.selectedCategory.name} />
         </div>
         <div className="content-header-label">
-            Continents
+            {props.selectedCategory.name}
         </div>
     </div>
 );
-

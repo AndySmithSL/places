@@ -5,7 +5,7 @@ export const DetailsHeader = (props) => {
     return (
         <div className="details-header">
             <div>
-                <img src={props.image} className="details-header-image" alt="continents"/>
+                <img src={props.icon} className="details-header-image" alt={props.icon} />
             </div>
             <div className="details-header-label">
                 {props.title}
