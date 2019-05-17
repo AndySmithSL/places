@@ -1,5 +1,5 @@
 import * as React from 'react';
-import Clock from '../utils/clockx';
+import Clock from '../utils/Clock';
 
 import './Header.scss';
 
