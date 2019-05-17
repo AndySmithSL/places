@@ -1,16 +1,17 @@
 import * as React from 'react';
-import Clock from '../utils/clock';
-import './header.scss';
+import Clock from '../utils/Clock';
+
+import './Header.scss';
 
 export const Header = () => (
-    <header className="header">
+    <header className="Header">
         <div>
-            <img src="/assets/around-the-globe.png" className="header-logo" alt="logo" />
+            <img src="/assets/around-the-globe.png" className="logo" alt="logo" />
         </div>
-        <div className="header-title">
+        <div className="title">
             Places
         </div>
-        <div className="header-clock">
+        <div className="clock">
             <Clock />
         </div>
     </header>

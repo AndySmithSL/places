@@ -11,11 +11,10 @@
 //     right: 0;
 //   }
 //   height: $footer-height;
+
   display: flex;
   justify-content: flex-end;
   align-items: flex-end;
-  
   margin: 1vh;
-  border-top: solid 1px;
-  border-top-color: rgba(255,130,255,0.3);
+  border-top: solid 1px $off-white;
 }

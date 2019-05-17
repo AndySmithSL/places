@@ -1,0 +1,26 @@
+@import '../../../../styles/variables/colors';
+
+.ContentTile {
+    padding: 1vh;
+    
+    // border-bottom: solid 1px;
+    // border-bottom-color: rgba(255,130,255,0.3);
+    display: flex;
+    flex-direction: row;
+
+    .left {
+        margin-left: auto;
+    }
+
+    .image {
+        height: 2.5vh;
+        margin-top: 1vh;
+        margin-right: 1vh;
+    }
+}
+
+.ContentTile:hover {
+    opacity: 0.5;
+    background-color: $gray;
+    cursor: pointer;
+}

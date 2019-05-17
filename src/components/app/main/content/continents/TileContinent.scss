@@ -1,0 +1,21 @@
+
+.TileContinent{
+
+    .details {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .title {
+        font-size: 1.25rem;
+    }
+
+    .subtitle {
+        font-size: 0.75rem;
+        opacity: 0.5;
+    }
+
+    .value {
+        font-size: 2rem;
+    }
+}

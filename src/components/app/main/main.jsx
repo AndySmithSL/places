@@ -1,7 +1,8 @@
 import React from 'react';
-import IconBar from './icon-bar/icon-bar';
-import Content from './content/content';
-import './main.scss';
+import IconBar from './iconBar/IconBar';
+import Content from './content/Content';
+
+import './Main.scss';
 
 const categories = [
     { name: "Home", icon: "../assets/home.png" },
@@ -30,9 +31,9 @@ class Main extends React.Component {
 
     render() {
         return (
-            <div className="App-main">
+            <div className="Main">
                 <IconBar categories={categories} handleClick={ this.handleIconClick } />
-                <Content selectedCategory={this.state.selectedCategory} />
+                <Content selectedCategory={this.state.selectedCategory} /> 
             </div>
         );
     }

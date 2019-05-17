@@ -1,0 +1,17 @@
+@import '../../../../styles/variables/colors';
+
+.DashboardHeader {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    border-bottom: solid 1px $off-white;
+
+    .image {
+        height: 5vh;
+    }
+
+    .label {
+        margin-left: 1vw;
+        font-size: 2rem;
+    }
+}

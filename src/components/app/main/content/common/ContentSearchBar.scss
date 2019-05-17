@@ -1,0 +1,28 @@
+@import '../../../../styles/variables/colors';
+
+.ContentSearchBar {
+    margin-top: 1vh;
+    margin-bottom: 1vh;
+    padding-left: 0.5vw;
+    
+    background: url(search.png) no-repeat;
+    background-position: right;
+    background-size: 3vh;
+    border: none;
+    color: $white;
+    height: 3vh;
+    width: 100%;
+}
+
+.ContentSearchBar:focus {
+    outline: none !important;
+    border: none;
+    // box-shadow: 0 0 10px #719ECE;
+}
+
+.ContentSearchBar:hover {
+    background-color: $gray;
+    outline: none !important;
+    border: none;
+    // box-shadow: 0 0 10px darkslategray;
+}

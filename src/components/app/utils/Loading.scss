@@ -1,0 +1,40 @@
+@import '../../styles/variables/colors';
+@import '../../styles/variables/spacing';
+
+.Loading {
+    position: inherit;
+    display: flex;
+    margin-left: auto;
+    margin-right: auto;
+    align-items: center;
+    z-index: 2000;
+  
+    i.spinner,
+    i.spinner::before {
+        width: $pad-xxl-3;
+        height: $pad-xxl-3;
+    }
+  
+    i.spinner::before {
+      content: '';
+      display: inline-block;
+      border-width: 3px;
+      border-style: solid;
+      border-radius: 50%;
+      background: transparent;
+      animation: rotate 1.0s infinite linear;
+    }
+    @keyframes rotate {
+      0% {
+        transform: rotate(0deg);
+      }
+      100% {
+        transform: rotate(360deg);
+      }
+    }
+  }
+  
+  .theme-spinner::before {
+    border-color: darkgray;
+    border-right-color: transparent;
+  }

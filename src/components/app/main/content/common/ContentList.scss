@@ -1,0 +1,8 @@
+.ContentList {
+    display: flex;
+    flex-direction: column;
+    width: 15vw;
+    height: 76vh;
+    max-height: 100%;//change here
+    overflow-y:auto;
+}

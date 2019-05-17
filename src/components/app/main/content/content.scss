@@ -1,7 +1,26 @@
-.content {
+.Content {
     display: flex;
     flex-direction: column;
     width: 100%;
     margin-top: 1vh;
     margin-left: 2vw;
+}
+
+.ContentMain {
+    display: flex;
+    flex-direction: row;
+    margin-top: 1vh;
+}
+
+.ContentDashboard {
+    display: flex;
+    flex-direction: column;
+    padding-left: 1vw;
+    padding-top: 1vh;
+    width: 100%;
+
+    .row {
+        display: flex;
+        flex-direction: row;
+    }
 }

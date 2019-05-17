@@ -1,0 +1,19 @@
+@import '../../../../styles/variables/colors';
+
+.DetailsHeader {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    border-bottom: solid 1px $gray;
+
+    .image {
+        margin-top: 0.65vh;
+        height: 2vh;
+    }
+
+    .label {
+        margin-left: 0.5vw;
+        font-size: 1.25rem;
+        font-weight: 700;
+    }
+}
