@@ -1,9 +1,12 @@
-.DetailsContinent {
+
+
+.ChartContinent {
     display: flex;
     flex-direction: column;
     padding-top: 1vh;
     padding-right: 1vw;
     
+
     .row {
         display: flex;
         flex-direction: row;
@@ -17,21 +20,10 @@
     .half {
         width: calc(100%/2);
     }
-}
 
-.DetailsItem {
-    width: 50%;
-    padding-top: 1vh;
-    padding-right: 1vw;
-    padding-bottom: 1vh;
-
-    .label {
-        font-size: 1rem;
-        font-weight: 500;
-        opacity: 0.5;
+    .chart {
+        margin-top: 1vh;
+        width: 100%;
     }
-
-    .value {
-        font-size: 1.25rem;
-    }
+    
 }

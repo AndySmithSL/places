@@ -12,11 +12,11 @@ class ContentSearchBar extends React.Component {
 
     render() {
 
-        const filterText = this.props.filterText;
+        const filterText = this.props.filter;
 
         return (
             <form>
-                <input type='text' value={filterText}  className="ContentSearchBar" onChange={this.handleFilterTextChange} placeholder="Filter..." ></input>
+                <input type='text' value={filterText}  className="ContentSearchBar" onChange={this.handleFilterTextChange} placeholder='Filter...' ></input>
             </form>
         );
     }

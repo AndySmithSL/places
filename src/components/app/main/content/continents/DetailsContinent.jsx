@@ -5,8 +5,11 @@ import { DetailsHeader } from '../common/DetailsHeader';
 import './DetailsContinent.scss';
 
 export const DetailsContinent = props => {
+
+    let className = 'DetailsContinent ' + props.size;
+
     return (
-        <div className="DetailsContinent" >
+        <div className={className} >
             <DetailsHeader icon={props.icon} label={props.label} />
             <div className="row" >
                 <div className="DetailsItem">

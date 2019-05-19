@@ -9,9 +9,6 @@ import { DashboardContinent } from './DashboardContinent';
 
 import '../Content.scss';
 
-
-
-
 class ContentContinents extends React.Component {
 
     constructor(props) {
@@ -51,7 +48,7 @@ class ContentContinents extends React.Component {
 
         return (
             <div className="ContentMain">
-                <FilterableContentList onFilterTextChange={this.handleFilterTextChange} items={items} />
+                <FilterableContentList onFilterTextChange={this.handleFilterTextChange} items={items} filter={this.props.filter} />
                 <DashboardContinent item={this.props.continent} icon={this.props.category.icon} /> 
             </div>
         );

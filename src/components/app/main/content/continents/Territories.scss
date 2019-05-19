@@ -1,0 +1,13 @@
+.Territories {
+    display: flex;
+    flex-direction: column;
+    padding-top: 1vh;
+    padding-right: 1vw;
+    width: calc(100%  /3);
+
+    .row {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+}

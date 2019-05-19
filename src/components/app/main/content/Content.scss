@@ -22,5 +22,18 @@
     .row {
         display: flex;
         flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+    .third {
+        width: calc(100%/3);
+    }
+
+    .half {
+        width: calc(100%/2);
+    }
+
+    .two-thirds {
+        width: calc((100%/3)*2);
     }
 }
