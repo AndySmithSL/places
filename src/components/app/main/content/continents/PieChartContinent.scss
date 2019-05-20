@@ -1,8 +1,10 @@
-.DetailsContinent {
+.PieChartContinent {
     display: flex;
     flex-direction: column;
     padding-top: 1vh;
     padding-right: 1vw;
+    height: 50%;
+    width: 50%;
     
     .row {
         display: flex;
@@ -17,22 +19,10 @@
     .half {
         width: calc(100%/2);
     }
-}
 
-.DetailsItem {
-    width: 50%;
-    padding: 1vh;
-    //padding-top: 1vh;
-    // padding-right: 1vw;
-    // padding-bottom: 1vh;
-
-    .label {
-        font-size: 1rem;
-        font-weight: 500;
-        opacity: 0.5;
-    }
-
-    .value {
-        font-size: 1.75rem;
+    .chart {
+        margin-top: 1vh;
+        margin-bottom: 1vh;
+        height: 250px;
     }
 }

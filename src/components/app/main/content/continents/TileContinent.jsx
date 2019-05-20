@@ -14,7 +14,7 @@ function TileContinent(props) {
                 <div className="subtitle">{props.item.code}</div>
             </div>
             <div className="left value">
-                {props.item.territories}
+                {props.item.listValue}
             </div>
         </div>
     );

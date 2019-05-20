@@ -28,6 +28,14 @@ export const DetailsContinent = props => {
                     <div className="label">PARENT</div>
                     <div className="value">{ props.item ? props.item.parent ? props.item.parent.name : '--' : '--' }</div>
                 </div>
+                <div className="DetailsItem">
+                    <div className="label">SUB-CONTINENTS</div>
+                    <div className="value">{ props.item ? props.item.children.length : '--' }</div>
+                </div>
+                <div className="DetailsItem">
+                    <div className="label">TERRITORIES</div>
+                    <div className="value">{ props.item ? props.item.totalTerritories.length : '--' }</div>
+                </div>
             </div>
         </div>
     );

@@ -1,18 +1,20 @@
 import React from 'react';
-import './content-tile.scss';
+
+import '../common/ContentTile.scss';
+import './TileTerritory.scss';
 
 function TileTerritory(props) {
     return (
-        <div className="content-tile" onClick={ () => props.handleClick(props.item.id) } >
+        <div className="ContentTile TileTerritory" onClick={ () => props.handleClick(props.item.id) } >
             <div>
-                <img src={props.icon} className="content-tile-image" alt={props.item.name} />
+                <img src={props.icon} className="image" alt={props.item.name} />
             </div>
-            <div className="content-tile-details">
-                <div className="content-tile-title">{props.item.name}</div>
-                <div className="content-tile-subtitle">{props.item.iso}</div>
+            <div className="details">
+                <div className="title">{props.item.name}</div>
+                <div className="subtitle">{props.item.fullName}</div>
             </div>
-            <div className="content-tile-left content-tile-value">
-                {props.item.places}
+            <div className="left value">
+                {props.item.isocode}
             </div>
         </div>
     );

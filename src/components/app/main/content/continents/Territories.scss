@@ -3,7 +3,10 @@
     flex-direction: column;
     padding-top: 1vh;
     padding-right: 1vw;
-    width: calc(100%  /3);
+    width: 100%;
+    height: 70vh;
+    max-height: 100%;
+    overflow-y:auto;
 
     .row {
         display: flex;

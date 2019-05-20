@@ -1,12 +1,11 @@
-
-
 .ChartContinent {
     display: flex;
     flex-direction: column;
     padding-top: 1vh;
     padding-right: 1vw;
+    width: 50%;
+    height: 50%;
     
-
     .row {
         display: flex;
         flex-direction: row;
@@ -25,5 +24,4 @@
         margin-top: 1vh;
         width: 100%;
     }
-    
 }

@@ -10,6 +10,7 @@
     display: flex;
     flex-direction: row;
     margin-top: 1vh;
+    height: 80vh;
 }
 
 .ContentDashboard {
@@ -18,11 +19,18 @@
     padding-left: 1vw;
     padding-top: 1vh;
     width: 100%;
+    // height: inherit;
+    // justify-content: top;
 
     .row {
         display: flex;
         flex-direction: row;
         flex-wrap: wrap;
+        // height: inherit;
+        //max-height: 100%;
+        //overflow-y:auto;
+        //line-height: 10vh;
+        
     }
 
     .third {

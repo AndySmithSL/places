@@ -18,15 +18,21 @@ export const ChartContinent = props => {
 
     let className = 'ChartContinent ' + props.size;
 
+    let data = [];
+    data.push(['Country', 'Name']);
+
+    props.item.totalTerritories.forEach(x => {
+        let item = [];
+        item.push(x.isocode, x.name);
+        data.push(item);
+    });
+
     return (
         <div className={className} >
             <DetailsHeader icon={props.icon} label={props.label} />
-            <Chart className='chart' chartType='GeoChart' data={[                    ['Country'],
-                        ['Spain '],
-                        ['Portugal'],
-                        ['Greece'],
-                        ['Italy']
-                    ]}
+            <Chart className='chart' 
+                    chartType='GeoChart' 
+                    data={data}              
                     options={options}
                 />
         </div>
