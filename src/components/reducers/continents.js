@@ -67,8 +67,6 @@ export const continents = (state = { isFetching: false, items: [], filter: '' },
 };
 
 
-
-
 // thunks
 
 export const fetchContinents = () => {
@@ -91,9 +89,3 @@ export const fetchContinent = id => {
             .catch((error) => console.log(error))
     }
 }
-
-// export const filterContinents = filter => {
-//     return dispatch => {
-//         dispatch(continentsFilter(filter));
-//     }
-// }

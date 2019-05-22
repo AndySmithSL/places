@@ -4,11 +4,11 @@ import { Loading } from '../../../utils/Loading';
 import { DashboardHeader } from '../common/DashboardHeader';
 import { DetailsContinent } from './DetailsContinent';
 import { ChartContinent } from './ChartContinent';
-
-import '../Content.scss';
 import { Subdivisons } from './Subdivisions';
 import { Territories } from './Territories';
 import { PieChartContinent } from './PieChartContinent';
+
+import '../Content.scss';
 
 export const DashboardContinent = (props) => {
     

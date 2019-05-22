@@ -1,11 +1,11 @@
 import React from 'react';
 
 import { Loading } from '../../../utils/Loading';
-
-import '../Content.scss';
 import { DashboardHeader } from '../common/DashboardHeader';
 
-export const DashboardTerritoryType = props => {
+import '../Content.scss';
+
+export const DashboardFlag = props => {
 
     if(!props.item) {
         return <Loading />;
@@ -13,7 +13,7 @@ export const DashboardTerritoryType = props => {
 
     return (
         <div className="ContentDashboard">
-            <DashboardHeader title={props.item.type} icon={props.icon} />
+            <DashboardHeader title={props.item.name} icon={props.icon} subtitle={props.item.code} />
         </div>
     );
 }

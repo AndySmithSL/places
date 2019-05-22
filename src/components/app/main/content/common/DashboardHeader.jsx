@@ -11,6 +11,9 @@ export const DashboardHeader = (props) => {
             <div className="label">
                 {props.title}
             </div>
+            <div className="leftlabel">
+                {props.subtitle}
+            </div>
         </div>
     )
 };

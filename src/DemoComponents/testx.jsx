@@ -10,8 +10,8 @@ const user = {
 
 const element = <h1>Hello, {formatName(user)}</h1>
 
-function Test() {
+function Testx() {
     return element;
 };
 
-export default Test;
+export default Testx;

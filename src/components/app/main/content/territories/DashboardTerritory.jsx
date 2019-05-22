@@ -1,12 +1,19 @@
 import React from 'react';
-import { DetailsHeader } from './detailsHeader/detailsHeader';
 
-import './details.scss';
+import { Loading } from '../../../utils/Loading';
+import { DashboardHeader } from '../common/DashboardHeader';
 
-export const DetailsTerritory = (props) => {
+import '../Content.scss';
+
+export const DashboardTerritory = props => {
+
+    if(!props.item) {
+        return <Loading />;
+    }
+
     return (
-        <div className="details">
-            <DetailsHeader title={props.item.name} icon={props.icon} />
+        <div className="ContentDashboard">
+            <DashboardHeader title={props.item.name} icon={props.icon} subtitle={props.item.nativeName} />
         </div>
     );
 }

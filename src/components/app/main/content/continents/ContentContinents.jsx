@@ -3,9 +3,9 @@ import { connect } from 'react-redux';
 
 import { fetchContinents, fetchContinent } from '../../../../reducers/continents';
 import { DashboardContinent } from './DashboardContinent';
+import ListContinents  from './ListContinents';
 
 import '../Content.scss';
-import ListContinents  from './ListContinents';
 
 class ContentContinents extends React.Component {
 

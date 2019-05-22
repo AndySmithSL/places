@@ -17,6 +17,8 @@
     "start": "set PORT=7000 && react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
+    "testj": "jest",
+    "testj:watch": "npm test -- --watch",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {

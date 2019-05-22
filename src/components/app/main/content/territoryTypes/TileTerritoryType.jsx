@@ -1,17 +1,18 @@
 import React from 'react';
-import './content-tile.scss';
-import './territory-type-tile.scss';
+
+import '../common/ContentTile.scss';
+import './TileTerritoryType.scss';
 
 function TileTerritoryType(props) {
     return (
-        <div className="content-tile" onClick={ () => props.handleClick(props.item.id) } >
+        <div className="ContentTile TileTerritoryType" onClick={ () => props.handleClick(props.item.id) } >
             <div>
-                <img src={props.icon} className="content-tile-image" alt={props.item.type} />
+                <img src={props.icon} className="image" alt={props.item.type} />
             </div>
-            <div className="territory-type-tile-title">
+            <div className="title">
                 {props.item.type}
             </div>
-            <div className="content-tile-left content-tile-value">
+            <div className="left value">
                 {props.item.territories}
             </div>
         </div>
