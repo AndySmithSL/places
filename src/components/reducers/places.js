@@ -1,11 +1,15 @@
 import { fetch } from 'whatwg-fetch';
 
+const updateObject = (oldObject, newValues) => Object.assign({}, oldObject, newValues);
+
+
+
 // actions
-const REQUEST_PLACES = 'REQUEST_PLACES';
-const RECEIVE_PLACES = 'RECEIVE_PLACES';
-const FILTER_PLACES = 'FILTER_PLACES';
-const REQUEST_PLACE = 'REQUEST_PLACE';
-const RECEIVE_PLACE = 'RECEIVE_PLACE';
+export const REQUEST_PLACES = 'REQUEST_PLACES';
+export const RECEIVE_PLACES = 'RECEIVE_PLACES';
+export const FILTER_PLACES = 'FILTER_PLACES';
+export const REQUEST_PLACE = 'REQUEST_PLACE';
+export const RECEIVE_PLACE = 'RECEIVE_PLACE';
 
 // action creators
 
@@ -13,9 +17,8 @@ export const requestPlaces = () => ({
     type: REQUEST_PLACES
 });
 
-export const receivePlaces = places => ({
+export const receivePlaces = places => ({ 
     type: RECEIVE_PLACES,
-    receivedAt: Date.now(),
     places
 });
 
@@ -37,36 +40,38 @@ export const receivePlace = place => ({
 
 // reducers
 
-export const places = (state = { isFetching: false, items: [], filter: '', flagId: null, flag: null }, action) => {
+const initialState = {
+    fetching: false,
+    items: [],
+    filter: '',
+    placeId: null,
+    place: null
+}
+
+export const places = (state = initialState, action) => {
     switch(action.type) {
         case REQUEST_PLACES:
-            return Object.assign({}, state, { 
-                isFetching: true
-            });
-        case RECEIVE_FLAGS:
-            return Object.assign({}, state, { 
-                isFetching: false, 
-                items: action.flags, 
-                lastUpdate: action.receivedAt 
-            });
-        case FILTER_FLAGS:
-            return Object.assign({}, state, { 
-                filter: action.filter
-            });
-        case REQUEST_FLAG:
-            return Object.assign({}, state, { 
-                flagId: action.flagId
-            });
-        case RECEIVE_FLAG:
-            return Object.assign({}, state, { 
-                flag: action.flag
-            });
+            return requestPlacesReducer(state);
+        case RECEIVE_PLACES:
+            return receivePlacesReducer(state, action);
+        case FILTER_PLACES:
+            return filterPlacesReducer(state, action);
+        case REQUEST_PLACE:
+            return updateObject(state, { placeId: action.id });
+        case RECEIVE_PLACE:
+            return updateObject(state, { place: action.place });
         default:
             return state;
     }
 };
 
-const places = (state = { isFetching: false, items: [], filter: '', flagId: null, flag: null }, action) => {
+const requestPlacesReducer = (state) => updateObject(state, { fetching: true });
+
+const receivePlacesReducer = (state, action) => updateObject(state, { fetching: false, items: action.places });
+
+const filterPlacesReducer = (state, action) => updateObject(state, { filter: action.filter });
+
+
 
 
 
@@ -74,10 +79,10 @@ const places = (state = { isFetching: false, items: [], filter: '', flagId: null
 
 export const fetchFlags = () => {
     return dispatch => {
-        dispatch(requestFlags());
+        dispatch(requestPlaces());
         return fetch('https://localhost:44324/api/flag')
             .then(response => response.json())
-            .then(json => dispatch(receiveFlags(json)))
+            .then(json => dispatch(receivePlaces(json)))
             .then(result => {
                 console.log('result');
                 console.log(result);
@@ -89,10 +94,10 @@ export const fetchFlags = () => {
 
 export const fetchFlag = id => {
     return dispatch => {
-        dispatch(requestFlag(id));
+        dispatch(requestPlace(id));
         return fetch(`https://localhost:44324/api/flag/${id}`)
             .then(response => response.json())
-            .then(json => dispatch(receiveFlag(json)))
+            .then(json => dispatch(receivePlace(json)))
             .catch((error) => console.log(error))
     }
 }
