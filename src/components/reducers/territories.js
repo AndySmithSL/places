@@ -1,5 +1,7 @@
 import { fetch } from 'whatwg-fetch';
 
+const updateObject = (oldObject, newValues) => Object.assign({}, oldObject, newValues);
+
 // actions
 const REQUEST_TERRITORIES = 'REQUEST_TERRITORIES';
 const RECEIVE_TERRITORIES = 'RECEIVE_TERRITORIES';
@@ -37,34 +39,41 @@ export const receiveTerritory = data => ({
 
 // reducers
 
-export const territories = (state = { isFetching: false, items: [], filter: '' }, action) => {
+const initialState = {
+    fetchingItems: false,
+    items: [],
+    filter: '',
+    fetchingItem: false,
+    itemId: null,
+    item: null
+}
+
+export const territoriesReducer = (state = initialState, action) => {
     switch(action.type) {
         case REQUEST_TERRITORIES:
-            return Object.assign({}, state, { 
-                isFetching: true
-            });
+            return requestTerritoriesReducer(state);
         case RECEIVE_TERRITORIES:
-            return Object.assign({}, state, { 
-                isFetching: false, 
-                items: action.territories, 
-                lastUpdate: action.receivedAt 
-            });
+            return receiveTerritoriesReducer(state, action);
         case FILTER_TERRITORIES:
-            return Object.assign({}, state, { 
-                filter: action.filter
-            });
+            return filterTerritoriesReducer(state, action);
         case REQUEST_TERRITORY:
-            return Object.assign({}, state, { 
-                territoryId: action.territoryId
-            });
+            return requestTerritoryReducer(state, action);
         case RECEIVE_TERRITORY:
-            return Object.assign({}, state, { 
-                territory: action.territory
-            });
+            return receiveTerritoryReducer(state, action);
         default:
             return state;
     }
 };
+
+const requestTerritoriesReducer = (state) => updateObject(state, { fetchingItems: true });
+
+const receiveTerritoriesReducer = (state, action) => updateObject(state, { fetchingItems: false, items: action.territories });
+
+const filterTerritoriesReducer = (state, action) => updateObject(state, { filter: action.filter });
+
+const requestTerritoryReducer = (state, action) => updateObject(state, { fetchingItem: true, itemId: action.id });
+
+const receiveTerritoryReducer = (state, action) => updateObject(state, { fetchingItem: false, item: action.territory });
 
 
 // thunks

@@ -77,25 +77,25 @@ const filterPlacesReducer = (state, action) => updateObject(state, { filter: act
 
 // thunks
 
-export const fetchFlags = () => {
+export const fetchPlaces = () => {
     return dispatch => {
         dispatch(requestPlaces());
-        return fetch('https://localhost:44324/api/flag')
+        return fetch('https://localhost:44324/api/place')
             .then(response => response.json())
             .then(json => dispatch(receivePlaces(json)))
             .then(result => {
                 console.log('result');
                 console.log(result);
-                dispatch(fetchFlag(result.flags[0].id))
+                dispatch(fetchPlace(result.places[0].id))
             })
             .catch(error => console.log(error))
     }
 }
 
-export const fetchFlag = id => {
+export const fetchPlace = id => {
     return dispatch => {
         dispatch(requestPlace(id));
-        return fetch(`https://localhost:44324/api/flag/${id}`)
+        return fetch(`https://localhost:44324/api/place/${id}`)
             .then(response => response.json())
             .then(json => dispatch(receivePlace(json)))
             .catch((error) => console.log(error))

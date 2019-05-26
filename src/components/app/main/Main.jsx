@@ -1,42 +1,32 @@
 import React from 'react';
+import { connect } from 'react-redux';
+
 import IconBar from './iconBar/IconBar';
 import Content from './content/Content';
+import { fetchCategories } from '../../reducers/categories';
 
 import './Main.scss';
 
-const categories = [
-    { name: "Home", icon: "../assets/home.png" },
-    { name: "Continents", icon: "../assets/america.png" },
-    { name: "Territory Types", icon: "../assets/map.png" },
-    { name: "Territories", icon: "../assets/passport.png" },
-    { name: "Places", icon: "../assets/marker.png" },
-    { name: "Flags", icon: "../assets/flag.png" },
-    { name: "Place Groups", icon: "../assets/picture.png" },
-    { name: "Drives", icon: "../assets/road.png" },
-];
-
 class Main extends React.Component {
 
-    constructor(props) {
-        super(props);
-
-        this.handleIconClick = this.handleIconClick.bind(this);
-        this.state = { selectedCategory: categories[0] };
-    }
-
-    handleIconClick = (category) => {
-        console.log(category);
-        this.setState({ selectedCategory: category })
+    componentDidMount() {
+        this.props.fetchCategories();
     }
 
     render() {
         return (
             <div className="Main">
-                <IconBar categories={categories} handleClick={ this.handleIconClick } />
-                <Content selectedCategory={this.state.selectedCategory} /> 
+                <IconBar />
+                <Content />
             </div>
         );
     }
 }
 
-export default Main;
+const mapDispatchToProps = dispatch => {
+    return {
+        fetchCategories: () => dispatch(fetchCategories())
+    };
+};
+
+export default connect(null, mapDispatchToProps)(Main)

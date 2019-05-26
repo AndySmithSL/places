@@ -13,7 +13,7 @@ export const Territories = props => {
     console.log(props.item.totalTerritories);
 
     props.item.totalTerritories.forEach(territory => {
-        items.push(<TileTerritory item={territory} icon={props.icon} key={territory.id} />)
+        items.push(<TileTerritory territory={territory} key={territory.id} />)
     });
 
     return (

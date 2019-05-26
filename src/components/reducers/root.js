@@ -1,13 +1,22 @@
 import { combineReducers } from 'redux';
+
+import { categoriesReducer as categories } from './categories';
 import { continents } from './continents';
+import { drives } from './drives';
 import { flags } from './flags';
-import { territories } from './territories';
+import { places } from './places';
+import { placeGroups } from './placeGroups';
+import { territoriesReducer } from './territories';
 import { territoryTypes } from './territoryTypes';
 
 const rootReducer = combineReducers({ 
+    categories,
     continents,
+    drives,
     flags,
-    territories,
+    places,
+    placeGroups,
+    territories: territoriesReducer,
     territoryTypes
  });
 

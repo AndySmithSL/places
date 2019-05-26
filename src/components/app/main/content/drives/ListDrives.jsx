@@ -2,12 +2,12 @@ import React from 'react';
 import { connect } from 'react-redux';
 
 import { FilterableContentList } from '../common/FilterableContentList';
-import { filterPlaces } from '../../../../reducers/places';
-import TilePlace from './TilePlace';
+import { filterDrives } from '../../../../reducers/drives';
+import { TileDrive } from './TileDrive';
 
-import './ListPlaces.scss';
+import './ListDrives.scss';
 
-class ListPlaces extends React.Component {
+class ListDrives extends React.Component {
 
     constructor(props) {
         super(props);
@@ -15,23 +15,23 @@ class ListPlaces extends React.Component {
     }
 
     handleFilterTextChange = filter => {
-        this.props.filterPlaces(filter);
+        this.props.filterDrives(filter);
     }
 
     render() {
         const items = [];
 
-        this.props.places.forEach(place => {
+        this.props.drives.forEach(drive => {
             // Check if name is filtered out
-            if(place.name.toUpperCase().indexOf(this.props.filter.toUpperCase()) === -1) {
+            if(drive.name.toUpperCase().indexOf(this.props.filter.toUpperCase()) === -1) {
                 return;
             }
 
-            items.push(<TilePlace item={place} icon={this.props.icon} handleClick={this.props.handleItemChange} key={place.id} />)
+            items.push(<TileDrive item={drive} icon={this.props.icon} handleClick={this.props.handleItemChange} key={drive.id} />)
         });
 
         return (
-            <div className="ListPlaces">
+            <div className="ListFlags">
                 <FilterableContentList onFilterTextChange={this.handleFilterTextChange} items={items} filter={this.props.filter} />
             </div>
         );
@@ -40,15 +40,15 @@ class ListPlaces extends React.Component {
 
 const mapStateToProps = state => {
     return {
-        places: state.places.items,
-        filter: state.places.filter,
+        drives: state.drives.items,
+        filter: state.drives.filter,
     };
 };
 
 const mapDispatchToProps = dispatch => {
     return {
-        filterPlaces: filter => dispatch(filterPlaces(filter))
+        filterDrives: filter => dispatch(filterDrives(filter))
     };
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(ListPlaces)
+export default connect(mapStateToProps, mapDispatchToProps)(ListDrives)

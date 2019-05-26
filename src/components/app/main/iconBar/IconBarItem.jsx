@@ -1,12 +1,10 @@
 import React from 'react';
 import './IconBarItem.scss';
 
-function IconBarItem(props) {
+export const IconBarItem = props => {
     return (
-        <div className="IconBarItem" onClick={ () => props.handleClick(props.category) } >
+        <div className="IconBarItem" onClick={ () => props.handleClick(props.category.name) } >
             <img src={props.category.icon} className="image" alt={props.category.name}  />
         </div>
     );
 }
-
-export default IconBarItem;

@@ -5,49 +5,40 @@ import { fetchTerritories, fetchTerritory } from '../../../../reducers/territori
 import ListTerritories from './ListTerritories';
 
 import '../Content.scss';
-import { DashboardTerritory } from './DashboardTerritory';
+import DashboardTerritory from './DashboardTerritory';
+import { Loading } from '../../../utils/Loading';
 
 
 class ContentTerritories extends React.Component {
 
-    constructor(props) {
-        super(props);
-        this.handleItemChange = this.handleItemChange.bind(this);
-    }
-
-    componentDidMount() {
-        this.props.fetchTerritories();
-    }
-
-    handleItemChange = id => {
-        this.props.fetchTerritory(id);
-    }
-
     render() {
+
+        const { fetching } = this.props;
+
+        if(fetching) {
+            return (
+                <div className="ContentMain">
+                    <Loading />
+                </div>
+            );
+        }
+
         return (
             <div className="ContentMain">
-                <ListTerritories handleItemChange={this.handleItemChange} icon={this.props.category.icon} />
-                <DashboardTerritory item={this.props.territory} icon={this.props.category.icon} />
+                <ListTerritories />
+                <DashboardTerritory />
             </div>
         );
     }
 }
 
 const mapStateToProps = state => {
+
+    //AS: Debug
+    console.log(state);
     return {
-        isFetching: state.territories.isFetching,
-        territories: state.territories.items,
-        filter: state.territories.filter,
-        territoryId: state.territories.territoryId,
-        territory: state.territories.territory
+        fetching: state.territories.fetchingItems
     };
 };
 
-const mapDispatchToProps = dispatch => {
-    return {
-        fetchTerritories: () => dispatch(fetchTerritories()),
-        fetchTerritory: id => dispatch(fetchTerritory(id)),
-    };
-};
-
-export default connect(mapStateToProps, mapDispatchToProps)(ContentTerritories)
+export default connect(mapStateToProps)(ContentTerritories)

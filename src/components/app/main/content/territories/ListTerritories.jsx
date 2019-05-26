@@ -19,21 +19,23 @@ class ListTerritories extends React.Component {
     }
 
     render() {
+        
         const items = [];
+        const { territories, filter } = this.props;
 
-        this.props.territories.forEach(territory => {
+        territories.forEach(territory => {
             // Check if name is filtered out
-            if((territory.name.toUpperCase().indexOf(this.props.filter.toUpperCase()) === -1) &&
-                (territory.isocode.toUpperCase().indexOf(this.props.filter.toUpperCase()) === -1)) {
+            if((territory.name.toUpperCase().indexOf(filter.toUpperCase()) === -1) &&
+                (territory.isocode.toUpperCase().indexOf(filter.toUpperCase()) === -1)) {
                 return;
             }
 
-            items.push(<TileTerritory item={territory} icon={this.props.icon} handleClick={this.props.handleItemChange} key={territory.id} />)
+            items.push(<TileTerritory territory={territory} key={territory.id} />)
         });
 
         return (
             <div className="ListTerritories">
-                <FilterableContentList onFilterTextChange={this.handleFilterTextChange} items={items} filter={this.props.filter} />
+                <FilterableContentList onFilterTextChange={this.handleFilterTextChange} items={items} filter={filter} />
             </div>
         );
     }
