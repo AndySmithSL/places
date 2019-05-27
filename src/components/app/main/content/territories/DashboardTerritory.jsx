@@ -15,7 +15,7 @@ class DashboardTerritory extends React.Component {
         if(fetching) {
             return (
                 <div className="ContentMain">
-                    <Loading />
+                    {/* <Loading /> */}
                 </div>
             );
         }

@@ -2,7 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 
 import { ContentHeader } from './common/ContentHeader';
-import ContentHome from './home/ContentHome';
+import ContentHome from './home/HomeContent';
 import ContentContinents from './continents/ContentContinents';
 import ContentFlags from './flags/ContentFlags';
 import ContentPlaces from './places/ContentPlaces';

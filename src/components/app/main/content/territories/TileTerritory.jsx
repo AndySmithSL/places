@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 
-import { fetchCategory } from '../../../../reducers/categories';
+import { setCategory } from '../../../../reducers/categories';
 import { fetchTerritory } from '../../../../reducers/territories';
 
 import '../common/ContentTile.scss';
@@ -15,9 +15,9 @@ class TileTerritory extends React.Component {
         this.handleItemClick = this.handleItemClick.bind(this);
     }
 
-    handleItemClick = (name, id) => {
+    handleItemClick = (category, id) => {
         this.props.fetchTerritory(id);
-        this.props.fetchCategory(name);
+        this.props.setCategory(category);
     };
 
     render() {
@@ -25,7 +25,7 @@ class TileTerritory extends React.Component {
         const { territory, category } = this.props;
 
         return (
-            <div className="ContentTile TileTerritory" onClick={ () => this.handleItemClick(category.name, territory.id) } >
+            <div className="ContentTile TileTerritory" onClick={ () => this.handleItemClick(category, territory.id) } >
                 <div>
                     <img src={category.icon} className="image" alt={territory.name} />
                 </div>
@@ -49,7 +49,7 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
     return {
-        fetchCategory: name => dispatch(fetchCategory(name)),
+        setCategory: category => dispatch(setCategory(category)),
         fetchTerritory: id => dispatch(fetchTerritory(id))
     };
 };

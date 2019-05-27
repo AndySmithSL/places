@@ -32,8 +32,8 @@ class DashboardDrive extends React.Component {
 
 const mapStateToProps = state => {
     return {
-        drive: state.drives.item,
-        driveId: state.drives.id,
+        drive: state.drives.drive.item,
+        driveId: state.drives.drive.id,
     };
 };
 

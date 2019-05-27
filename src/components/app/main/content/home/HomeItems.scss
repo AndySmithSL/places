@@ -1,0 +1,19 @@
+.HomeItems {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 100%;
+    height: min-content;
+
+    .item {
+        width: calc(100%/4);
+    }
+
+    .loading {
+        font-size: 2rem;
+        font-weight: 700;
+        opacity: 0.5;
+        margin-top: 1.5vh;
+        width: calc(100%/4);
+    }
+}

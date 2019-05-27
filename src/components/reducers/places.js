@@ -83,11 +83,7 @@ export const fetchPlaces = () => {
         return fetch('https://localhost:44324/api/place')
             .then(response => response.json())
             .then(json => dispatch(receivePlaces(json)))
-            .then(result => {
-                console.log('result');
-                console.log(result);
-                dispatch(fetchPlace(result.places[0].id))
-            })
+            .then(result => dispatch(fetchPlace(result.places[0].id)))
             .catch(error => console.log(error))
     }
 }

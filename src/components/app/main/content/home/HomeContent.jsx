@@ -11,17 +11,20 @@ import { fetchTerritories, fetchTerritory } from '../../../../reducers/territori
 import { fetchTerritoryTypes } from '../../../../reducers/territoryTypes';
 
 import '../Content.scss';
+import './HomeContent.scss';
+import { HomeItem } from './HomeItem';
+import HomeItems from './HomeItems';
 
 class ContentHome extends React.Component {
 
     componentDidMount() {
-        this.props.fetchContinents();
-        this.props.fetchDrives();
-        this.props.fetchFlags();
-        this.props.fetchPlaces();
-        this.props.fetchPlaceGroups();
-        this.props.fetchTerritories();
-        this.props.fetchTerritoryTypes();
+        //this.props.fetchContinents();
+        //this.props.fetchDrives();
+        //this.props.fetchFlags();
+        //this.props.fetchPlaces();
+        // this.props.fetchPlaceGroups();
+        // this.props.fetchTerritories();
+        // this.props.fetchTerritoryTypes();
     }
 
     render() {
@@ -50,22 +53,26 @@ class ContentHome extends React.Component {
 
         return (
             <div className="ContentMain">
-                <p>Continents: {this.props.continents.length}</p>
-                <p>Drives: {this.props.drives.length}</p>
-                <p>Flags: {this.props.flags.length}</p>
-                <p>Places: {this.props.places.length}</p>
-                <p>PlaceGroups: {this.props.placeGroups.length}</p>
-                <p>Territories: {this.props.territories.length}</p>
-                <p>TerritoryTypes: {this.props.territoryTypes.length}</p>
-                <p>Random: { Math.floor((Math.random() * 100) + 1) }</p>
-                <div>
+
+                <HomeItems />
+
+               
+                {/* <HomeItem label="Drives:" value={this.props.drives.length} />
+                <HomeItem label="Flags:" value={this.props.flags.length} />
+                <HomeItem label="Places:" value={this.props.places.length} />
+                <HomeItem label="Place Groups:" value={this.props.placeGroups.length} />
+                <HomeItem label="Territories:" value={this.props.territories.length} />
+                <HomeItem label="Territory Types:" value={this.props.territoryTypes.length} /> */}
+            
+
+                {/* <div>
                     <p>Place</p>
                     <p>{ place && place.name}</p>
                 </div>
                 <div>
                     <p>Territory</p>
                     <p>{ territory && territory.name}</p>
-                </div>
+                </div> */}
             </div>
         );
     }
@@ -73,15 +80,8 @@ class ContentHome extends React.Component {
 
 const mapStateToProps = state => {
     return {
-        fetchingContinents: state.continents.fetching,
-        fetchingDrives: state.drives.fetching,
-        fetchingFlags: state.flags.fetching,
-        fetchingPlaces: state.places.fetching,
-        fetchingPlaceGroups: state.placeGroups.fetching,
-        fetchingTerritories: state.territories.fetching,
-        fetchingTerritoryTypes: state.territoryTypes.fetching,
         continents: state.continents.items,
-        drives: state.drives.items,
+        drives: state.drives.drives.items,
         flags: state.flags.items,
         places: state.places.items,
         placeGroups: state.placeGroups.items,
@@ -90,16 +90,4 @@ const mapStateToProps = state => {
     };
 };
 
-const mapDispatchToProps = dispatch => {
-    return {
-        fetchContinents: () => dispatch(fetchContinents()),
-        fetchDrives: () => dispatch(fetchDrives()),
-        fetchFlags: () => dispatch(fetchFlags()),
-        fetchPlaces: () => dispatch(fetchPlaces()),
-        fetchPlaceGroups: () => dispatch(fetchPlaceGroups()),
-        fetchTerritories: () => dispatch(fetchTerritories()),
-        fetchTerritoryTypes: () => dispatch(fetchTerritoryTypes())
-    };
-};
-
-export default connect(mapStateToProps, mapDispatchToProps)(ContentHome)
+export default connect(mapStateToProps)(ContentHome)

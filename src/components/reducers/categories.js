@@ -57,11 +57,10 @@ const receiveCategoryReducer = (state, action) => updateObject(state, { selected
 export const fetchCategories = () => {
     return dispatch => {
         dispatch(receiveCategories(categories));
-        dispatch(fetchCategory(categories[0].name));
+        dispatch(setCategory(categories[0]));
     }
 }
 
-export const fetchCategory = name => {
-    console.log(name);
-    return dispatch => dispatch(receiveCategory(categories.find(x => x.name === name)));
+export const setCategory = category => {
+    return dispatch => dispatch(receiveCategory(category));
 }

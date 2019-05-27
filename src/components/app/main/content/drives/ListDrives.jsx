@@ -40,7 +40,7 @@ class ListDrives extends React.Component {
 
 const mapStateToProps = state => {
     return {
-        drives: state.drives.items,
+        drives: state.drives.drives.items,
         filter: state.drives.filter,
     };
 };

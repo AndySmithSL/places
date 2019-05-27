@@ -2,7 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 
 import { IconBarItem } from './IconBarItem';
-import { fetchCategories, fetchCategory } from '../../../reducers/categories';
+import { setCategory } from '../../../reducers/categories';
 
 import './IconBar.scss';
 
@@ -11,7 +11,7 @@ class IconBar extends React.Component {
     render() {
 
         const iconBarItems = this.props.categories.map(category => {
-            return <IconBarItem category={category} handleClick={this.props.fetchCategory} key={category.name} />;
+            return <IconBarItem category={category} handleClick={this.props.setCategory} key={category.name} />;
         });
 
         return (
@@ -30,7 +30,7 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
     return {
-        fetchCategory: name => dispatch(fetchCategory(name))
+        setCategory: category => dispatch(setCategory(category))
     };
 };
 

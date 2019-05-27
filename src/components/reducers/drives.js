@@ -1,4 +1,5 @@
 import { fetch } from 'whatwg-fetch';
+import { combineReducers } from '../../../../../Users/asmith/AppData/Local/Microsoft/TypeScript/3.4.5/node_modules/redux';
 
 const updateObject = (oldObject, newValues) => Object.assign({}, oldObject, newValues);
 
@@ -38,41 +39,45 @@ export const receiveDrive = drive => ({
 
 // reducers
 
-const initialState = {
-    fetching: false,
-    items: [],
-    filter: '',
-    id: null,
-    item: null
+const createReducer = (initialState, handlers) => {
+    return (state = initialState, action) => {
+        if(handlers.hasOwnProperty(action.type)) {
+            return handlers[action.type](state, action);
+        } else {
+            return state;
+        }
+    }
 }
 
-export const drives = (state = initialState, action) => {
-    switch(action.type) {
-        case REQUEST_DRIVES:
-            return requestDrivesReducer(state);
-        case RECEIVE_DRIVES:
-            return receiveDrivesReducer(state, action);
-        case FILTER_DRIVES:
-            return filterDrivesReducer(state, action);
-        case REQUEST_DRIVE:
-            return requestDriveReducer(state, action);
-        case RECEIVE_DRIVE:
-            return receiveDriveReducer(state, action);
-        default:
-            return state;
-    }
-};
-
-const requestDrivesReducer = (state) => updateObject(state, { fetching: true });
+const requestDrivesReducer = (state, action) => updateObject(state, { fetching: true });
 
 const receiveDrivesReducer = (state, action) => updateObject(state, { fetching: false, items: action.drives });
 
-const filterDrivesReducer = (state, action) => updateObject(state, { filter: action.filter });
+const filterDrivesReducer = (state, action) => action.filter;
 
-const requestDriveReducer = (state, action) => updateObject(state, { id: action.id });
+const requestDriveReducer = (state, action) => updateObject(state, { fetching: true, id: action.id });
 
-const receiveDriveReducer = (state, action) => updateObject(state, { item: action.drive });
+const receiveDriveReducer = (state, action) => updateObject(state, { fetching: false, item: action.drive });
 
+const drivesReducer = createReducer({ fetching: false, items: [] }, {
+    REQUEST_DRIVES: requestDrivesReducer,
+    RECEIVE_DRIVES: receiveDrivesReducer
+});
+
+const filterReducer = createReducer('', {
+    FILTER_DRIVES: filterDrivesReducer
+});
+
+const driveReducer = createReducer({ fetching: false, id: null, item: null }, {
+    REQUEST_DRIVE: requestDriveReducer,
+    RECEIVE_DRIVE: receiveDriveReducer
+})
+
+export const drives = combineReducers ({
+    drives: drivesReducer,
+    filter: filterReducer,
+    drive: driveReducer
+});
 
 
 // thunks
