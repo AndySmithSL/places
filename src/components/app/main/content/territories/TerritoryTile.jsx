@@ -3,11 +3,11 @@ import { connect } from 'react-redux';
 
 import { setCategory } from '../../../../reducers/categories';
 import { fetchTerritory } from '../../../../reducers/territories';
+import { FLAG_PATH } from '../../../utils/Global';
 
-import '../common/ContentTile.scss';
-import './TileTerritory.scss';
+import './TerritoryTile.scss';
 
-class TileTerritory extends React.Component {
+class TerritoryTile extends React.Component {
 
     constructor(props) {
         super(props);
@@ -23,11 +23,12 @@ class TileTerritory extends React.Component {
     render() {
 
         const { territory, category } = this.props;
-
+        const flag = territory && FLAG_PATH + territory.flagImage;
+       
         return (
-            <div className="ContentTile TileTerritory" onClick={ () => this.handleItemClick(category, territory.id) } >
+            <div className="TerritoryTile" onClick={ () => this.handleItemClick(category, territory.id) } >
                 <div>
-                    <img src={category.icon} className="image" alt={territory.name} />
+                    <img src={flag} className="image" alt={territory.name} />
                 </div>
                 <div className="details">
                     <div className="title">{territory.name}</div>
@@ -54,4 +55,4 @@ const mapDispatchToProps = dispatch => {
     };
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(TileTerritory)
+export default connect(mapStateToProps, mapDispatchToProps)(TerritoryTile)

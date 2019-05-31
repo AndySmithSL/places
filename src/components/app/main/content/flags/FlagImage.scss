@@ -1,0 +1,16 @@
+
+.FlagImage {
+    padding-top: 1vh;
+    padding-right: 1vw;
+}
+
+.FlagImageItem {
+    padding-top: 1vh;
+    width: 100%;
+
+    .image{
+        width: 100%;
+        opacity: 0.3;
+        border-radius: 5px;
+    }
+}

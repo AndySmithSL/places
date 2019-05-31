@@ -1,9 +1,14 @@
 import React from 'react';
 
 import { Loading } from '../../../utils/Loading';
-import { DashboardHeader } from '../common/DashboardHeader';
 
-import '../Content.scss';
+
+import { FlagHeader } from './FlagHeader';
+
+import './DashboardFlag.scss';
+import { FlagDetails } from './FlagDetails';
+import { FlagImage } from './FlagImage';
+import { FlagTerritories } from './FlagTerritories';
 
 export const DashboardFlag = props => {
 
@@ -12,8 +17,19 @@ export const DashboardFlag = props => {
     }
 
     return (
-        <div className="ContentDashboard">
-            <DashboardHeader title={props.item.name} icon={props.icon} subtitle={props.item.code} />
+        <div className="DashboardFlag">
+            <FlagHeader flag={props.item} />
+            <div className="DashboardFlagRow" >
+                <div className="third" >
+                    <FlagDetails flag={props.item} />
+                </div>
+                <div className="third" >
+                    <FlagImage flag={props.item} />
+                </div>
+                <div className="third" >
+                    <FlagTerritories flag={props.item} />
+                </div>
+            </div>
         </div>
     );
 }

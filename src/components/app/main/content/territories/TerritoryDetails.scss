@@ -1,0 +1,43 @@
+
+.TerritoryDetails {
+    display: flex;
+    flex-direction: column;
+    padding-top: 1vh;
+    padding-right: 1vw;
+}
+
+.TerritoryDetailsRow {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+
+    .third {
+        width: calc(100%/3);
+    }
+    
+    .half {
+        width: calc(100%/2);
+    }
+    
+    .two-thirds {
+        width: calc((100%/3)*2);
+    }
+    
+    .whole {
+        width: 100%;
+    }
+}
+
+.TerritoryDetailsItem {
+    padding-top: 1vh;
+  
+    .label {
+        font-size: 0.75rem;
+        font-weight: 500;
+        opacity: 0.5;
+    }
+
+    .value {
+        font-size: 1.25rem;
+    }
+}

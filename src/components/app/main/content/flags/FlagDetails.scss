@@ -1,0 +1,45 @@
+
+.FlagDetails {
+    display: flex;
+    flex-direction: column;
+    padding-top: 1vh;
+    padding-right: 1vw;
+}
+
+.FlagDetailsRow {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+
+    .third {
+        width: calc(100%/3);
+    }
+    
+    .half {
+        width: calc(100%/2);
+    }
+    
+    .two-thirds {
+        width: calc((100%/3)*2);
+    }
+    
+    .whole {
+        width: 100%;
+    }
+}
+
+.FlagDetailsItem {
+    padding: 1vh;
+  
+    .label {
+        font-size: 1rem;
+        font-weight: 500;
+        opacity: 0.5;
+    }
+
+    .value {
+        font-size: 1.5rem;
+    }
+}
+
+

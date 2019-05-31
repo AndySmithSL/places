@@ -1,13 +1,10 @@
 import React from 'react';
 import { connect } from 'react-redux';
 
-import { fetchTerritories, fetchTerritory } from '../../../../reducers/territories';
 import ListTerritories from './ListTerritories';
+import TerritoryDashboard from './TerritoryDashboard';
 
 import '../Content.scss';
-import DashboardTerritory from './DashboardTerritory';
-import { Loading } from '../../../utils/Loading';
-
 
 class ContentTerritories extends React.Component {
 
@@ -18,7 +15,7 @@ class ContentTerritories extends React.Component {
         if(fetching) {
             return (
                 <div className="ContentMain">
-                    <Loading />
+                    LOADING...
                 </div>
             );
         }
@@ -26,16 +23,13 @@ class ContentTerritories extends React.Component {
         return (
             <div className="ContentMain">
                 <ListTerritories />
-                <DashboardTerritory />
+                <TerritoryDashboard />
             </div>
         );
     }
 }
 
 const mapStateToProps = state => {
-
-    //AS: Debug
-    console.log(state);
     return {
         fetching: state.territories.fetchingItems
     };

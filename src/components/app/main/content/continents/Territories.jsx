@@ -4,7 +4,7 @@ import { DetailsHeader } from '../common/DetailsHeader';
 
 import './Territories.scss';
 import ContentList from '../common/ContentList';
-import TileTerritory from '../territories/TileTerritory';
+import TerritoryTile from '../territories/TerritoryTile';
 
 export const Territories = props => {
 
@@ -13,7 +13,7 @@ export const Territories = props => {
     console.log(props.item.totalTerritories);
 
     props.item.totalTerritories.forEach(territory => {
-        items.push(<TileTerritory territory={territory} key={territory.id} />)
+        items.push(<TerritoryTile territory={territory} key={territory.id} />)
     });
 
     return (

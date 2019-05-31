@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 
 import { FilterableContentList } from '../common/FilterableContentList';
 import { filterTerritories } from '../../../../reducers/territories';
-import TileTerritory from './TileTerritory';
+import TerritoryTile from './TerritoryTile';
 
 import './ListTerritories.scss';
 
@@ -30,7 +30,7 @@ class ListTerritories extends React.Component {
                 return;
             }
 
-            items.push(<TileTerritory territory={territory} key={territory.id} />)
+            items.push(<TerritoryTile territory={territory} key={territory.id} />)
         });
 
         return (

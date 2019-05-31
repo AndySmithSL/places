@@ -1,0 +1,28 @@
+.TerritoryChart {
+    
+    display: flex;
+    flex-direction: column;
+    padding-top: 1vh;
+    padding-right: 1vw;
+    width: 100%;
+    height: 100%;
+    
+    .row {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+    .third {
+        width: calc(100%/3);
+    }
+
+    .half {
+        width: calc(100%/2);
+    }
+
+    .chart {
+        margin-top: 1vh;
+        width: 100%;
+    }
+}
