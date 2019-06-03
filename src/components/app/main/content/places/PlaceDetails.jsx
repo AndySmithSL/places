@@ -7,7 +7,6 @@ import './PlaceDetails.scss';
 
 export const PlaceDetails = props => {
 
-    const { flag } = props;
     const icon = ICON_PATH + ICON_DETAILS;
 
     return (

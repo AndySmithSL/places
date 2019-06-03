@@ -1,33 +1,29 @@
 import React from 'react';
 import { connect } from 'react-redux';
 
-import { fetchContinents, fetchContinent } from '../../../../reducers/continents';
-import { DashboardContinent } from './DashboardContinent';
 import ListContinents  from './ListContinents';
 
 import '../Content.scss';
+import ContinentDashboard from './ContinentDashboard';
 
 class ContentContinents extends React.Component {
 
-    constructor(props) {
-        super(props);
-
-        this.handleItemChange = this.handleItemChange.bind(this);
-    }
-
-    componentDidMount() {
-        this.props.fetchContinents();
-    }
-
-    handleItemChange = (id) => {
-        this.props.fetchContinent(id);
-    }
-
     render() {
+
+        const { fetching } = this.props;
+
+        if(fetching) {
+            return (
+                <div className="ContentMain">
+                    LOADING...
+                </div>
+            );
+        }
+
         return (
             <div className="ContentMain">
-                <ListContinents handleItemChange={this.handleItemChange} icon={this.props.category.icon} />
-                <DashboardContinent item={this.props.continent} icon={this.props.category.icon} /> 
+                <ListContinents />
+                <ContinentDashboard />
             </div>
         );
     }
@@ -35,19 +31,39 @@ class ContentContinents extends React.Component {
 
 const mapStateToProps = state => {
     return {
-        isFetching: state.continents.isFetching,
-        continents: state.continents.items,
-        filter: state.continents.filter,
-        continentId: state.continents.continentId,
-        continent: state.continents.continent
+        fetching: state.continents.continents.fetching
     };
 };
 
-const mapDispatchToProps = dispatch => {
-    return {
-        fetchContinents: url => dispatch(fetchContinents()),
-        fetchContinent: id => dispatch(fetchContinent(id)),
-    };
-};
+export default connect(mapStateToProps)(ContentContinents)
 
-export default connect(mapStateToProps, mapDispatchToProps)(ContentContinents)
+
+
+    // render() {
+    //     return (
+    //         <div className="ContentMain">
+    //             <ListContinents handleItemChange={this.handleItemChange} icon={this.props.category.icon} />
+    //             <DashboardContinent item={this.props.continent} icon={this.props.category.icon} /> 
+    //         </div>
+    //     );
+    // }
+
+
+// const mapStateToProps = state => {
+//     return {
+//         isFetching: state.continents.isFetching,
+//         continents: state.continents.items,
+//         filter: state.continents.filter,
+//         continentId: state.continents.continentId,
+//         continent: state.continents.continent
+//     };
+// };
+
+// const mapDispatchToProps = dispatch => {
+//     return {
+//         fetchContinents: url => dispatch(fetchContinents()),
+//         fetchContinent: id => dispatch(fetchContinent(id)),
+//     };
+// };
+
+// export default connect(mapStateToProps, mapDispatchToProps)(ContentContinents)

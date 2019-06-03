@@ -42,8 +42,8 @@ class HomeItemContinents extends React.Component {
 
 const mapStateToProps = state => {
     return {
-        fetching: state.continents.fetching,
-        items: state.continents.items,
+        fetching: state.continents.continents.fetching,
+        items: state.continents.continents.items,
         category: state.categories.categories.find(x => x.name === "Continents")
     };
 };

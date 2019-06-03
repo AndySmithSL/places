@@ -1,7 +1,8 @@
 import { fetch } from 'whatwg-fetch';
 import { combineReducers } from '../../../../../Users/asmith/AppData/Local/Microsoft/TypeScript/3.4.5/node_modules/redux';
 
-const updateObject = (oldObject, newValues) => Object.assign({}, oldObject, newValues);
+import { updateObject, createReducer } from './commonFunctions';
+
 
 // actions
 const REQUEST_DRIVES = 'REQUEST_DRIVES';
@@ -39,16 +40,6 @@ export const receiveDrive = drive => ({
 
 // reducers
 
-const createReducer = (initialState, handlers) => {
-    return (state = initialState, action) => {
-        if(handlers.hasOwnProperty(action.type)) {
-            return handlers[action.type](state, action);
-        } else {
-            return state;
-        }
-    }
-}
-
 const requestDrivesReducer = (state, action) => updateObject(state, { fetching: true });
 
 const receiveDrivesReducer = (state, action) => updateObject(state, { fetching: false, items: action.drives });
@@ -58,6 +49,8 @@ const filterDrivesReducer = (state, action) => action.filter;
 const requestDriveReducer = (state, action) => updateObject(state, { fetching: true, id: action.id });
 
 const receiveDriveReducer = (state, action) => updateObject(state, { fetching: false, item: action.drive });
+
+
 
 const drivesReducer = createReducer({ fetching: false, items: [] }, {
     REQUEST_DRIVES: requestDrivesReducer,

@@ -13,7 +13,7 @@ class DashboardTerritory extends React.Component {
 
     render() {
 
-        const { fetching, item, category } = this.props;
+        const { fetching, item } = this.props;
 
         if(fetching) {
             return (

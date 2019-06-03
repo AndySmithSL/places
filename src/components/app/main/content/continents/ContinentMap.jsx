@@ -3,9 +3,9 @@ import Chart from 'react-google-charts';
 
 import { DetailsHeader } from '../common/DetailsHeader';
 
-import './ChartContinent.scss';
+import './ContinentMap.scss';
 
-export const ChartContinent = props => {
+export const ContinentMap = props => {
 
     const options = {
         region: props.item && props.item.code,
@@ -15,8 +15,6 @@ export const ChartContinent = props => {
         datalessRegionColor: 'darkgray',
         defaultColor: 'darkslategray'
     }
-
-    let className = 'ChartContinent ' + props.size;
 
     let data = [];
     data.push(['Country', 'Name']);
@@ -28,7 +26,7 @@ export const ChartContinent = props => {
     });
 
     return (
-        <div className={className} >
+        <div className='ContinentMap' >
             <DetailsHeader icon={props.icon} label={props.label} />
             <Chart className='chart' 
                     chartType='GeoChart' 

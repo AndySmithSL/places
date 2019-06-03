@@ -11,7 +11,6 @@ export const TerritoryRegions = props => {
 
     const { territory } = props;
     const icon = ICON_PATH + ICON_PASSPORT;
-    const flag = territory.flag && territory.flag.image;
     let items = [];
     
     territory.children.forEach(child => {

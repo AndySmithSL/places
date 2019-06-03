@@ -2,10 +2,11 @@ import React from 'react';
 import Chart from 'react-google-charts';
 
 import { DetailsHeader } from '../common/DetailsHeader';
+//import
 
-import './PieChartContinent.scss';
+import './ContinentPieChart.scss';
 
-export const PieChartContinent = props => {
+export const ContinentPieChart = props => {
 
     var options = {
         backgroundColor: { fill: 'none' },
@@ -25,8 +26,6 @@ export const PieChartContinent = props => {
         sliceVisibilityThreshold: 0.01
     };
 
-    let className = 'PieChartContinent ' + props.size;
-
     let data = [];
     data.push(['Sub-Continent', 'Territories']);
 
@@ -37,8 +36,8 @@ export const PieChartContinent = props => {
     });
 
     return (
-        <div className={className} >
-            <DetailsHeader icon={props.icon} label={props.label} />
+        <div className="ContinentPieChart" >
+            <DetailsHeader icon={props.icon} label='Territories by Sub-continent' />
             <Chart className='chart' 
                     chartType='PieChart' 
                     data={data}              

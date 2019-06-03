@@ -1,16 +1,15 @@
 import React from 'react';
 import { connect } from 'react-redux';
 
-import TileContinent from './TileContinent';
 import { FilterableContentList } from '../common/FilterableContentList';
-import { continentsFilter } from '../../../../reducers/continents';
+import { filterContinents } from '../../../../reducers/continents';
+import ContinentTile from './ContinentTile';
 
 import './ListContinents.scss';
 
 class ListContinents extends React.Component {
     constructor(props) {
         super(props);
-
         this.handleFilterTextChange = this.handleFilterTextChange.bind(this);
     }
 
@@ -19,18 +18,17 @@ class ListContinents extends React.Component {
     }
 
     render() {
+        const { continents, filter } = this.props;
         const items = [];
 
-        this.props.continents.forEach(continent => {
-
+        continents.forEach(continent => {
             // Check if name is filtered out
-            if((continent.name.toUpperCase().indexOf(this.props.filter.toUpperCase()) === -1) 
-                && (continent.code.toUpperCase().indexOf(this.props.filter.toUpperCase()) === -1))
-            {
+            if((continent.name.toUpperCase().indexOf(filter.toUpperCase()) === -1) 
+                && (continent.code.toUpperCase().indexOf(filter.toUpperCase()) === -1)) {
                 return;
             }
 
-            items.push(<TileContinent item={continent} icon={this.props.icon} handleClick={this.props.handleItemChange} key={continent.id} />)
+            items.push(<ContinentTile item={continent} key={continent.id} />)
         });
 
         return (
@@ -43,14 +41,14 @@ class ListContinents extends React.Component {
 
 const mapStateToProps = state => {
     return {
-        continents: state.continents.items,
+        continents: state.continents.continents.items,
         filter: state.continents.filter,
     };
 };
 
 const mapDispatchToProps = dispatch => {
     return {
-        filterContinents: filter => dispatch(continentsFilter(filter))
+        filterContinents: filter => dispatch(filterContinents(filter))
     };
 };
 

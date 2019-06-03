@@ -1,4 +1,7 @@
 import { fetch } from 'whatwg-fetch';
+import { combineReducers } from 'redux';
+import { updateObject, createReducer } from './commonFunctions';
+
 
 // actions
 const REQUEST_CONTINENTS = 'REQUEST_CONTINENTS';
@@ -7,74 +10,77 @@ const FILTER_CONTINENTS = 'FILTER_CONTINENTS';
 const REQUEST_CONTINENT = 'REQUEST_CONTINENT';
 const RECEIVE_CONTINENT = 'RECEIVE_CONTINENT';
 
+
 // action creators
 
-export const continentsRequest = () => ({
+export const requestContinents = () => ({
     type: REQUEST_CONTINENTS
 });
 
-export const continentsReceive = data => ({
+export const receiveContinents = continents => ({
     type: RECEIVE_CONTINENTS,
-    continents: data,
-    receivedAt: Date.now()
+    continents
 });
 
-export const continentsFilter = filter => ({
+export const filterContinents = filter => ({
     type: FILTER_CONTINENTS,
     filter
 });
 
-export const continentRequest = id => ({
+export const requestContinent = id => ({
     type: REQUEST_CONTINENT,
-    continentId: id
+    id
 });
 
-export const continentReceive = data => ({
+export const receiveContinent = continent => ({
     type: RECEIVE_CONTINENT,
-    continent: data
+    continent
 });
 
 
 // reducers
 
-export const continents = (state = { isFetching: false, items: [], filter: '' }, action) => {
-    switch(action.type) {
-        case REQUEST_CONTINENTS:
-            return Object.assign({}, state, { 
-                isFetching: true
-            });
-        case RECEIVE_CONTINENTS:
-            return Object.assign({}, state, { 
-                isFetching: false, 
-                items: action.continents, 
-                lastUpdate: action.receivedAt 
-            });
-        case FILTER_CONTINENTS:
-            return Object.assign({}, state, { 
-                filter: action.filter
-            });
-        case REQUEST_CONTINENT:
-            return Object.assign({}, state, { 
-                continentId: action.continentId
-            });
-        case RECEIVE_CONTINENT:
-            return Object.assign({}, state, { 
-                continent: action.continent
-            });
-        default:
-            return state;
-    }
-};
+// This will probably fail
+const requestContinentsReducer = state => updateObject(state, { fetching: true });
+
+const receiveContinentsReducer = (state, action) => updateObject(state, { fetching: false, items: action.continents });
+
+const filterContinentsReducer = (state, action) => action.filter;
+
+const requestContinentReducer = (state, action) => updateObject(state, { fetching: true, id: action.id });
+
+const receiveContinentReducer = (state, action) => updateObject(state, { fetching: false, item: action.continent });
+
+
+const continentsReducer = createReducer({ fetching: false, items: [] }, {
+    REQUEST_CONTINENTS: requestContinentsReducer,
+    RECEIVE_CONTINENTS: receiveContinentsReducer
+});
+
+const filterReducer = createReducer('', {
+    FILTER_CONTINENTS: filterContinentsReducer
+});
+
+const continentReducer = createReducer({ fetching: false, id: null, item: null }, {
+    REQUEST_CONTINENT: requestContinentReducer,
+    RECEIVE_CONTINENT: receiveContinentReducer
+})
+
+export const continents = combineReducers ({
+    continents: continentsReducer,
+    filter: filterReducer,
+    continent: continentReducer
+});
 
 
 // thunks
 
 export const fetchContinents = () => {
     return dispatch => {
-        dispatch(continentsRequest());
+        dispatch(requestContinents());
         return fetch('https://localhost:44324/api/continent')
             .then(response => response.json())
-            .then(json => dispatch(continentsReceive(json)))
+            .then(json => dispatch(receiveContinents(json)))
             .then(result => dispatch(fetchContinent(result.continents[0].id)))
             .catch(error => console.log(error))
     }
@@ -82,10 +88,10 @@ export const fetchContinents = () => {
 
 export const fetchContinent = id => {
     return dispatch => {
-        dispatch(continentRequest(id));
+        dispatch(requestContinent(id));
         return fetch(`https://localhost:44324/api/continent/${id}`)
             .then(response => response.json())
-            .then(json => dispatch(continentReceive(json)))
+            .then(json => dispatch(receiveContinent(json)))
             .catch((error) => console.log(error))
     }
 }

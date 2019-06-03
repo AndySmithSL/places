@@ -1,15 +1,19 @@
-.PieChartContinent {
+
+.ContinentDashboard {
     display: flex;
     flex-direction: column;
+    padding-left: 1vw;
     padding-top: 1vh;
-    padding-right: 1vw;
-    height: 50%;
-    width: 50%;
+    width: 100%;
+    height: inherit;
     
     .row {
         display: flex;
         flex-direction: row;
         flex-wrap: wrap;
+        height: min-content;
+
+        //height: 50vh;
     }
 
     .third {
@@ -20,9 +24,7 @@
         width: calc(100%/2);
     }
 
-    .chart {
-        margin-top: 1vh;
-        margin-bottom: 1vh;
-        height: 250px;
+    .two-thirds {
+        width: calc((100%/3)*2);
     }
 }

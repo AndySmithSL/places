@@ -1,0 +1,30 @@
+
+@import '../../../../styles/variables/colors';
+
+.ContinentDetailsParent {
+    padding: 1vh;
+  
+    .label {
+        font-size: 0.75rem;
+        font-weight: 500;
+        opacity: 0.5;
+    }
+
+    .value {
+        font-size: 1.25rem;
+    }
+
+    .half {
+        width: calc(100%/2);
+    }
+    
+    .whole {
+        width: 100%;
+    }
+}
+
+.ContinentDetailsParent:hover {
+    opacity: 0.5;
+    background-color: $gray;
+    cursor: pointer;
+}

@@ -1,9 +1,11 @@
-.Subdivisions {
+
+.ContinentTerritories {
     display: flex;
     flex-direction: column;
     padding-top: 1vh;
-    padding-right: 1vw;
+    //padding-right: 1vw;
     width: 100%;
+    height: 70vh;
     max-height: 100%;
     overflow-y:auto;
 
@@ -11,13 +13,5 @@
         display: flex;
         flex-direction: row;
         flex-wrap: wrap;
-    }
-
-    .third {
-        width: calc(100%/3);
-    }
-
-    .half {
-        width: calc(100%/2);
     }
 }
