@@ -1,7 +1,6 @@
 import { fetch } from 'whatwg-fetch';
-
-const updateObject = (oldObject, newValues) => Object.assign({}, oldObject, newValues);
-
+import { combineReducers } from 'redux';
+import { updateObject, createReducer } from './commonFunctions';
 
 
 // actions
@@ -10,6 +9,7 @@ export const RECEIVE_PLACES = 'RECEIVE_PLACES';
 export const FILTER_PLACES = 'FILTER_PLACES';
 export const REQUEST_PLACE = 'REQUEST_PLACE';
 export const RECEIVE_PLACE = 'RECEIVE_PLACE';
+
 
 // action creators
 
@@ -40,39 +40,37 @@ export const receivePlace = place => ({
 
 // reducers
 
-const initialState = {
-    fetching: false,
-    items: [],
-    filter: '',
-    placeId: null,
-    place: null
-}
-
-export const places = (state = initialState, action) => {
-    switch(action.type) {
-        case REQUEST_PLACES:
-            return requestPlacesReducer(state);
-        case RECEIVE_PLACES:
-            return receivePlacesReducer(state, action);
-        case FILTER_PLACES:
-            return filterPlacesReducer(state, action);
-        case REQUEST_PLACE:
-            return updateObject(state, { placeId: action.id });
-        case RECEIVE_PLACE:
-            return updateObject(state, { place: action.place });
-        default:
-            return state;
-    }
-};
-
-const requestPlacesReducer = (state) => updateObject(state, { fetching: true });
+// This will probably fail
+const requestPlacesReducer = state => updateObject(state, { fetching: true });
 
 const receivePlacesReducer = (state, action) => updateObject(state, { fetching: false, items: action.places });
 
-const filterPlacesReducer = (state, action) => updateObject(state, { filter: action.filter });
+const filterPlacesReducer = (state, action) => action.filter;
+
+const requestPlaceReducer = (state, action) => updateObject(state, { fetching: true, id: action.id });
+
+const receivePlaceReducer = (state, action) => updateObject(state, { fetching: false, item: action.place });
 
 
+const placesReducer = createReducer({ fetching: false, items: [] }, {
+    REQUEST_PLACES: requestPlacesReducer,
+    RECEIVE_PLACES: receivePlacesReducer
+});
 
+const filterReducer = createReducer('', {
+    FILTER_PLACES: filterPlacesReducer
+});
+
+const placeReducer = createReducer({ fetching: false, id: null, item: null }, {
+    REQUEST_PLACE: requestPlaceReducer,
+    RECEIVE_PLACE: receivePlaceReducer
+})
+
+export const places = combineReducers ({
+    places: placesReducer,
+    filter: filterReducer,
+    place: placeReducer
+});
 
 
 // thunks

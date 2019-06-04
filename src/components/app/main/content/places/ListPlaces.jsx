@@ -6,6 +6,7 @@ import { filterPlaces } from '../../../../reducers/places';
 import TilePlace from './TilePlace';
 
 import './ListPlaces.scss';
+import PlaceTile from './PlaceTile';
 
 class ListPlaces extends React.Component {
 
@@ -20,14 +21,15 @@ class ListPlaces extends React.Component {
 
     render() {
         const items = [];
+        const { places, filter } = this.props;
 
-        this.props.places.forEach(place => {
+        places.forEach(place => {
             // Check if name is filtered out
-            if(place.name.toUpperCase().indexOf(this.props.filter.toUpperCase()) === -1) {
+            if(place.name.toUpperCase().indexOf(filter.toUpperCase()) === -1) {
                 return;
             }
 
-            items.push(<TilePlace item={place} icon={this.props.icon} handleClick={this.props.handleItemChange} key={place.id} />)
+            // items.push(<PlaceTile item={place} flag={place.} key={place.id} />)
         });
 
         return (
@@ -40,7 +42,7 @@ class ListPlaces extends React.Component {
 
 const mapStateToProps = state => {
     return {
-        places: state.places.items,
+        places: state.places.places.items,
         filter: state.places.filter,
     };
 };

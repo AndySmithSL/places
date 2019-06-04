@@ -83,7 +83,7 @@ const mapStateToProps = state => {
         continents: state.continents.items,
         drives: state.drives.drives.items,
         flags: state.flags.items,
-        places: state.places.items,
+        places: state.places.places.items,
         placeGroups: state.placeGroups.items,
         territories: state.territories.items,
         territoryTypes: state.territoryTypes.items,

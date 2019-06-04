@@ -42,8 +42,8 @@ class HomeItemPlaces extends React.Component {
 
 const mapStateToProps = state => {
     return {
-        fetching: state.places.fetching,
-        items: state.places.items,
+        fetching: state.places.places.fetching,
+        items: state.places.places.items,
         category: state.categories.categories.find(x => x.name === "Places")
     };
 };
