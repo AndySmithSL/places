@@ -36,34 +36,3 @@ const mapStateToProps = state => {
 };
 
 export default connect(mapStateToProps)(ContentContinents)
-
-
-
-    // render() {
-    //     return (
-    //         <div className="ContentMain">
-    //             <ListContinents handleItemChange={this.handleItemChange} icon={this.props.category.icon} />
-    //             <DashboardContinent item={this.props.continent} icon={this.props.category.icon} /> 
-    //         </div>
-    //     );
-    // }
-
-
-// const mapStateToProps = state => {
-//     return {
-//         isFetching: state.continents.isFetching,
-//         continents: state.continents.items,
-//         filter: state.continents.filter,
-//         continentId: state.continents.continentId,
-//         continent: state.continents.continent
-//     };
-// };
-
-// const mapDispatchToProps = dispatch => {
-//     return {
-//         fetchContinents: url => dispatch(fetchContinents()),
-//         fetchContinent: id => dispatch(fetchContinent(id)),
-//     };
-// };
-
-// export default connect(mapStateToProps, mapDispatchToProps)(ContentContinents)

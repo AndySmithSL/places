@@ -3,10 +3,11 @@ import { connect } from 'react-redux';
 
 import { FilterableContentList } from '../common/FilterableContentList';
 import { filterPlaces } from '../../../../reducers/places';
-import TilePlace from './TilePlace';
+
 
 import './ListPlaces.scss';
 import PlaceTile from './PlaceTile';
+import { TilePlace } from './TilePlace';
 
 class ListPlaces extends React.Component {
 
@@ -29,7 +30,10 @@ class ListPlaces extends React.Component {
                 return;
             }
 
-            // items.push(<PlaceTile item={place} flag={place.} key={place.id} />)
+            //items.push(<PlaceTile place={place} flag={place.flags && place.flags[0]} key={place.id} />)
+            items.push(<PlaceTile place={place} key={place.id} />)
+
+            //items.push(<TilePlace place={place} category={category} key={place.id} />)
         });
 
         return (

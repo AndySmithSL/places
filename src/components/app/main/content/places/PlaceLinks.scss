@@ -1,0 +1,11 @@
+@import '../../../../styles/variables/colors';
+
+.PlaceLinks {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 100%;
+    padding-top: 0.5vh;
+    padding-bottom: 0.5vh;
+    border-bottom: solid 1px $off-white;
+}

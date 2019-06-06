@@ -83,12 +83,7 @@ export const fetchPlaceGroups = () => {
         return fetch('https://localhost:44324/api/placegroup')
             .then(response => response.json())
             .then(json => dispatch(receivePlaceGroups(json)))
-            .then(result => {
-                console.log('result');
-                console.log(result);
-                console.log(result.placeGroups[0].id);
-                dispatch(fetchPlaceGroup(result.placeGroups[0].id))
-            })
+            .then(result => dispatch(fetchPlaceGroup(result.placeGroups[0].id)))
             .catch(error => console.log(error))
     }
 }

@@ -10,3 +10,7 @@ export const createReducer = (initialState, handlers) => {
         }
     }
 }
+
+export const isEmpty = str => {
+    return (!str || 0 === str.length);
+}

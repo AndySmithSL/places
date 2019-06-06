@@ -17,7 +17,7 @@ class ContentPlaceGroups extends React.Component {
     }
 
     componentDidMount() {
-        this.props.fetchPlaceGroups();
+       // this.props.fetchPlaceGroups();
     }
 
     handleItemChange = id => {

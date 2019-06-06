@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 import { FLAG_PATH } from '../../../utils/Global';
 import { setCategory } from '../../../../reducers/categories';
 import { fetchPlace } from '../../../../reducers/places';
+import { isEmpty } from '../../../../reducers/commonFunctions';
 
 import './PlaceTile.scss';
 
@@ -23,13 +24,13 @@ class PlaceTile extends React.Component {
     render() {
 
         const { place, flag, category } = this.props;
-        const flagImage = place && FLAG_PATH + flag;
-        console.log(place);
-       
+        console.log(flag);
+        const icon = isEmpty(flag) ? category.icon : FLAG_PATH + flag;
+
         return (
             <div className="PlaceTile" onClick={ () => this.handleItemClick(category, place.id) } >
                 <div>
-                    <img src={flagImage} className="image" alt={place.name} />
+                    <img src={icon} className="image" alt={place.name} />
                 </div>
                 <div className="details">
                     <div className="title">{place.name}</div>
