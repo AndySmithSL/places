@@ -39,14 +39,16 @@ class ContinentDashboard extends React.Component {
                         <div className="half">
                             <ContinentMap item={item} label='Map' icon={icon} />
                         </div>
-                        <div className="half">
-                            <ContinentPieChart item={item} label='Map' icon={icon} />
-                        </div>
-                        <div className="half">
-                            <ContinentSubdivisons item={item} />
-                        </div>
-                        
-                        
+                        { item.children.length > 0 && 
+                            <div className="half">
+                                <ContinentPieChart item={item} label='Map' icon={icon} />
+                            </div>
+                        }
+                        { item.children.length > 0 && 
+                            <div className="half">
+                                <ContinentSubdivisons item={item} />
+                            </div>
+                        }
                         
                         {/* <DetailsContinent item={props.item} label='Details' icon='../assets/info.png' size='half' />
                         { props.item.children.length > 0 && <Subdivisons item={props.item} label='Subdivisons' icon='../assets/america.png' size='half' /> }         
