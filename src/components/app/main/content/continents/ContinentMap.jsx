@@ -11,9 +11,13 @@ export const ContinentMap = props => {
         region: props.item && props.item.code,
         resolution: 'countries',
         keepAspectRatio: false,
-        backgroundColor: { stroke: 'white', fill: 'gainsboro' },
-        datalessRegionColor: 'darkgray',
-        defaultColor: 'darkslategray'
+        //backgroundColor: { stroke: 'white', fill: 'gainsboro' },
+        backgroundColor: { fill: 'none' },
+        //datalessRegionColor: 'darkgray',
+        datalessRegionColor: 'none',
+        //defaultColor: 'darkslategray'
+        defaultColor: 'dimgray',
+        //displayMode: 'region',
     }
 
     let data = [];

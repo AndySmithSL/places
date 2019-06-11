@@ -11,6 +11,9 @@ import { ContinentSubdivisons } from './ContinentSubdivisions';
 import './ContinentDashboard.scss';
 import { ContinentPieChart } from './ContinentPieChart';
 
+import { ContinentTerritoryAreas } from './ContinentTerritoryAreas';
+import { ContinentTerritoryPopulations } from './ContinentTerritoryPopulations';
+
 
 class ContinentDashboard extends React.Component {
 
@@ -49,11 +52,18 @@ class ContinentDashboard extends React.Component {
                                 <ContinentSubdivisons item={item} />
                             </div>
                         }
-                        
-                        {/* <DetailsContinent item={props.item} label='Details' icon='../assets/info.png' size='half' />
-                        { props.item.children.length > 0 && <Subdivisons item={props.item} label='Subdivisons' icon='../assets/america.png' size='half' /> }         
-                        { props.item.parent && <DetailsContinent item={props.item.parent} label='Parent' icon='../assets/america.png' size='half' /> } 
-                        { props.item.children.length > 0 && <PieChartContinent item={props.item} label='Sub-continents' icon='../assets/map.png' size='half' /> }  */}
+                        {
+                            item.children.length === 0 &&
+                            <div className='half'>
+                                <ContinentTerritoryAreas continent={item} category={category} />
+                            </div>
+                        }
+                        {
+                            item.children.length === 0 &&
+                            <div className='half'>
+                                <ContinentTerritoryPopulations continent={item} category={category} />
+                            </div>
+                        }
                     </div>
                     <div className="row third">
                         <ContinentTerritories continent={item} />
