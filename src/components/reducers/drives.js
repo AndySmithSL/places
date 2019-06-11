@@ -1,5 +1,5 @@
 import { fetch } from 'whatwg-fetch';
-import { combineReducers } from '../../../../../Users/asmith/AppData/Local/Microsoft/TypeScript/3.4.5/node_modules/redux';
+import { combineReducers } from 'redux';
 
 import { updateObject, createReducer } from './commonFunctions';
 
