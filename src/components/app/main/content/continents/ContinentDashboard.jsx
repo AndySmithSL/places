@@ -44,7 +44,7 @@ class ContinentDashboard extends React.Component {
                         </div>
                         { item.children.length > 0 && 
                             <div className="half">
-                                <ContinentPieChart item={item} label='Map' icon={icon} />
+                                <ContinentPieChart continent={item} category={category} />
                             </div>
                         }
                         { item.children.length > 0 && 
