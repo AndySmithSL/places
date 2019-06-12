@@ -33,12 +33,18 @@ class DashboardTerritory extends React.Component {
                     <div className="third" >
                         <TerritoryChart item={item} />
                     </div>
-                    <div className="third" >
-                        <TerritoryPlaces territory={item} />
-                    </div>
-                    <div className="third" >
-                        <TerritoryRegions territory={item} />
-                    </div>
+                    {
+                        item.places.length > 0 &&
+                        <div className="third" >
+                            <TerritoryPlaces territory={item} />
+                        </div>
+                    }
+                    {
+                        item.children.length > 0 &&
+                        <div className="third" >
+                            <TerritoryRegions territory={item} />
+                        </div>
+                    }
                 </div>
             </div>
         );
