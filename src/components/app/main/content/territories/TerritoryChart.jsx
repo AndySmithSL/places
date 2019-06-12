@@ -12,9 +12,12 @@ export const TerritoryChart = props => {
         region: props.item && props.item.countryIso,
         resolution: props.item && props.item.geoChartLevel,
         keepAspectRatio: false,
-        backgroundColor: 'gainsboro',
-        datalessRegionColor: 'darkgray',
-        defaultColor: 'darkslategray'
+        //backgroundColor: 'gainsboro',
+        backgroundColor: { fill: 'none' },
+        //datalessRegionColor: 'darkgray',
+        datalessRegionColor: 'none',
+        //defaultColor: 'darkslategray'
+        defaultColor: 'gray',
     };
 
     const icon = ICON_PATH + ICON_MAP;

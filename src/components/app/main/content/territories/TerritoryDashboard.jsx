@@ -8,6 +8,7 @@ import { TerritoryHeader } from './TerritoryHeader';
 import './TerritoryDashboard.scss';
 import { TerritoryPlaces } from './TerritoryPlaces';
 import { TerritoryRegions } from './TerritoryRegions';
+import TerritoryLinks from './TerritoryLinks';
 
 class DashboardTerritory extends React.Component {
 
@@ -26,6 +27,7 @@ class DashboardTerritory extends React.Component {
         return (
             <div className="TerritoryDashboard">
                 <TerritoryHeader territory={item} />
+                <TerritoryLinks />
                 <div className="row" >
                     <div className="third" >
                         <TerritoryDetails item={item} />

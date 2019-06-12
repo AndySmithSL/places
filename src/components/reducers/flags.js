@@ -75,11 +75,7 @@ export const fetchFlags = () => {
         return fetch('https://localhost:44324/api/flag')
             .then(response => response.json())
             .then(json => dispatch(receiveFlags(json)))
-            .then(result => {
-                console.log('result');
-                console.log(result);
-                dispatch(fetchFlag(result.flags[0].id))
-            })
+            .then(result => dispatch(fetchFlag(result.flags[0].id)))
             .catch(error => console.log(error))
     }
 }

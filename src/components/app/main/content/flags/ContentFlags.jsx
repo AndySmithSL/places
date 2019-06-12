@@ -15,7 +15,7 @@ class ContentFlags extends React.Component {
     }
 
     componentDidMount() {
-        this.props.fetchFlags();
+        //this.props.fetchFlags();
     }
 
     handleItemChange = id => {

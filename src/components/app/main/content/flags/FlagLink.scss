@@ -1,7 +1,7 @@
 @import '../../../../styles/variables/colors';
 
-.TerritoryLink {
-    padding-left: 0.25vw;
+.FlagLink {
+    padding-left:0.25vw;
     margin-right: 0.5vw;
     display: flex;
     flex-direction: row;
@@ -28,13 +28,12 @@
     .arrow {
         height: 2.5vh;
         width: 2.5vh;
-        //opacity:0.7;
         margin-top: 0.5vh;
         margin-left: 0.5vw;
     }
 }
 
-.TerritoryLink:hover {
+.FlagLink:hover {
     opacity: 0.5;
     background-color: $gray;
     cursor: pointer;

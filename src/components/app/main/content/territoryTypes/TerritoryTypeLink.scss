@@ -1,7 +1,7 @@
 @import '../../../../styles/variables/colors';
 
-.TerritoryLink {
-    padding-left: 0.25vw;
+.TerritoryTypeLink {
+    padding-left:0.25vw;
     margin-right: 0.5vw;
     display: flex;
     flex-direction: row;
@@ -11,11 +11,6 @@
     .image {
         height: 2.5vh;
         width: 2.5vh;
-        object-fit: cover;
-        overflow: hidden;
-        opacity:0.4;
-        border-radius: 5px;
-
         margin-top: 0.5vh;
         margin-right: 0.5vw;
     }
@@ -34,7 +29,7 @@
     }
 }
 
-.TerritoryLink:hover {
+.TerritoryTypeLink:hover {
     opacity: 0.5;
     background-color: $gray;
     cursor: pointer;
