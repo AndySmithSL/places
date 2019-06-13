@@ -6,6 +6,7 @@ import { filterPlaceGroups } from '../../../../reducers/placeGroups';
 import { TilePlaceGroup } from './TilePlaceGroup';
 
 import './ListPlaceGroups.scss';
+import PlaceGroupTile from './PlaceGroupTile';
 
 class ListPlaceGroups extends React.Component {
 
@@ -27,7 +28,7 @@ class ListPlaceGroups extends React.Component {
                 return;
             }
 
-            items.push(<TilePlaceGroup item={placeGroup} icon={this.props.icon} handleClick={this.props.handleItemChange} key={placeGroup.id} />)
+            items.push(<PlaceGroupTile placeGroup={placeGroup} key={placeGroup.id} />)
         });
 
         return (

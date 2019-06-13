@@ -1,13 +1,13 @@
 import React from 'react';
 import { connect } from 'react-redux';
 
+import { ICON_PATH } from '../../../utils/Global';
 import { setCategory } from '../../../../reducers/categories';
 import { fetchPlaceGroup } from '../../../../reducers/placeGroups';
-import { ICON_PATH, ICON_ARROW } from '../../../utils/Global';
 
-import './PlaceGroupLink.scss';
+import './PlaceGroupTile.scss';
 
-class PlaceGroupLink extends React.Component {
+class PlaceGroupTile extends React.Component {
 
     constructor(props) {
         super(props);
@@ -22,20 +22,19 @@ class PlaceGroupLink extends React.Component {
 
     render() {
 
-        const { placeGroup , category } = this.props;
+        const { placeGroup, category } = this.props;
         const icon = placeGroup && ICON_PATH + placeGroup.image;
-        //const icon = category.icon;
-       
+
         return (
-            <div className="PlaceGroupLink" onClick={ () => this.handleItemClick(category, placeGroup.id) } >
+            <div className="PlaceGroupTile" onClick={ () => this.handleItemClick(category, placeGroup.id) } >
                 <div>
                     <img src={icon} className="image" alt={placeGroup.name} />
                 </div>
                 <div className="details">
                     <div className="title">{placeGroup.name}</div>
                 </div>
-                <div>
-                    <img src={ICON_PATH + ICON_ARROW} className="arrow" alt='arrow' />
+                <div className="left value">
+                    {placeGroup.places}
                 </div>
             </div>
         );
@@ -55,4 +54,4 @@ const mapDispatchToProps = dispatch => {
     };
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(PlaceGroupLink)
+export default connect(mapStateToProps, mapDispatchToProps)(PlaceGroupTile)

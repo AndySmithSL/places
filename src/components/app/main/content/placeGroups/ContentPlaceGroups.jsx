@@ -3,11 +3,11 @@ import { connect } from 'react-redux';
 
 import { Loading } from '../../../utils/Loading';
 import ListPlaceGroups from './ListPlaceGroups';
-import DashboardPlaceGroup from './DashboardPlaceGroup';
 
 import { fetchPlaceGroups, fetchPlaceGroup } from '../../../../reducers/placeGroups';
 
 import '../Content.scss';
+import PlaceGroupDashboard from './PlaceGroupDashboard';
 
 class ContentPlaceGroups extends React.Component {
 
@@ -33,7 +33,7 @@ class ContentPlaceGroups extends React.Component {
         return (
             <div className="ContentMain">
                 <ListPlaceGroups handleItemChange={this.handleItemChange} icon={this.props.category.icon} />
-                <DashboardPlaceGroup item={this.props.placeGroup} icon={this.props.category.icon} />
+                <PlaceGroupDashboard item={this.props.placeGroup} icon={this.props.category.icon} />
             </div>
         );
     }
