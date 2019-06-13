@@ -34,7 +34,7 @@ export const FlagDetails = props => {
                     <div className="label">END DATE</div>
                     <div className="value">{ flag ? flag.endDateLabel : '--' }</div>
                 </div>
-                <div className="DetailsItem">
+                <div className="FlagDetailsItem half">
                     <div className="label">TERRITORIES</div>
                     <div className="value">{ flag ? flag.territories ? flag.territories.length : '--' : '--' }</div>
                 </div>
