@@ -18,7 +18,7 @@ export const FlagTerritories = props => {
     });
 
     return (
-        <div className="Territories" >
+        <div className="FlagTerritories" >
             <DetailsHeader icon={icon} label='Territories' />
             <ContentList items={items} />
         </div>
