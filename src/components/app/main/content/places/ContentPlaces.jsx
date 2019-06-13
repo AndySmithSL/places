@@ -1,13 +1,11 @@
 import React from 'react';
 import { connect } from 'react-redux';
 
-import { fetchPlaces, fetchPlace } from '../../../../reducers/places';
 import ListPlaces from './ListPlaces';
-import { DashboardPlace } from './DashboardPlace';
-
-import '../Content.scss';
 import { Loading } from '../../../utils/Loading';
 import PlaceDashboard from './PlaceDashboard';
+
+import '../Content.scss';
 
 class ContentPlaces extends React.Component {
 

@@ -32,8 +32,6 @@ class ListPlaces extends React.Component {
 
             //items.push(<PlaceTile place={place} flag={place.flags && place.flags[0]} key={place.id} />)
             items.push(<PlaceTile place={place} key={place.id} />)
-
-            //items.push(<TilePlace place={place} category={category} key={place.id} />)
         });
 
         return (

@@ -17,7 +17,7 @@ export const TerritoryChart = props => {
         //datalessRegionColor: 'darkgray',
         datalessRegionColor: 'none',
         //defaultColor: 'darkslategray'
-        defaultColor: 'gray',
+        defaultColor: 'darkgray',
     };
 
     const icon = ICON_PATH + ICON_MAP;
