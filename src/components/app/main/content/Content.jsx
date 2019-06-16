@@ -2,7 +2,6 @@ import React from 'react';
 import { connect } from 'react-redux';
 
 import { ContentHeader } from './common/ContentHeader';
-import ContentHome from './home/HomeContent';
 import ContentContinents from './continents/ContentContinents';
 import ContentFlags from './flags/ContentFlags';
 import ContentPlaces from './places/ContentPlaces';
@@ -13,6 +12,7 @@ import ContentDrives from './drives/ContentDrives';
 
 import './Content.scss';  
 import { Loading } from '../../utils/Loading';
+import HomeContent from './home/HomeContent';
 
 class Content extends React.Component {
 
@@ -27,7 +27,7 @@ class Content extends React.Component {
         return (
             <div className="Content">
                 <ContentHeader selectedCategory={category} />
-                { category.name === 'Home' && <ContentHome /> }
+                { category.name === 'Home' && <HomeContent /> }
                 { category.name === 'Continents' && <ContentContinents category={category} /> }
                 { category.name === 'Territory Types' && <ContentTerritoryTypes category={category} /> }
                 { category.name === 'Territories' && <ContentTerritories category={category} /> } 
@@ -41,7 +41,6 @@ class Content extends React.Component {
 }
 
 const mapStateToProps = state => {
-    console.log(state);
     return {
         category: state.categories.selectedCategory,
     };

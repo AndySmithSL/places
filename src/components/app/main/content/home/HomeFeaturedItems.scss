@@ -1,0 +1,12 @@
+
+.HomeFeaturedItems {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 100%;
+    height: min-content;
+
+    .item {
+        width: calc(100%/3);
+    }
+}

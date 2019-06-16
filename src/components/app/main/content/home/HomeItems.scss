@@ -1,9 +1,13 @@
+@import '../../../../styles/variables/colors';
+
 .HomeItems {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     width: 100%;
     height: min-content;
+    padding-bottom: 1vh;
+    border-bottom: solid 1px $white;
 
     .item {
         width: calc(100%/4);

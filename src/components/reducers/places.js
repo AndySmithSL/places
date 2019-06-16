@@ -9,6 +9,8 @@ export const RECEIVE_PLACES = 'RECEIVE_PLACES';
 export const FILTER_PLACES = 'FILTER_PLACES';
 export const REQUEST_PLACE = 'REQUEST_PLACE';
 export const RECEIVE_PLACE = 'RECEIVE_PLACE';
+export const REQUEST_FEATURED_PLACE = 'REQUEST_FEATURED_PLACE';
+export const RECEIVE_FEATURED_PLACE = 'RECEIVE_FEATURED_PLACE';
 
 
 // action creators
@@ -37,6 +39,17 @@ export const receivePlace = place => ({
     place
 });
 
+export const requestFeaturedPlace = id => ({
+    type: REQUEST_FEATURED_PLACE,
+    id
+});
+
+export const receiveFeaturedPlace = place => ({
+    type: RECEIVE_FEATURED_PLACE,
+    place
+});
+
+
 
 // reducers
 
@@ -50,6 +63,10 @@ const filterPlacesReducer = (state, action) => action.filter;
 const requestPlaceReducer = (state, action) => updateObject(state, { fetching: true, id: action.id });
 
 const receivePlaceReducer = (state, action) => updateObject(state, { fetching: false, item: action.place });
+
+const requestFeaturedPlaceReducer = (state, action) => updateObject(state, { fetching: true, id: action.id });
+
+const receiveFeaturedPlaceReducer = (state, action) => updateObject(state, { fetching: false, item: action.place });
 
 
 const placesReducer = createReducer({ fetching: false, items: [] }, {
@@ -66,10 +83,16 @@ const placeReducer = createReducer({ fetching: false, id: null, item: null }, {
     RECEIVE_PLACE: receivePlaceReducer
 })
 
+const featuredPlaceReducer = createReducer({ fetching: false, id: null, item: null }, {
+    REQUEST_FEATURED_PLACE: requestFeaturedPlaceReducer,
+    RECEIVE_FEATURED_PLACE: receiveFeaturedPlaceReducer
+})
+
 export const places = combineReducers ({
     places: placesReducer,
     filter: filterReducer,
-    place: placeReducer
+    place: placeReducer,
+    featuredPlace: featuredPlaceReducer
 });
 
 
@@ -92,6 +115,19 @@ export const fetchPlace = id => {
         return fetch(`https://localhost:44324/api/place/${id}`)
             .then(response => response.json())
             .then(json => dispatch(receivePlace(json)))
+            .catch((error) => console.log(error))
+    }
+}
+
+export const fetchFeaturedPlace = id => {
+    return dispatch => {
+        dispatch(requestFeaturedPlace(id));
+        return fetch(`https://localhost:44324/api/place/${id}`)
+            .then(response => response.json())
+            .then(json => {
+                console.log(json);
+                dispatch(receiveFeaturedPlace(json))
+            })
             .catch((error) => console.log(error))
     }
 }

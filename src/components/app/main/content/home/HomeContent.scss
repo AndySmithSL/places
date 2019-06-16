@@ -1,3 +1,9 @@
+
+.HomeContent {
+    display: flex;
+    flex-direction: column;
+}
+
 .ContentHomeItem {
     display: flex;
     flex-direction: row;
@@ -5,6 +11,5 @@
 
     border: 1px red solid;
 
-    
 
 }
