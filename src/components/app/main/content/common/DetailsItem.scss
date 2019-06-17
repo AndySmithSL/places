@@ -1,0 +1,15 @@
+
+.DetailsItem {
+    padding: 1vh;
+    width: 100%;
+  
+    .label {
+        font-size: 0.75rem;
+        font-weight: 500;
+        opacity: 0.5;
+    }
+
+    .value {
+        font-size: 1.25rem;
+    }
+}

@@ -2,7 +2,7 @@ import React from 'react';
 
 import { DetailsHeader } from '../common/DetailsHeader';
 import ContentList from '../common/ContentList';
-import { FLAG_PATH, ICON_PATH, ICON_MARKER } from '../../../utils/Global';
+import { ICON_PATH, ICON_MARKER } from '../../../utils/Global';
 import PlaceGroupPlaceItem from './PlaceGroupPlaceItem';
 
 import './PlaceGroupPlaces.scss';

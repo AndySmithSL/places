@@ -12,7 +12,7 @@ import ContentDrives from './drives/ContentDrives';
 
 import './Content.scss';  
 import { Loading } from '../../utils/Loading';
-import HomeContent from './home/HomeContent';
+import { HomeContent } from './home/HomeContent';
 
 class Content extends React.Component {
 

@@ -13,8 +13,7 @@ class PlaceDashboard extends React.Component {
 
     render() {
 
-        const { fetching, item, category } = this.props;
-        const icon = ICON_PATH + ICON_MAP;
+        const { fetching, item } = this.props;
 
         if(fetching) {
             return (
@@ -45,8 +44,7 @@ class PlaceDashboard extends React.Component {
 const mapStateToProps = state => {
     return {
         fetching: state.places.place.fetching,
-        item: state.places.place.item,
-        category: state.categories.categories.find(x => x.name === 'Places')
+        item: state.places.place.item
     };
 };
 

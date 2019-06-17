@@ -3,10 +3,9 @@ import { connect } from 'react-redux';
 
 import { FilterableContentList } from '../common/FilterableContentList';
 import { filterPlaceGroups } from '../../../../reducers/placeGroups';
-import { TilePlaceGroup } from './TilePlaceGroup';
+import PlaceGroupTile from './PlaceGroupTile';
 
 import './ListPlaceGroups.scss';
-import PlaceGroupTile from './PlaceGroupTile';
 
 class ListPlaceGroups extends React.Component {
 

@@ -1,7 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
 
-import { ICON_PATH, ICON_MAP } from '../../../utils/Global';
 import { PlaceGroupHeader } from './PlaceGroupHeader';
 import { PlaceGroupPlaces } from './PlaceGroupPlaces';
 
@@ -11,8 +10,7 @@ class PlaceGroupDashboard extends React.Component {
 
     render() {
 
-        const { fetching, item, category } = this.props;
-        const icon = ICON_PATH + ICON_MAP;
+        const { fetching, item } = this.props;
 
         if(fetching) {
             return (
@@ -30,7 +28,6 @@ class PlaceGroupDashboard extends React.Component {
                     <div className="row whole">
                         <PlaceGroupPlaces placeGroup={item} />
                     </div>
-                    
                 </div>
             </div>
         );
@@ -41,7 +38,6 @@ const mapStateToProps = state => {
     return {
         fetching: state.placeGroups.fetching,
         item: state.placeGroups.placeGroup,
-        category: state.categories.categories.find(x => x.name === 'Place Groups')
     };
 };
 

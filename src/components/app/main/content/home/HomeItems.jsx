@@ -10,20 +10,16 @@ import HomeItemTerritoryTypes from './HomeItemTerritoryTypes';
 
 import './HomeItems.scss';
 
-class HomeItems extends React.Component {
-    render() {
-        return (
-            <div className="HomeItems">
-                <HomeItemContinents />
-                <HomeItemDrives />
-                <HomeItemFlags />
-                <HomeItemPlaces />
-                <HomeItemPlaceGroups />
-                <HomeItemTerritories />
-                <HomeItemTerritoryTypes />
-            </div>
-        );
-    }
+export const HomeItems = () => {
+    return (
+        <div className="HomeItems">
+            <HomeItemContinents />
+            <HomeItemDrives />
+            <HomeItemFlags />
+            <HomeItemPlaces />
+            <HomeItemPlaceGroups />
+            <HomeItemTerritories />
+            <HomeItemTerritoryTypes />
+        </div>
+    );
 }
-
-export default HomeItems;

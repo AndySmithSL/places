@@ -3,11 +3,9 @@ import { connect } from 'react-redux';
 
 import { FilterableContentList } from '../common/FilterableContentList';
 import { filterPlaces } from '../../../../reducers/places';
-
+import PlaceTile from './PlaceTile';
 
 import './ListPlaces.scss';
-import PlaceTile from './PlaceTile';
-import { TilePlace } from './TilePlace';
 
 class ListPlaces extends React.Component {
 

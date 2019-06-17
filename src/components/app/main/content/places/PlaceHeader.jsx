@@ -6,16 +6,13 @@ import './PlaceHeader.scss';
 export const PlaceHeader = props => {
 
     const { place } = props;
-   // const image = territory.flag && FLAG_PATH + territory.flag.image;
-
     const flags = [];
 
-    place.territories.map(territory => {
-        flags.push(
-            <div>
-                <img src={FLAG_PATH + territory.flagImage} className="image" alt={territory.name} />
-            </div>
-        );
+    console.log('place');
+    console.log(place);
+
+    place && place.territories.map(territory => {
+        return flags.push(<div><img src={FLAG_PATH + territory.flagImage} className="image" alt={territory.name} /></div>);
     });
 
     return (

@@ -83,7 +83,7 @@ export const fetchTerritoryTypes = () => {
 export const fetchTerritoryType = id => {
     return dispatch => {
         dispatch(requestTerritoryType(id));
-        return fetch(`https://localhost:44324/api/territorytype/${id}`)
+        return fetch(`https://localhost:44324/api/territoryType/${id}`)
             .then(response => response.json())
             .then(json => dispatch(receiveTerritoryType(json)))
             .catch((error) => console.log(error))

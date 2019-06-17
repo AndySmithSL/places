@@ -14,3 +14,18 @@ export const createReducer = (initialState, handlers) => {
 export const isEmpty = str => {
     return (!str || 0 === str.length);
 }
+
+export const createStringFromList = list => {
+    var first = true;
+    var result = '';
+
+    list.forEach(item => {
+        if(!first) {
+            result += ', ';
+            first = false;
+        }
+        result += item;
+    });
+
+    return result;
+}

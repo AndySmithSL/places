@@ -1,17 +1,18 @@
 import React from 'react';
 import { connect } from 'react-redux';
 
-import { fetchPlace } from '../../../../reducers/places';
+import { fetchTerritory } from '../../../../reducers/territories';
 import { setCategory } from '../../../../reducers/categories';
 import { DetailsHeader } from '../common/DetailsHeader';
 import { DetailsItem } from '../common/DetailsItem';
 import { FLAG_PATH } from '../../../utils/Global';
 import { createStringFromList } from '../../../../reducers/commonFunctions';
-import MapContainer from '../places/MapContainer';
 
-import './HomeFeaturedPlace.scss';
 
-class HomeFeaturedPlace extends React.Component {
+import './HomeFeaturedTerritory.scss';
+import { TerritoryMap } from '../common/TerritoryMap';
+
+class HomeFeaturedTerritory extends React.Component {
 
     constructor(props) {
         super(props);
@@ -20,12 +21,12 @@ class HomeFeaturedPlace extends React.Component {
 
     handleItemClick = (category, id) => {
         this.props.setCategory(category);
-        this.props.fetchPlace(id);
+        this.props.fetchTerritory(id);
     }
 
     render() {
 
-        const { fetching, places, category } = this.props;
+        const { fetching, territories, category } = this.props;
         
         if(fetching) {
             return (
@@ -33,33 +34,35 @@ class HomeFeaturedPlace extends React.Component {
             )
         }
 
-        const index = Math.floor((Math.random() * this.props.places.length) + 1);
-        const place = places[index];
-        const flag = place && FLAG_PATH + place.flags[0];
-        const territories = place && createStringFromList(place.territories)
+        const index = Math.floor((Math.random() * territories.length) + 1);
+        const territory = territories[index];
+        const flag = territory && FLAG_PATH + territory.flagImage;
+        //const territories = place && createStringFromList(place.territories)
 
         return (
-            <div className='HomeFeaturedPlace'>
-                <DetailsHeader label='Featured Place' icon={category.icon}/>
+            <div className='HomeFeaturedTerritory'>
+                <DetailsHeader label='Featured Territory' icon={category.icon}/>
 
-                { place &&
-                    <div className="FeaturedPlaceHeader" onClick={ () => this.handleItemClick(category, place.id) }>
-                        <div>
-                            <img src={flag} className="image" alt={place.name} />
-                        </div>
+                { territory &&
+                    <div className="FeaturedTerritoryHeader" onClick={ () => this.handleItemClick(category, territory.id) }>
+                        { territory.flagImage != '--' &&
+                            <div>
+                                <img src={flag} className="image" alt={territory.name} />
+                            </div>
+                        }
                         <div className="label">
-                            { place.name }
+                            { territory.name }
                         </div>
                     </div>
                 }
 
-                { place && 
-                    <div className='map'>
-                        <MapContainer place={place} /> 
+                { territory && 
+                    <div className='x'>
+                        <TerritoryMap item={territory} />
                     </div>
                 }
 
-                { place && 
+                {/* { place && 
                     <div className='details'>
                         <div className='half'>
                             <DetailsItem label='Local Name' value={place.localName} />
@@ -74,25 +77,26 @@ class HomeFeaturedPlace extends React.Component {
                             <DetailsItem className='half' label='Longitude' value={place.longitudeDegrees} />
                         </div>
                     </div>
-                }
+                }  */}
             </div>
         );
     }
 }
 
 const mapStateToProps = state => {
+    console.log(state);
     return {
-        places: state.places.places.items,
-        fetching: state.places.places.fetching,
-        category: state.categories.categories.find(x => x.name === "Places")
+        territories: state.territories.items,
+        fetching: state.territories.fetchingItems,
+        category: state.categories.categories.find(x => x.name === "Territories")
     };
 };
 
 const mapDispatchToProps = dispatch => {
     return {
-        fetchPlace: id => dispatch(fetchPlace(id)),
+        fetchTerritory: id => dispatch(fetchTerritory(id)),
         setCategory: category => dispatch(setCategory(category))
     };
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(HomeFeaturedPlace)
+export default connect(mapStateToProps, mapDispatchToProps)(HomeFeaturedTerritory)

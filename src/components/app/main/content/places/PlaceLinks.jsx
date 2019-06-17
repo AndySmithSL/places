@@ -1,15 +1,11 @@
 import React from 'react';
 import { connect } from 'react-redux';
 
-import { FilterableContentList } from '../common/FilterableContentList';
 import { filterPlaces } from '../../../../reducers/places';
-
-
-import './PlaceLinks.scss';
-import PlaceTile from './PlaceTile';
-import { TilePlace } from './TilePlace';
 import TerritoryLink from '../territories/TerritoryLink';
 import PlaceGroupLink from '../placeGroups/PlaceGroupLink';
+
+import './PlaceLinks.scss';
 
 class PlaceLinks extends React.Component {
 
