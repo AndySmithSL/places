@@ -47,8 +47,13 @@ class HomeFeaturedPlace extends React.Component {
                         <div>
                             <img src={flag} className="image" alt={place.name} />
                         </div>
-                        <div className="label">
-                            { place.name }
+                        <div className="details">
+                            <div className='title'>
+                                {place.name}
+                            </div>
+                            <div className='subtitle'>
+                                {place.territories}
+                            </div>
                         </div>
                     </div>
                 }

@@ -50,34 +50,39 @@ class HomeFeaturedTerritory extends React.Component {
                                 <img src={flag} className="image" alt={territory.name} />
                             </div>
                         }
-                        <div className="label">
-                            { territory.name }
+                        <div className="details">
+                            <div className='title'>
+                                {territory.name}
+                            </div>
+                            <div className='subtitle'>
+                                {territory.partOf}
+                            </div>
                         </div>
                     </div>
                 }
 
                 { territory && 
-                    <div className='x'>
+                    <div className='map'>
                         <TerritoryMap item={territory} />
                     </div>
                 }
 
-                {/* { place && 
+                { territory && 
                     <div className='details'>
                         <div className='half'>
-                            <DetailsItem label='Local Name' value={place.localName} />
+                            <DetailsItem label='Local Name' value={territory.nativeName} />
                         </div>
                         <div className='half'>
-                            <DetailsItem className='half' label='Territories' value={territories} />
+                            <DetailsItem className='half' label='Part of' value={territory.partOf} />
                         </div>
                         <div className='half'>
-                            <DetailsItem className='half' label='Latitude' value={place.latitudeDegrees} />
+                            <DetailsItem className='half' label='Area' value={territory.areaLabel} />
                         </div>
                         <div className='half'>
-                            <DetailsItem className='half' label='Longitude' value={place.longitudeDegrees} />
+                            <DetailsItem className='half' label='Population' value={territory.populationLabel} />
                         </div>
                     </div>
-                }  */}
+                }
             </div>
         );
     }
