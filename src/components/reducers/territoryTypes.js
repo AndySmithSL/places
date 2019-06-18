@@ -1,4 +1,7 @@
 import { fetch } from 'whatwg-fetch';
+import { combineReducers } from 'redux';
+import { updateObject, createReducer } from './commonFunctions';
+
 
 // actions
 const REQUEST_TERRITORY_TYPES = 'REQUEST_TERRITORY_TYPES';
@@ -6,6 +9,7 @@ const RECEIVE_TERRITORY_TYPES = 'RECEIVE_TERRITORY_TYPES';
 const FILTER_TERRITORY_TYPES = 'FILTER_TERRITORY_TYPES';
 const REQUEST_TERRITORY_TYPE = 'REQUEST_TERRITORY_TYPE';
 const RECEIVE_TERRITORY_TYPE = 'RECEIVE_TERRITORY_TYPE';
+
 
 // action creators
 
@@ -15,8 +19,7 @@ export const requestTerritoryTypes = () => ({
 
 export const receiveTerritoryTypes = data => ({
     type: RECEIVE_TERRITORY_TYPES,
-    territoryTypes: data,
-    receivedAt: Date.now()
+    territoryTypes: data
 });
 
 export const filterTerritoryTypes = filter => ({
@@ -37,34 +40,35 @@ export const receiveTerritoryType = data => ({
 
 // reducers
 
-export const territoryTypes = (state = { isFetching: false, items: [], filter: '' }, action) => {
-    switch(action.type) {
-        case REQUEST_TERRITORY_TYPES:
-            return Object.assign({}, state, { 
-                isFetching: true
-            });
-        case RECEIVE_TERRITORY_TYPES:
-            return Object.assign({}, state, { 
-                isFetching: false, 
-                items: action.territoryTypes, 
-                lastUpdate: action.receivedAt 
-            });
-        case FILTER_TERRITORY_TYPES:
-            return Object.assign({}, state, { 
-                filter: action.filter
-            });
-        case REQUEST_TERRITORY_TYPE:
-            return Object.assign({}, state, { 
-                territoryTypeId: action.territoryTypeId
-            });
-        case RECEIVE_TERRITORY_TYPE:
-            return Object.assign({}, state, { 
-                territoryType: action.territoryType
-            });
-        default:
-            return state;
-    }
-};
+const requestTerritoryTypesReducer = state => updateObject(state, { fetching: true });
+
+const receiveTerritoryTypesReducer = (state, action) => updateObject(state, { fetching: false, items: action.territoryTypes });
+
+const filterTerritoryTypesReducer = (state, action) => action.filter;
+
+const requestTerritoryTypeReducer = (state, action) => updateObject(state, { fetching: true, id: action.id });
+
+const receiveTerritoryTypeReducer = (state, action) => updateObject(state, { fetching: false, item: action.territoryType });
+
+const territoryTypesReducer = createReducer({ fetching: false, items: [] }, {
+    REQUEST_TERRITORY_TYPES: requestTerritoryTypesReducer,
+    RECEIVE_TERRITORY_TYPES: receiveTerritoryTypesReducer
+});
+
+const filterReducer = createReducer('', {
+    FILTER_TERRITORY_TYPES: filterTerritoryTypesReducer
+});
+
+const territoryTypeReducer = createReducer({ fetching: false, id: null, item: null }, {
+    REQUEST_TERRITORY_TYPE: requestTerritoryTypeReducer,
+    RECEIVE_TERRITORY_TYPE: receiveTerritoryTypeReducer
+})
+
+export const territoryTypes = combineReducers ({
+    territoryTypes: territoryTypesReducer,
+    filter: filterReducer,
+    territoryType: territoryTypeReducer
+});
 
 
 // thunks

@@ -1,0 +1,40 @@
+
+@import '../../../../styles/variables/colors';
+
+.TerritoryTypeTile {
+    padding: 1vh;
+    display: flex;
+    flex-direction: row;
+
+    .left {
+        margin-left: auto;
+    }
+
+    .image {
+        height: 2.5vh;
+        width: 2.5vh;
+        margin-top: 1vh;
+        margin-right: 1vh;
+    }
+
+    .details {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .title {
+        font-size: 1.25rem;
+        margin-top: 0.75vh;
+    }
+
+    .value {
+        font-size: 2rem;
+        //margin-top: 1vh;
+    }
+}
+
+.TerritoryTypeTile:hover {
+    opacity: 0.5;
+    background-color: $gray;
+    cursor: pointer;
+}

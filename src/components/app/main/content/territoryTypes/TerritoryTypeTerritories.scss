@@ -1,0 +1,16 @@
+
+.TerritoryTypeTerritories {
+    display: flex;
+    flex-direction: column;
+    padding-top: 1vh;
+    width: 100%;
+    height: 70vh;
+    max-height: 100%;
+    overflow-y:auto;
+
+    .row {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+}

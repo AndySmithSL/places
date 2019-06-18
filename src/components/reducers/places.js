@@ -53,7 +53,6 @@ export const receiveFeaturedPlace = place => ({
 
 // reducers
 
-// This will probably fail
 const requestPlacesReducer = state => updateObject(state, { fetching: true });
 
 const receivePlacesReducer = (state, action) => updateObject(state, { fetching: false, items: action.places });

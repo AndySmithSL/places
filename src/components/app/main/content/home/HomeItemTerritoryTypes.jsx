@@ -42,8 +42,8 @@ class HomeItemTerritoryTypes extends React.Component {
 
 const mapStateToProps = state => {
     return {
-        fetching: state.territoryTypes.fetching,
-        items: state.territoryTypes.items,
+        fetching: state.territoryTypes.territoryTypes.fetching,
+        items: state.territoryTypes.territoryTypes.items,
         category: state.categories.categories.find(x => x.name === "Territory Types")
     };
 };

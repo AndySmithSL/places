@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 
 import { FilterableContentList } from '../common/FilterableContentList';
 import { filterTerritoryTypes } from '../../../../reducers/territoryTypes';
-import TileTerritoryType from './TileTerritoryType';
+import TerritoryTypeTile from './TerritoryTypeTile';
 
 import './ListTerritoryTypes.scss';
 
@@ -24,12 +24,11 @@ class ListTerritoryTypes extends React.Component {
         this.props.territoryTypes.forEach(territoryType => {
 
             // Check if name is filtered out
-            if(territoryType.type.toUpperCase().indexOf(this.props.filter.toUpperCase()) === -1) 
-            {
+            if(territoryType.type.toUpperCase().indexOf(this.props.filter.toUpperCase()) === -1) {
                 return;
             }
 
-            items.push(<TileTerritoryType item={territoryType} icon={this.props.icon} handleClick={this.props.handleItemChange} key={territoryType.id} />)
+            items.push(<TerritoryTypeTile territoryType={territoryType} key={territoryType.id} />)
         });
 
         return (
@@ -42,7 +41,7 @@ class ListTerritoryTypes extends React.Component {
 
 const mapStateToProps = state => {
     return {
-        territoryTypes: state.territoryTypes.items,
+        territoryTypes: state.territoryTypes.territoryTypes.items,
         filter: state.territoryTypes.filter,
     };
 };
