@@ -14,10 +14,10 @@ export const TerritoryChart = props => {
         keepAspectRatio: false,
         //backgroundColor: 'gainsboro',
         backgroundColor: { fill: 'none' },
-        //datalessRegionColor: 'darkgray',
-        datalessRegionColor: 'none',
+        //datalessRegionColor: 'gray',
+        datalessRegionColor: '#282c34',
         //defaultColor: 'darkslategray'
-        defaultColor: 'darkgray',
+        defaultColor: 'FloralWhite',
     };
 
     const icon = ICON_PATH + ICON_MAP;

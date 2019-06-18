@@ -11,10 +11,10 @@ export const TerritoryMap = props => {
         keepAspectRatio: false,
         //backgroundColor: 'gainsboro',
         backgroundColor: { fill: 'none' },
-        //datalessRegionColor: 'darkgray',
-        datalessRegionColor: 'none',
+        //datalessRegionColor: 'gray',
+        datalessRegionColor: '#282c34',
         //defaultColor: 'darkslategray'
-        defaultColor: 'darkgray',
+        defaultColor: 'FloralWhite',
     };
 
     let data = [];

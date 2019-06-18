@@ -24,25 +24,5 @@
     .chart {
         margin-top: 1vh;
         width: 100%;
-
-        path {
-            //stroke-width: 1; /* control the countries borders width */
-            //stroke:#282c34; /* choose a color for the border */
-            stroke: darkslategray; /* choose a color for the border */
-        }
-
-        path:hover {
-            fill: darkslategray;
-        }
-        // path:hover { 
-        //     fill: gray; 
-        //     stroke-width: 0;
-        //     stroke:#282c34;
-        // }
-        // rect:hover { fill: transparent; }
     }
-
-    
-
-   
 }
