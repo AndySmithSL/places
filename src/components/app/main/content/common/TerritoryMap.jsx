@@ -11,8 +11,8 @@ export const TerritoryMap = props => {
         keepAspectRatio: false,
         //backgroundColor: 'gainsboro',
         backgroundColor: { fill: 'none' },
-        //datalessRegionColor: 'gray',
-        datalessRegionColor: '#282c34',
+        datalessRegionColor: 'darkslategray',
+        //datalessRegionColor: '#282c34',
         //defaultColor: 'darkslategray'
         defaultColor: 'FloralWhite',
     };

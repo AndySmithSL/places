@@ -25,8 +25,6 @@ class TerritoryTypeDashboard extends React.Component {
                 <div className='row'>
                     <div className='row whole'>
                         <TerritoryTypeTerritories territoryType={territoryType} />
-
-                        {/* <PlaceGroupPlaces placeGroup={item} /> */}
                     </div>
                 </div>
             </div>
@@ -38,7 +36,7 @@ const mapStateToProps = state => {
     return {
         fetching: state.territoryTypes.territoryType.fetching,
         territoryType: state.territoryTypes.territoryType.item,
-        category: state.categories.categories.find(x => x.name === 'Territory Types')
+        category: state.categories.categories.find(x => x.name === "Territory Types")
     };
 };
 

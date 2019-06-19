@@ -123,10 +123,7 @@ export const fetchFeaturedPlace = id => {
         dispatch(requestFeaturedPlace(id));
         return fetch(`https://localhost:44324/api/place/${id}`)
             .then(response => response.json())
-            .then(json => {
-                console.log(json);
-                dispatch(receiveFeaturedPlace(json))
-            })
+            .then(json => dispatch(receiveFeaturedPlace(json)))
             .catch((error) => console.log(error))
     }
 }

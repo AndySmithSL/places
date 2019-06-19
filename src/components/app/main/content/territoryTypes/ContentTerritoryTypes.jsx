@@ -25,8 +25,6 @@ class ContentTerritoryTypes extends React.Component {
             <div className="ContentMain">
                 <ListTerritoryTypes />
                 <TerritoryTypeDashboard />
-                {/* <ListContinents />
-                <ContinentDashboard /> */}
             </div>
         );
     }

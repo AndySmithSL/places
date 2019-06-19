@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 
 import { FilterableContentList } from '../common/FilterableContentList';
 import { filterDrives } from '../../../../reducers/drives';
-import { TileDrive } from './TileDrive';
+import DriveTile from './DriveTile';
 
 import './ListDrives.scss';
 
@@ -19,19 +19,20 @@ class ListDrives extends React.Component {
     }
 
     render() {
+        const { drives, filter } = this.props;
         const items = [];
 
-        this.props.drives.forEach(drive => {
+        drives.forEach(drive => {
             // Check if name is filtered out
-            if(drive.name.toUpperCase().indexOf(this.props.filter.toUpperCase()) === -1) {
+            if(drive.name.toUpperCase().indexOf(filter.toUpperCase()) === -1) {
                 return;
             }
 
-            items.push(<TileDrive item={drive} icon={this.props.icon} handleClick={this.props.handleItemChange} key={drive.id} />)
+            items.push(<DriveTile drive={drive} key={drive.id} />)
         });
 
         return (
-            <div className="ListFlags">
+            <div className='ListDrives'>
                 <FilterableContentList onFilterTextChange={this.handleFilterTextChange} items={items} filter={this.props.filter} />
             </div>
         );

@@ -81,6 +81,7 @@ export const fetchDrives = () => {
         return fetch('https://localhost:44324/api/drive')
             .then(response => response.json())
             .then(json => dispatch(receiveDrives(json)))
+            .then(result => dispatch(fetchDrive(result.drives[0].id)))
             .catch(error => console.log(error))
     }
 }
