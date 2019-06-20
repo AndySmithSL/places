@@ -10,3 +10,4 @@ export const ICON_MAP = "map.png";
 export const ICON_MARKER = "marker.png";
 export const ICON_AMERICA = "america.png";
 export const ICON_ARROW = "arrow.png";
+export const ICON_ROUTE = "route.png";

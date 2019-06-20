@@ -5,12 +5,15 @@ import ContentList from '../common/ContentList';
 import DriveLegTile from './DriveLegTile';
 import { ICON_PATH, ICON_PASSPORT } from '../../../utils/Global';
 
+
+import { ImageDetails } from '../../../utils/ImageDetails';
+
 import './DriveLegs.scss';
 
 export const DriveLegs = props => {
 
     const { drive } = props;
-    const icon = ICON_PATH + ICON_PASSPORT;
+    const icon = ImageDetails.getFullPathImage("journey");
     let items = [];
     
     drive.driveLegs.forEach(leg => {

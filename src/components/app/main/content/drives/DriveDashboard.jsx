@@ -5,8 +5,7 @@ import { DashboardHeader } from '../common/DashboardHeader';
 import { DetailsItem } from '../common/DetailsItem';
 
 import { DriveLegs } from './DriveLegs';
-
-import { DriveMap2 } from './DriveMap2';
+import { DriveMap } from './DriveMap';
 
 import './DriveDashboard.scss';
 
@@ -33,8 +32,7 @@ class DriveDashboard extends React.Component {
                         <DriveLegs drive={drive}  />
                     </div>
                     <div className="row twothirds">
-                        {/* <DriveMap2 /> */}
-                        <DriveMap2 isMarkerShown={false} />
+                        <DriveMap drive={drive} /> 
                     </div>
                 </div>
             </div>
