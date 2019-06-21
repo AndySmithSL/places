@@ -1,11 +1,11 @@
 import React from 'react';
 import { connect } from 'react-redux';
 
-import { ICON_PATH, ICON_MAP } from '../../../utils/Global';
 import { PlaceHeader } from './PlaceHeader';
 import PlaceLinks from './PlaceLinks';
 import { PlaceDetails } from './PlaceDetails';
 import { PlaceMap } from './PlaceMap';
+import { getFullPathImage } from '../../../utils/ImageDetails';
 
 import './PlaceDashboard.scss';
 
@@ -17,23 +17,23 @@ class PlaceDashboard extends React.Component {
 
         if(fetching) {
             return (
-                <div className="PlaceDashboard">
+                <div className='PlaceDashboard'>
                     LOADING...
                 </div>
             );
         }
 
         return (
-            <div className="PlaceDashboard">
+            <div className='PlaceDashboard'>
                 <PlaceHeader place={item} />
                 <PlaceLinks />
 
-                <div className="row">
-                    <div className="row third">
+                <div className='row'>
+                    <div className='row third'>
                         <PlaceDetails item={item} />
                     </div>
-                    <div className="row twothirds">
-                        <PlaceMap place={item} label='Map' icon={ICON_PATH + ICON_MAP} />
+                    <div className='row twothirds'>
+                        <PlaceMap place={item} label='Map' icon={getFullPathImage("world-map")} />
                     </div>
                 </div>
             </div>

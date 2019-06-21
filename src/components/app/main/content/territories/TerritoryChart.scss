@@ -25,11 +25,10 @@
         margin-top: 1vh;
         width: 100%;
 
-        // path {
-        //     //stroke-width: 1; /* control the countries borders width */
-        //     //stroke:#282c34; /* choose a color for the border */
-        //    // stroke: darkgrey; /* choose a color for the border */
-        // }
+        path {
+            stroke-width: 0.25;
+            stroke: gray;
+        }
 
         // path:hover {
         //     fill: darkslategray;

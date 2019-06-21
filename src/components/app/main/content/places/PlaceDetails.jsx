@@ -1,21 +1,20 @@
 import React from 'react';
 
 import { DetailsHeader } from '../common/DetailsHeader';
-import { ICON_PATH, ICON_DETAILS } from '../../../utils/Global';
+import { getFullPathImage } from '../../../utils/ImageDetails';
 
 import './PlaceDetails.scss';
 
 export const PlaceDetails = props => {
 
-    const icon = ICON_PATH + ICON_DETAILS;
     const { item } = props;
     const territories = territoryString(item.territories);
 
     return (
         <div className='PlaceDetails' >
-            <DetailsHeader icon={icon} label='Details' />
-            <div className="PlaceDetailsRow" >
-                <div className="PlaceDetailsItem whole">
+            <DetailsHeader icon={getFullPathImage("information")} label='Details' />
+            <div className='PlaceDetailsRow' >
+                <div className='PlaceDetailsItem whole'>
                     <div className="label">LOCAL NAME</div>
                     <div className="value">{ props.item ? props.item.localName ? props.item.localName : '--' : '--' }</div>
                 </div>

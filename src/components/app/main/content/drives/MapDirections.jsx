@@ -46,7 +46,7 @@ class MapDirections extends Component {
                 defaultOptions={{ styles: styles }} >
                 <DirectionsRenderer 
                     directions={this.state.directions} 
-                    options={{ polylineOptions:{ strokeColor:"gray" }, suppressMarkers : true }}
+                    options={{ polylineOptions:{ strokeColor:"gray" }, suppressMarkers : false }}
                 />
             </GoogleMap>
         ));

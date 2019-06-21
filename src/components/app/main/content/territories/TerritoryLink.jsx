@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 
 import { setCategory } from '../../../../reducers/categories';
 import { fetchTerritory } from '../../../../reducers/territories';
-import { FLAG_PATH, ICON_PATH, ICON_ARROW } from '../../../utils/Global';
+import { getFullFlagImage, getFullPathImage } from '../../../utils/ImageDetails';
 
 import './TerritoryLink.scss';
 
@@ -11,7 +11,6 @@ class TerritoryLink extends React.Component {
 
     constructor(props) {
         super(props);
-
         this.handleItemClick = this.handleItemClick.bind(this);
     }
 
@@ -23,18 +22,18 @@ class TerritoryLink extends React.Component {
     render() {
 
         const { territory, category } = this.props;
-        const flag = territory && FLAG_PATH + territory.flagImage;
+        const flag = territory && getFullFlagImage(territory.flagImage);
        
         return (
-            <div className="TerritoryLink" onClick={ () => this.handleItemClick(category, territory.id) } >
+            <div className='TerritoryLink' onClick={ () => this.handleItemClick(category, territory.id) } >
                 <div>
-                    <img src={flag} className="image" alt={territory.name} />
+                    <img src={flag} className='image' alt={territory.name} />
                 </div>
-                <div className="details">
-                    <div className="title">{territory.name}</div>
+                <div className='details'>
+                    <div className='title'>{territory.name}</div>
                 </div>
                 <div>
-                    <img src={ICON_PATH + ICON_ARROW} className="arrow" alt='arrow' />
+                    <img src={getFullPathImage("forward")} className='arrow' alt='arrow' />
                 </div>
             </div>
         );

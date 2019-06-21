@@ -3,15 +3,13 @@ import React from 'react';
 import { DetailsHeader } from '../common/DetailsHeader';
 import ContentList from '../common/ContentList';
 import TerritoryTile from '../territories/TerritoryTile';
-
-import { ICON_PATH, ICON_PASSPORT } from '../../../utils/Global';
+import { getFullPathImage } from '../../../utils/ImageDetails';
 
 import './FlagTerritories.scss';
 
 export const FlagTerritories = props => {
 
     let items = [];
-    const icon = ICON_PATH + ICON_PASSPORT;
 
     props.flag.territories.forEach(territory => {
         items.push(<TerritoryTile territory={territory} key={territory.id} />)
@@ -19,7 +17,7 @@ export const FlagTerritories = props => {
 
     return (
         <div className="FlagTerritories" >
-            <DetailsHeader icon={icon} label='Territories' />
+            <DetailsHeader icon={getFullPathImage("country")} label='Territories' />
             <ContentList items={items} />
         </div>
     );

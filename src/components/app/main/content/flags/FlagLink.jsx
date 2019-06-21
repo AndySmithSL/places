@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 
 import { setCategory } from '../../../../reducers/categories';
 import { fetchFlag } from '../../../../reducers/flags';
-import { FLAG_PATH, ICON_PATH, ICON_ARROW } from '../../../utils/Global';
+import { getFullPathImage, getFullFlagImage } from '../../../utils/ImageDetails';
 
 import './FlagLink.scss';
 
@@ -11,7 +11,6 @@ class FlagLink extends React.Component {
 
     constructor(props) {
         super(props);
-
         this.handleItemClick = this.handleItemClick.bind(this);
     }
 
@@ -23,18 +22,18 @@ class FlagLink extends React.Component {
     render() {
 
         const { flag, category } = this.props;
-        const icon = flag && FLAG_PATH + flag.image;
+        const icon = flag && getFullFlagImage(flag.image);
        
         return (
-            <div className="FlagLink" onClick={ () => this.handleItemClick(category, flag.id) } >
+            <div className='FlagLink' onClick={ () => this.handleItemClick(category, flag.id) } >
                 <div>
-                    <img src={icon} className="image" alt={flag.name} />
+                    <img src={icon} className='image' alt={flag.name} />
                 </div>
-                <div className="details">
-                    <div className="title">{flag.name}</div>
+                <div className='details'>
+                    <div className='title'>{flag.name}</div>
                 </div>
                 <div>
-                    <img src={ICON_PATH + ICON_ARROW} className="arrow" alt='arrow' />
+                    <img src={getFullPathImage("forward")} className='arrow' alt='arrow' />
                 </div>
             </div>
         );

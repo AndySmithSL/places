@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 
 import { setCategory } from '../../../../reducers/categories';
 import { fetchTerritoryType } from '../../../../reducers/territoryTypes';
-import { ICON_PATH, ICON_ARROW } from '../../../utils/Global';
+import { getFullPathImage } from '../../../utils/ImageDetails';
 
 import './TerritoryTypeLink.scss';
 
@@ -11,7 +11,6 @@ class TerritoryTypeLink extends React.Component {
 
     constructor(props) {
         super(props);
-
         this.handleItemClick = this.handleItemClick.bind(this);
     }
 
@@ -25,7 +24,7 @@ class TerritoryTypeLink extends React.Component {
         const { territoryType, category } = this.props;
        
         return (
-            <div className="TerritoryTypeLink" onClick={ () => this.handleItemClick(category, territoryType.id) } >
+            <div className='TerritoryTypeLink' onClick={ () => this.handleItemClick(category, territoryType.id) } >
                 <div>
                     <img src={category.icon} className="image" alt={territoryType.type} />
                 </div>
@@ -33,7 +32,7 @@ class TerritoryTypeLink extends React.Component {
                     <div className="title">{territoryType.type}</div>
                 </div>
                 <div>
-                    <img src={ICON_PATH + ICON_ARROW} className="arrow" alt='arrow' />
+                    <img src={getFullPathImage("forward")} className="arrow" alt='arrow' />
                 </div>
             </div>
         );
@@ -42,7 +41,7 @@ class TerritoryTypeLink extends React.Component {
 
 const mapStateToProps = state => {
     return {
-        category: state.categories.categories.find(x => x.name === 'Territory Types')
+        category: state.categories.categories.find(x => x.name === "Territory Types")
     };
 };
 

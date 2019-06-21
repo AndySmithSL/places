@@ -3,17 +3,16 @@ import React from 'react';
 import { DetailsHeader } from '../common/DetailsHeader';
 import ContentList from '../common/ContentList';
 import DriveLegTile from './DriveLegTile';
-import { ICON_PATH, ICON_PASSPORT } from '../../../utils/Global';
 
-
-import { ImageDetails } from '../../../utils/ImageDetails';
+import { getFullPathImage } from '../../../utils/ImageDetails';
 
 import './DriveLegs.scss';
 
 export const DriveLegs = props => {
 
     const { drive } = props;
-    const icon = ImageDetails.getFullPathImage("journey");
+    const icon = getFullPathImage("journey");
+
     let items = [];
     
     drive.driveLegs.forEach(leg => {

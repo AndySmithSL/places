@@ -1,9 +1,9 @@
 import React from 'react';
 import { connect } from 'react-redux';
 
-import { ICON_PATH } from '../../../utils/Global';
 import { setCategory } from '../../../../reducers/categories';
 import { fetchPlaceGroup } from '../../../../reducers/placeGroups';
+import { getFullPathImage } from '../../../utils/ImageDetails';
 
 import './PlaceGroupTile.scss';
 
@@ -11,7 +11,6 @@ class PlaceGroupTile extends React.Component {
 
     constructor(props) {
         super(props);
-
         this.handleItemClick = this.handleItemClick.bind(this);
     }
 
@@ -23,17 +22,17 @@ class PlaceGroupTile extends React.Component {
     render() {
 
         const { placeGroup, category } = this.props;
-        const icon = placeGroup && ICON_PATH + placeGroup.image;
+        const icon = placeGroup && getFullPathImage(placeGroup.image);
 
         return (
-            <div className="PlaceGroupTile" onClick={ () => this.handleItemClick(category, placeGroup.id) } >
+            <div className='PlaceGroupTile' onClick={ () => this.handleItemClick(category, placeGroup.id) } >
                 <div>
-                    <img src={icon} className="image" alt={placeGroup.name} />
+                    <img src={icon} className='image' alt={placeGroup.name} />
                 </div>
-                <div className="details">
-                    <div className="title">{placeGroup.name}</div>
+                <div className='details'>
+                    <div className='title'>{placeGroup.name}</div>
                 </div>
-                <div className="left value">
+                <div className='left value'>
                     {placeGroup.places}
                 </div>
             </div>

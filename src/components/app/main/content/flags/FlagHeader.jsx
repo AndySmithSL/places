@@ -1,21 +1,24 @@
 import React from 'react';
-import { FLAG_PATH } from '../../../utils/Global';
+
+import { getFullFlagImage } from '../../../utils/ImageDetails';
+
 import './FlagHeader.scss';
 
 export const FlagHeader = props => {
 
-    const image = FLAG_PATH + props.flag.image;
+    const { flag } = props;
+    const image = getFullFlagImage(flag.image);
 
     return (
         <div className="FlagHeader">
             <div>
-                { props.flag.image && <img src={image} className="image" alt={props.flag.name} /> }
+                { flag.image && <img src={image} className="image" alt={flag.name} /> }
             </div>
             <div className="label">
-                {props.flag.name}
+                {flag.name}
             </div>
             <div className="leftlabel">
-                {props.flag.code}
+                {flag.code}
             </div>
         </div>
     )

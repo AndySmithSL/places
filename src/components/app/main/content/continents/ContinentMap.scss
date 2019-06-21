@@ -24,5 +24,10 @@
     .chart {
         margin-top: 1vh;
         width: 100%;
+
+        path {
+            stroke-width: 0.25; 
+            stroke: gray; 
+        }
     }
 }

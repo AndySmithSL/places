@@ -1,9 +1,10 @@
 import React from 'react';
 import { PieChart } from '../common/PieChart';
+import { getFullPathImage } from '../../../utils/ImageDetails';
 
 export const ContinentTerritoryPopulations = props => {
 
-    const { continent, category } = props;
+    const { continent } = props;
     let data = [];
     data.push(['Territory', 'Population']);
 
@@ -15,8 +16,7 @@ export const ContinentTerritoryPopulations = props => {
 
     return (
         <div>
-            <PieChart data={data} icon={category.icon} label='Territory Population' />
-            {/* <ColumnChart data={data} icon={category.icon} label='Territory Population' /> */}
+            <PieChart data={data} icon={getFullPathImage("country")} label='Territory Population' />
         </div>
     );
 }

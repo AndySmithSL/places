@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 
 import { setCategory } from '../../../../reducers/categories';
 import { fetchFlag } from '../../../../reducers/flags';
-import { FLAG_PATH } from '../../../utils/Global';
+import { getFullFlagImage } from '../../../utils/ImageDetails';
 
 import './FlagTile.scss';
 
@@ -22,18 +22,18 @@ class FlagTile extends React.Component {
     render() {
 
         const { flag, category } = this.props;
-        const flagImage = flag && FLAG_PATH + flag.image;
+        const flagImage = flag && getFullFlagImage(flag.image);
        
         return (
-            <div className="FlagTile" onClick={ () => this.handleItemClick(category, flag.id) } >
+            <div className='FlagTile' onClick={ () => this.handleItemClick(category, flag.id) } >
                 <div>
-                    <img src={flagImage} className="image" alt={flag.name} />
+                    <img src={flagImage} className='image' alt={flag.name} />
                 </div>
-                <div className="details">
-                    <div className="title">{flag.name}</div>
-                    <div className="subtitle">{flag.description}</div>
+                <div className='details'>
+                    <div className='title'>{flag.name}</div>
+                    <div className='subtitle'>{flag.description}</div>
                 </div>
-                <div className="left value">
+                <div className='left value'>
                     {flag.code}
                 </div>
             </div>
@@ -43,7 +43,7 @@ class FlagTile extends React.Component {
 
 const mapStateToProps = state => {
     return {
-        category: state.categories.categories.find(x => x.name === 'Flags')
+        category: state.categories.categories.find(x => x.name === "Flags")
     };
 };
 

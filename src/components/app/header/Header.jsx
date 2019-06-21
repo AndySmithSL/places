@@ -1,14 +1,14 @@
 import * as React from 'react';
 import Clock from '../utils/Clock';
 
-import { ICON_PATH, ICON_LOGO } from '../utils/Global';
+import { getFullPathImage } from '../utils/ImageDetails';
 
 import './Header.scss';
 
 export const Header = () => (
     <header className="Header">
         <div>
-            <img src={ICON_PATH + ICON_LOGO} className="logo" alt="logo" />
+            <img src={ getFullPathImage("around-the-globe") } className="logo" alt="logo" />
         </div>
         <div className="title">
             Places

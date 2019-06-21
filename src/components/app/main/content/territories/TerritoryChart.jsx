@@ -2,7 +2,7 @@ import React from 'react';
 import Chart from 'react-google-charts';
 
 import { DetailsHeader } from '../common/DetailsHeader';
-import { ICON_PATH, ICON_MAP } from '../../../utils/Global';
+import { getFullPathImage } from '../../../utils/ImageDetails';
 
 import './TerritoryChart.scss';
 
@@ -12,15 +12,20 @@ export const TerritoryChart = props => {
         region: props.item && props.item.countryIso,
         resolution: props.item && props.item.geoChartLevel,
         keepAspectRatio: false,
-        //backgroundColor: 'gainsboro',
-        backgroundColor: { fill: 'none' },
-        //datalessRegionColor: 'gray',
+        displayMode: 'auto',
+        enableRegionInteractivity: true,
+        backgroundColor: '#282c34',
         datalessRegionColor: '#282c34',
-        //defaultColor: 'darkslategray'
-        defaultColor: 'FloralWhite',
+        defaultColor: 'floralwhite',
+        tooltip: {
+            textStyle: {
+                color: 'black',
+                fontName: 'Roboto',
+                fontSize: 18,
+                bold: false
+            }
+        }
     };
-
-    const icon = ICON_PATH + ICON_MAP;
 
     let data = [];
     data.push(['Region', 'Name']);
@@ -30,8 +35,8 @@ export const TerritoryChart = props => {
     }
 
     return (
-        <div className="TerritoryChart" >
-            <DetailsHeader icon={icon} label='Map' />
+        <div className='TerritoryChart' >
+            <DetailsHeader icon={getFullPathImage("world-map")} label='Map' />
             <Chart className='chart' 
                     chartType='GeoChart' 
                     data={data}              

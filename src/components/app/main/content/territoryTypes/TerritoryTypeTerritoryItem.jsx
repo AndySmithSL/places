@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 
-import { FLAG_PATH } from '../../../utils/Global';
+import { getFullFlagImage } from '../../../utils/ImageDetails';
 import { setCategory } from '../../../../reducers/categories';
 import { fetchTerritory } from '../../../../reducers/territories';
 import { isEmpty } from '../../../../reducers/commonFunctions';
@@ -24,7 +24,7 @@ class TerritoryTypeTerritoryItem extends React.Component {
 
         const { territory, flag, category } = this.props;
         console.log(flag);
-        const icon = isEmpty(flag) ? category.icon : FLAG_PATH + flag;
+        const icon = isEmpty(flag) ? category.icon : getFullFlagImage(flag);
 
         return (
             <div className="TerritoryTypeTerritoryItem" onClick={ () => this.handleItemClick(category, territory.id) } >

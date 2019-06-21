@@ -5,9 +5,9 @@ import { fetchPlace } from '../../../../reducers/places';
 import { setCategory } from '../../../../reducers/categories';
 import { DetailsHeader } from '../common/DetailsHeader';
 import { DetailsItem } from '../common/DetailsItem';
-import { FLAG_PATH } from '../../../utils/Global';
 import { createStringFromList } from '../../../../reducers/commonFunctions';
 import MapContainer from '../places/MapContainer';
+import { getFullFlagImage } from '../../../utils/ImageDetails';
 
 import './HomeFeaturedPlace.scss';
 
@@ -35,7 +35,7 @@ class HomeFeaturedPlace extends React.Component {
 
         const index = Math.floor((Math.random() * this.props.places.length) + 1);
         const place = places[index];
-        const flag = place && FLAG_PATH + place.flags[0];
+        const flag = place && getFullFlagImage(place.flags[0]);
         const territories = place && createStringFromList(place.territories)
 
         return (
@@ -43,11 +43,11 @@ class HomeFeaturedPlace extends React.Component {
                 <DetailsHeader label='Featured Place' icon={category.icon}/>
 
                 { place &&
-                    <div className="FeaturedPlaceHeader" onClick={ () => this.handleItemClick(category, place.id) }>
+                    <div className='FeaturedPlaceHeader' onClick={ () => this.handleItemClick(category, place.id) }>
                         <div>
-                            <img src={flag} className="image" alt={place.name} />
+                            <img src={flag} className='image' alt={place.name} />
                         </div>
-                        <div className="details">
+                        <div className='details'>
                             <div className='title'>
                                 {place.name}
                             </div>

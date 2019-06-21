@@ -4,16 +4,10 @@ import { connect } from 'react-redux';
 import { fetchFlag } from '../../../../reducers/flags';
 import { setCategory } from '../../../../reducers/categories';
 import { DetailsHeader } from '../common/DetailsHeader';
-import { DetailsItem } from '../common/DetailsItem';
-import { FLAG_PATH } from '../../../utils/Global';
-import { createStringFromList } from '../../../../reducers/commonFunctions';
-
-
-import './HomeFlagsOnDay.scss';
-import { TerritoryMap } from '../common/TerritoryMap';
-
 import { ContentList } from '../common/ContentList';
 import FlagTile from '../flags/FlagTile';
+
+import './HomeFlagsOnDay.scss';
 
 class HomeFlagsOnDay extends React.Component {
 

@@ -11,12 +11,19 @@ export const ContinentMap = props => {
         region: props.item && props.item.code,
         resolution: 'countries',
         keepAspectRatio: false,
-        //backgroundColor: 'gainsboro',
-        backgroundColor: { fill: 'none' },
-        //datalessRegionColor: 'gray',
+        displayMode: 'auto',
+        enableRegionInteractivity: true,
+        backgroundColor: '#282c34',
         datalessRegionColor: '#282c34',
-        //defaultColor: 'darkslategray'
-        defaultColor: 'FloralWhite',
+        defaultColor: 'floralwhite',
+        tooltip: {
+            textStyle: {
+                color: 'black',
+                fontName: 'Roboto',
+                fontSize: 18,
+                bold: false
+            }
+        }
     }
 
     let data = [];

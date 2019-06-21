@@ -1,18 +1,17 @@
 import React from 'react';
 
 import { DetailsHeader } from '../common/DetailsHeader';
-import { ICON_PATH, ICON_DETAILS } from '../../../utils/Global';
+import { getFullPathImage } from '../../../utils/ImageDetails';
 
 import './TerritoryDetails.scss';
 
 export const TerritoryDetails = props => {
 
     const { item } = props;
-    const icon = ICON_PATH + ICON_DETAILS;
 
     return (
         <div className="TerritoryDetails" >
-            <DetailsHeader icon={icon} label='Details' />
+            <DetailsHeader icon={getFullPathImage("information")} label='Details' />
             <div className="TerritoryDetailsRow" >
                 <div className="TerritoryDetailsItem whole">
                     <div className="label">FULL NAME</div>

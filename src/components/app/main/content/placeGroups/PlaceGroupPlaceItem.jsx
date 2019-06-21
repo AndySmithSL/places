@@ -1,10 +1,11 @@
 import React from 'react';
 import { connect } from 'react-redux';
 
-import { FLAG_PATH } from '../../../utils/Global';
 import { setCategory } from '../../../../reducers/categories';
 import { fetchPlace } from '../../../../reducers/places';
 import { isEmpty } from '../../../../reducers/commonFunctions';
+
+import { getFullFlagImage } from '../../../utils/ImageDetails';
 
 import './PlaceGroupPlaceItem.scss';
 
@@ -12,7 +13,6 @@ class PlaceGroupPlaceItem extends React.Component {
 
     constructor(props) {
         super(props);
-
         this.handleItemClick = this.handleItemClick.bind(this);
     }
 
@@ -24,8 +24,7 @@ class PlaceGroupPlaceItem extends React.Component {
     render() {
 
         const { place, flag, category } = this.props;
-        console.log(flag);
-        const icon = isEmpty(flag) ? category.icon : FLAG_PATH + flag;
+        const icon = isEmpty(flag) ? category.icon : getFullFlagImage(flag);
 
         return (
             <div className="PlaceGroupPlaceItem" onClick={ () => this.handleItemClick(category, place.id) } >

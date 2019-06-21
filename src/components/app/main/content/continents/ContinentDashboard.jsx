@@ -2,17 +2,16 @@ import React from 'react';
 import { connect } from 'react-redux';
 
 import { DashboardHeader } from '../common/DashboardHeader';
-import { ICON_PATH, ICON_MAP } from '../../../utils/Global';
 import { ContinentMap } from './ContinentMap';
 import { ContinentDetails } from './ContinentDetails';
 import { ContinentTerritories } from './ContinentTerritories';
 import { ContinentSubdivisons } from './ContinentSubdivisions';
-
-import './ContinentDashboard.scss';
 import { ContinentPieChart } from './ContinentPieChart';
-
 import { ContinentTerritoryAreas } from './ContinentTerritoryAreas';
 import { ContinentTerritoryPopulations } from './ContinentTerritoryPopulations';
+import { getFullPathImage } from '../../../utils/ImageDetails';
+
+import './ContinentDashboard.scss';
 
 
 class ContinentDashboard extends React.Component {
@@ -20,7 +19,6 @@ class ContinentDashboard extends React.Component {
     render() {
 
         const { fetching, item, category } = this.props;
-        const icon = ICON_PATH + ICON_MAP;
 
         if(fetching) {
             return (
@@ -40,11 +38,11 @@ class ContinentDashboard extends React.Component {
                             <ContinentDetails item={item} />
                         </div>
                         <div className="half">
-                            <ContinentMap item={item} label='Map' icon={icon} />
+                            <ContinentMap item={item} label='Map' icon={ getFullPathImage("world-map") } />
                         </div>
                         { item.children.length > 0 && 
                             <div className="half">
-                                <ContinentPieChart continent={item} category={category} />
+                                <ContinentPieChart continent={item} />
                             </div>
                         }
                         { item.children.length > 0 && 
@@ -55,13 +53,13 @@ class ContinentDashboard extends React.Component {
                         {
                             item.children.length === 0 &&
                             <div className='half'>
-                                <ContinentTerritoryAreas continent={item} category={category} />
+                                <ContinentTerritoryAreas continent={item} />
                             </div>
                         }
                         {
                             item.children.length === 0 &&
                             <div className='half'>
-                                <ContinentTerritoryPopulations continent={item} category={category} />
+                                <ContinentTerritoryPopulations continent={item} />
                             </div>
                         }
                     </div>

@@ -2,15 +2,14 @@ import React from 'react';
 
 import { DetailsHeader } from '../common/DetailsHeader';
 import ContentList from '../common/ContentList';
-import { ICON_PATH, ICON_PASSPORT } from '../../../utils/Global';
+import { getFullPathImage } from '../../../utils/ImageDetails';
+import TerritoryTile from './TerritoryTile';
 
 import './TerritoryRegions.scss';
-import TerritoryTile from './TerritoryTile';
 
 export const TerritoryRegions = props => {
 
     const { territory } = props;
-    const icon = ICON_PATH + ICON_PASSPORT;
     let items = [];
     
     territory.children.forEach(child => {
@@ -18,8 +17,8 @@ export const TerritoryRegions = props => {
     });
 
     return (
-        <div className="TerritoryRegions" >
-            <DetailsHeader icon={icon} label='Parts' />
+        <div className='TerritoryRegions' >
+            <DetailsHeader icon={getFullPathImage("country")} label='Parts' />
             <ContentList items={items} />
         </div>
     );

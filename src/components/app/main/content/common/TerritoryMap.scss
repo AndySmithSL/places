@@ -9,5 +9,10 @@
 
     .chart {
         width: 100%;
+
+        path {
+            stroke-width: 0.25; 
+            stroke: gray; 
+        }
     }
 }

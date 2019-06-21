@@ -9,12 +9,19 @@ export const TerritoryMap = props => {
         region: props.item && props.item.countryIso,
         resolution: props.item && props.item.geoChartLevel,
         keepAspectRatio: false,
-        //backgroundColor: 'gainsboro',
-        backgroundColor: { fill: 'none' },
-        datalessRegionColor: 'darkslategray',
-        //datalessRegionColor: '#282c34',
-        //defaultColor: 'darkslategray'
-        defaultColor: 'FloralWhite',
+        displayMode: 'auto',
+        enableRegionInteractivity: true,
+        backgroundColor: '#282c34',
+        datalessRegionColor: '#282c34',
+        defaultColor: 'floralwhite',
+        tooltip: {
+            textStyle: {
+                color: 'black',
+                fontName: 'Roboto',
+                fontSize: 18,
+                bold: false
+            }
+        }
     };
 
     let data = [];

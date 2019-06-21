@@ -1,13 +1,15 @@
 
+import { getFullPathImage } from '../app/utils/ImageDetails';
+
 const categories = [
-    { name: "Home", icon: "../assets/icons/home.png" },
-    { name: "Continents", icon: "../assets/icons/america.png" },
-    { name: "Territory Types", icon: "../assets/icons/map.png" },
-    { name: "Territories", icon: "../assets/icons/passport.png" },
-    { name: "Places", icon: "../assets/icons/marker.png" },
-    { name: "Flags", icon: "../assets/icons/flag.png" },
-    { name: "Place Groups", icon: "../assets/icons/picture.png" },
-    { name: "Drives", icon: "../assets/icons/road.png" },
+    { name: "Home", icon: getFullPathImage("home-page") },
+    { name: "Continents", icon: getFullPathImage("globe") },
+    { name: "Territory Types", icon: getFullPathImage("map") },
+    { name: "Territories", icon: getFullPathImage("country") },
+    { name: "Places", icon: getFullPathImage("place-marker") },
+    { name: "Flags", icon: getFullPathImage("great-britain") },
+    { name: "Place Groups", icon: getFullPathImage("picture") },
+    { name: "Drives", icon: getFullPathImage("road") },
 ];
 
 const updateObject = (oldObject, newValues) => Object.assign({}, oldObject, newValues);

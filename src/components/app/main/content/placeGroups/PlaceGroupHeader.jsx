@@ -1,6 +1,5 @@
 import React from 'react';
-import { ICON_PATH } from '../../../utils/Global';
-
+import { getFullPathImage } from '../../../utils/ImageDetails';
 import './PlaceGroupHeader.scss';
 
 export const PlaceGroupHeader = props => {
@@ -10,7 +9,7 @@ export const PlaceGroupHeader = props => {
     return (
         <div className="PlaceGroupHeader">
             <div>
-                <img src={ICON_PATH + placeGroup.image} className="image" alt={placeGroup.name} />
+                <img src={getFullPathImage(placeGroup.image)} className="image" alt={placeGroup.name} />
             </div>
             <div className="label">
                 {placeGroup.name}

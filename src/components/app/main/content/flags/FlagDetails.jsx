@@ -1,18 +1,17 @@
 import React from 'react';
 
 import { DetailsHeader } from '../common/DetailsHeader';
-import { ICON_PATH, ICON_DETAILS } from '../../../utils/Global';
+import { getFullPathImage } from '../../../utils/ImageDetails';
 
 import './FlagDetails.scss';
 
 export const FlagDetails = props => {
 
     const { flag } = props;
-    const icon = ICON_PATH + ICON_DETAILS;
 
     return (
         <div className='FlagDetails' >
-            <DetailsHeader icon={icon} label='Details' />
+            <DetailsHeader icon={getFullPathImage("information")} label='Details' />
             <div className="FlagDetailsRow" >
                 <div className="FlagDetailsItem whole">
                     <div className="label">DESCRIPTION</div>

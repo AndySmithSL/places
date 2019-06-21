@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 
 import { setCategory } from '../../../../reducers/categories';
 import { fetchContinent } from '../../../../reducers/continents';
-import { ICON_PATH, ICON_ARROW } from '../../../utils/Global';
+import { getFullPathImage } from '../../../utils/ImageDetails';
 
 import './ContinentLink.scss';
 
@@ -11,7 +11,6 @@ class ContinentLink extends React.Component {
 
     constructor(props) {
         super(props);
-
         this.handleItemClick = this.handleItemClick.bind(this);
     }
 
@@ -33,7 +32,7 @@ class ContinentLink extends React.Component {
                     <div className="title">{continent.name}</div>
                 </div>
                 <div>
-                    <img src={ICON_PATH + ICON_ARROW} className="arrow" alt='arrow' />
+                    <img src={getFullPathImage("forward")} className="arrow" alt='arrow' />
                 </div>
             </div>
         );

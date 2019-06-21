@@ -1,15 +1,15 @@
 import React from 'react';
 
 import { DetailsHeader } from '../common/DetailsHeader';
-import { ICON_PATH, ICON_DETAILS } from '../../../utils/Global';
+import ContinentDetailsParent from './ContinentDetailsParent';
+import { getFullPathImage } from '../../../utils/ImageDetails';
 
 import './ContinentDetails.scss';
-import ContinentDetailsParent from './ContinentDetailsParent';
 
 export const ContinentDetails = props => {
 
     const { item } = props;
-    const icon = ICON_PATH + ICON_DETAILS;
+    const icon = getFullPathImage("information");
 
     return (
         <div className="ContinentDetails" >

@@ -2,7 +2,7 @@ import React from 'react';
 
 import { DetailsHeader } from '../common/DetailsHeader';
 import ContentList from '../common/ContentList';
-import { ICON_PATH, ICON_MARKER } from '../../../utils/Global';
+import { getFullPathImage } from '../../../utils/ImageDetails';
 import TerritoryTypeTerritoryItem from './TerritoryTypeTerritoryItem';
 
 import './TerritoryTypeTerritories.scss';
@@ -10,7 +10,6 @@ import './TerritoryTypeTerritories.scss';
 export const TerritoryTypeTerritories = props => {
 
     const { territoryType } = props;
-    const icon = ICON_PATH + ICON_MARKER;
     let items = [];
     
     territoryType.territories.forEach(territory => {
@@ -19,8 +18,8 @@ export const TerritoryTypeTerritories = props => {
     });
 
     return (
-        <div className="TerritoryTypeTerritories" >
-            <DetailsHeader icon={icon} label='Territories' />
+        <div className='TerritoryTypeTerritories' >
+            <DetailsHeader icon={getFullPathImage("country")} label='Territories' />
             <ContentList items={items} />
         </div>
     );
