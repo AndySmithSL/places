@@ -4,7 +4,7 @@ import { getFullPathImage } from '../app/utils/ImageDetails';
 const categories = [
     { name: "Home", icon: getFullPathImage("home-page") },
     { name: "Continents", icon: getFullPathImage("globe") },
-    { name: "Territory Types", icon: getFullPathImage("map") },
+    { name: "Territory Types", icon: getFullPathImage("quest") },
     { name: "Territories", icon: getFullPathImage("country") },
     { name: "Places", icon: getFullPathImage("place-marker") },
     { name: "Flags", icon: getFullPathImage("great-britain") },

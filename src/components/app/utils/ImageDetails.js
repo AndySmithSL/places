@@ -3,6 +3,29 @@ export const ImageDetails = {
     flagPath: "../assets/flags/",
     iconPath: "../assets/icons/",
     icons: [
+
+        // Main
+
+        {
+            name: "around-the-globe",
+            image: "around-the-globe.png"
+        },
+        {
+            name: "home-page",
+            image: "home-page.png"
+        },
+        {
+            name: "globe",
+            image: "globe.png"
+        },
+        {
+            name: "quest",
+            image: "quest.png"
+        },
+
+
+
+
         {
             name: "aircraft",
             image: "aircraft.png"
@@ -11,10 +34,7 @@ export const ImageDetails = {
             name: "airport",
             image: "airport.png"
         },
-        {
-            name: "around-the-globe",
-            image: "around-the-globe.png"
-        },
+        
         {
             name: "city-hall",
             image: "city-hall.png"
@@ -27,18 +47,12 @@ export const ImageDetails = {
             name: "forward",
             image: "forward.png"
         },
-        {
-            name: "globe",
-            image: "globe.png"
-        },
+       
         {
             name: "great-britain",
             image: "great-britain.png"
         },
-        {
-            name: "home-page",
-            image: "home-page.png"
-        },
+        
         {
             name: "image",
             image: "image.png"
