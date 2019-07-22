@@ -22,6 +22,22 @@ export const ImageDetails = {
             name: "quest",
             image: "quest.png"
         },
+        {
+            name: "country",
+            image: "country.png"
+        },
+        {
+            name: "place-marker",
+            image: "place-marker.png"
+        },
+        {
+            name: "great-britain",
+            image: "great-britain.png"
+        },
+        {
+            name: "picture",
+            image: "picture.png"
+        },
 
 
 
@@ -39,19 +55,13 @@ export const ImageDetails = {
             name: "city-hall",
             image: "city-hall.png"
         },
-        {
-            name: "country",
-            image: "country.png"
-        },
+        
         {
             name: "forward",
             image: "forward.png"
         },
        
-        {
-            name: "great-britain",
-            image: "great-britain.png"
-        },
+        
         
         {
             name: "image",
@@ -69,14 +79,8 @@ export const ImageDetails = {
             name: "map",
             image: "map.png"
         },
-        {
-            name: "picture",
-            image: "picture.png"
-        },
-        {
-            name: "place-marker",
-            image: "place-marker.png"
-        },
+       
+        
         {
             name: "road",
             image: "road.png"
