@@ -81,6 +81,10 @@ export const ImageDetails = {
             name: "airport",
             image: "airport.png"
         },
+        {   // Mountain(s)
+            name: "alps",
+            image: "alps.png"
+        },
         {   // Atoll
             name: "beach",
             image: "beach.png"
@@ -91,14 +95,100 @@ export const ImageDetails = {
             image: "cave.png"
         },
 
+        {   // World Heritage
+            name: "chichen-itza",
+            image: "chichen-itza.png"
+        },
+
         {   // Reef
             name: "coral",
             image: "coral.png"
         },
 
+        {   // Must Visit City
+            name: "eiffel-tower",
+            image: "eiffel-tower.png"
+        },
+        {   // Wildlife
+            name: "elephant",
+            image: "elephant.png"
+        },
+
+        {   // Hotel
+            name: "hotel-star",
+            image: "hotel-star.png"
+        },
+
+        {   // World Heritage Natural
+            name: "landscape",
+            image: "landscape.png"
+        },
+
+        {   // Island
+            name: "lighthouse",
+            image: "lighthouse.png"
+        },
+
+        {   // Military Base
+            name: "fighter-jet",
+            image: "fighter-jet.png"
+        },
+
+        {   // Forest / Jungle
+            name: "forest",
+            image: "forest.png"
+        },
+
+        {   // Highest Point
+            name: "mountain",
+            image: "mountain.png"
+        },
+        {   // Building / Structure
+            name: "museum",
+            image: "museum.png"
+        },
+        {   // National Park
+            name: "national-park",
+            image: "national-park.png"
+        },
+        {   // Heritage Site Cultural
+            name: "pagoda",
+            image: "pagoda.png"
+        },
+
         {   // Natural Wonders
             name: "grand-canyon",
             image: "grand-canyon.png"
+        },
+
+        {   // VOR
+            name: "radio-tower",
+            image: "radio-tower.png"
+        },
+
+        {   // Spectacular Valley
+            name: "scenic-view",
+            image: "scenic-view.png"
+        },
+
+        {   // Research Base
+            name: "thermometer",
+            image: "thermometer.png"
+        },
+
+        {   // Region / State Park
+            name: "trekking",
+            image: "trekking.png"
+        },
+
+        {   // Region / State Capital
+            name: "us-capitol",
+            image: "us-capitol.png"
+        },
+
+        {   // Village / Hamlet
+            name: "village",
+            image: "village.png"
         },
 
 
