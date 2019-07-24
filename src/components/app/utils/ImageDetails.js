@@ -85,10 +85,17 @@ export const ImageDetails = {
             name: "alps",
             image: "alps.png"
         },
-        {   // Atoll
+        {   // Atoll / Island / Island Group
             name: "beach",
             image: "beach.png"
         },
+        {   // Provincial / Regional Park
+            name: "bear-footprint",
+            image: "bear-footprint.png"
+        },
+
+
+        
 
         {   // Cave
             name: "cave",
@@ -139,6 +146,12 @@ export const ImageDetails = {
             image: "forest.png"
         },
 
+        {   // Historic Site
+            name: "monument",
+            image: "monument.png"
+        },
+
+        
         {   // Highest Point
             name: "mountain",
             image: "mountain.png"
@@ -147,13 +160,33 @@ export const ImageDetails = {
             name: "museum",
             image: "museum.png"
         },
+
+        {   // National Heritage Area
+            name: "obelisk",
+            image: "obelisk.png"
+        },
+        
         {   // National Park
             name: "national-park",
             image: "national-park.png"
         },
+        {   // Atoll
+            name: "palm-tree",
+            image: "palm-tree.png"
+        },
+
+
+        
         {   // Heritage Site Cultural
             name: "pagoda",
             image: "pagoda.png"
+        },
+
+
+
+        {   // Capital
+            name: "parliament",
+            image: "parliament.png"
         },
 
         {   // Natural Wonders
@@ -171,6 +204,14 @@ export const ImageDetails = {
             image: "scenic-view.png"
         },
 
+        {   // New Seven Wonders of the World
+            name: "taj-mahal",
+            image: "taj-mahal.png"
+        },
+
+
+        
+
         {   // Research Base
             name: "thermometer",
             image: "thermometer.png"
@@ -180,6 +221,14 @@ export const ImageDetails = {
             name: "trekking",
             image: "trekking.png"
         },
+
+        {   // Must Visit Destination
+            name: "triumphal-arch",
+            image: "triumphal-arch.png"
+        },
+
+
+        
 
         {   // Region / State Capital
             name: "us-capitol",
