@@ -85,6 +85,10 @@ export const ImageDetails = {
             name: "alps",
             image: "alps.png"
         },
+        {   // Town
+            name: "apartment",
+            image: "apartment.png"
+        },
         {   // Atoll / Island / Island Group
             name: "beach",
             image: "beach.png"
@@ -92,6 +96,10 @@ export const ImageDetails = {
         {   // Provincial / Regional Park
             name: "bear-footprint",
             image: "bear-footprint.png"
+        },
+        {   // Settlement
+            name: "bungalow",
+            image: "bungalow.png"
         },
 
 
@@ -105,6 +113,23 @@ export const ImageDetails = {
         {   // World Heritage
             name: "chichen-itza",
             image: "chichen-itza.png"
+        },
+
+        {   // Major Urban Area
+            name: "city",
+            image: "city.png"
+        },
+
+        {   // Municipality
+            name: "city-hall",
+            image: "city-hall.png"
+        },
+
+        
+
+        {   // City
+            name: "company",
+            image: "company.png"
         },
 
         {   // Reef
@@ -145,6 +170,14 @@ export const ImageDetails = {
             name: "forest",
             image: "forest.png"
         },
+
+        {   // Suburb
+            name: "house-with-a-garden",
+            image: "house-with-a-garden.png"
+        },
+
+
+        
 
         {   // Historic Site
             name: "monument",
@@ -204,6 +237,11 @@ export const ImageDetails = {
             image: "scenic-view.png"
         },
 
+        {   // Commune
+            name: "school-building",
+            image: "school-building.png"
+        },
+
         {   // New Seven Wonders of the World
             name: "taj-mahal",
             image: "taj-mahal.png"
@@ -239,40 +277,10 @@ export const ImageDetails = {
             name: "village",
             image: "village.png"
         },
-
-
-
-
-
-
-        
-
-
-
-
-
-
-        
-        
-        
-        {
-            name: "city-hall",
-            image: "city-hall.png"
+        {   // Waterfall
+            name: "waterfall",
+            image: "waterfall.png"
         },
-        
-        
-       
-        
-        
-        {
-            name: "map",
-            image: "map.png"
-        },
-       
-        
-        
-        
-        
     ]  
 };
 
