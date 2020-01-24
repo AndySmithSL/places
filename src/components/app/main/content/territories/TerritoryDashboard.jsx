@@ -29,6 +29,9 @@ class DashboardTerritory extends React.Component {
                 <TerritoryHeader territory={item} />
                 <TerritoryLinks />
                 <div className="row" >
+                    <div className="two-thirds" >
+                        <TerritoryChart item={item} />
+                    </div>
                     <div className="third" >
                         <div classname="column">
                             <TerritoryDetails item={item} />
@@ -45,9 +48,6 @@ class DashboardTerritory extends React.Component {
                                 </div>
                             }
                         </div>
-                    </div>
-                    <div className="two-thirds" >
-                        <TerritoryChart item={item} />
                     </div>
                     
                 </div>

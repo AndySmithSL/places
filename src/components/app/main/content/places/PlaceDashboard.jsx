@@ -27,21 +27,12 @@ class PlaceDashboard extends React.Component {
             <div className='PlaceDashboard'>
                 <PlaceHeader place={item} />
                 <PlaceLinks />
-
                 <div className='row'>
-                    <div className='row third'>
-                        
+                    <div className="row two-thirds">
+                        <PlaceMap place={item} label='Map' icon={getFullPathImage("world-map")} />
                     </div>
-                    <div className='row twothirds'>
-                        
-                    </div>
-                </div>
-                <div className='row'>
                     <div className='row third'>
                         <PlaceDetails item={item} />
-                    </div>
-                    <div className="row twothirds">
-                        <PlaceMap place={item} label='Map' icon={getFullPathImage("world-map")} />
                     </div>
                 </div>
             </div>
