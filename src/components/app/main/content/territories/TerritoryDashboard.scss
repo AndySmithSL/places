@@ -16,6 +16,11 @@
         //height: 50vh;
     }
 
+    .column {
+        display: flex;
+        flex-direction: column;
+    }
+
     .third {
         width: calc(100%/3);
     }

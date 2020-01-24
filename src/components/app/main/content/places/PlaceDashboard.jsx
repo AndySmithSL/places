@@ -30,9 +30,17 @@ class PlaceDashboard extends React.Component {
 
                 <div className='row'>
                     <div className='row third'>
-                        <PlaceDetails item={item} />
+                        
                     </div>
                     <div className='row twothirds'>
+                        
+                    </div>
+                </div>
+                <div className='row'>
+                    <div className='row third'>
+                        <PlaceDetails item={item} />
+                    </div>
+                    <div className="row twothirds">
                         <PlaceMap place={item} label='Map' icon={getFullPathImage("world-map")} />
                     </div>
                 </div>

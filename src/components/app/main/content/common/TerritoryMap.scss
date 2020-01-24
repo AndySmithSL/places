@@ -1,5 +1,5 @@
 
-.TerritoryMap {
+.TerritoryMapx {
     display: flex;
     flex-direction: column;
     padding-top: 1vh;
@@ -15,4 +15,10 @@
             stroke: gray; 
         }
     }
+}
+
+.TerritoryMap {
+    padding-top: 1vh;
+    width: 100%;
+    height:100%;
 }

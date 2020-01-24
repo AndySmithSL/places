@@ -16,8 +16,8 @@ class MapContainer extends Component {
                     center={{ lat: place.latitude, lng: place.longitude }}
                     zoom={place.zoom} 
                     styles={styles}
-                    //containerStyle={{width: '49.25vw', height: '60vh', position: 'absolute'}}
-                    containerStyle={{width: '30.5vw', height: '40vh', position: 'absolute'}}
+                    containerStyle={{width: '48.25vw', height: '60vh', position: 'absolute'}}
+                    //containerStyle={{width: '30.5vw', height: '40vh', position: 'absolute'}}
                 />
             </div>
         );
