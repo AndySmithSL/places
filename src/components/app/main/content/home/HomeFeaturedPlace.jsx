@@ -6,7 +6,7 @@ import { setCategory } from '../../../../reducers/categories';
 import { DetailsHeader } from '../common/DetailsHeader';
 import { DetailsItem } from '../common/DetailsItem';
 import { createStringFromList } from '../../../../reducers/commonFunctions';
-import MapContainer from '../places/MapContainer';
+import FeaturedMapContainer from './FeaturedMapContainer';
 import { getFullFlagImage } from '../../../utils/ImageDetails';
 
 import './HomeFeaturedPlace.scss';
@@ -60,7 +60,7 @@ class HomeFeaturedPlace extends React.Component {
 
                 { place && 
                     <div className='map'>
-                        <MapContainer place={place} /> 
+                        <FeaturedMapContainer place={place} /> 
                     </div>
                 }
 

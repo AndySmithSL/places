@@ -10,13 +10,13 @@ export const HomeFeaturedItems = () => {
     return (
         <div className="HomeFeaturedItems">
             <div className='item'>
-                <HomeFlagsOnDay />
-            </div>
-            <div className='item'>
                 <HomeFeaturedTerritory />
             </div>
             <div className='item'>
                 <HomeFeaturedPlace />
+            </div>
+            <div className='item'>
+                <HomeFlagsOnDay />
             </div>
         </div>
     );

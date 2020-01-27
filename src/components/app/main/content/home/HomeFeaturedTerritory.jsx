@@ -44,7 +44,7 @@ class HomeFeaturedTerritory extends React.Component {
                     <div className='FeaturedTerritoryHeader' onClick={ () => this.handleItemClick(category, territory.id) }>
                         { territory.flagImage != "--" &&
                             <div>
-                                <img src={flag} className='image' alt={territory.name} />
+                                <img src={flag} className='imagex' alt={territory.name} />
                             </div>
                         }
                         <div className='details'>

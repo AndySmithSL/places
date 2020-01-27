@@ -28,7 +28,7 @@
     margin-top: 1vh;
     padding-left: 1vh;
 
-    .image {
+    .imagex {
         height: 3vh;
         width: 3vh;
         object-fit: cover;
@@ -36,8 +36,9 @@
         opacity:0.4;
         border-radius: 5px;
 
-        margin-top: 0.5vh;
-        margin-right: 0.5vw;
+        margin-top: 1vh;
+        margin-right: 1vw;
+        margin-bottom: 0.5vh;
     }
   
     .details {

@@ -32,7 +32,7 @@ export const TerritoryMap = props => {
     }
 
     return (
-        <div className="TerritoryMap" >
+        <div className="TerritoryMapx" >
             <Chart className='chart' 
                     chartType='GeoChart' 
                     data={data}              
