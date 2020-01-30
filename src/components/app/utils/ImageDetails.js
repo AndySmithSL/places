@@ -70,6 +70,14 @@ export const ImageDetails = {
             name: "route",
             image: "route.png"
         },
+        {
+            name: "airplane",
+            image: "airplane.png"
+        },
+        {
+            name: "airplane-landing",
+            image: "airplane-landing.png"
+        },
 
         //Place Groups
 
@@ -289,5 +297,3 @@ export const getImage = name => ImageDetails.icons.find(icon => icon.name === na
 export const getFullPathImage = name => ImageDetails.iconPath + (getImage(name) &&  getImage(name).image);
 
 export const getFullFlagImage = image => ImageDetails.flagPath + image;
-
-
