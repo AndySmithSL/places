@@ -4,12 +4,13 @@ import { DetailsHeader } from '../common/DetailsHeader';
 
 import './RouteMap.scss';
 import SimpleMap from './SimpleMap';
+import SimpleMap2 from './SimpleMap2';
 
 export const RouteMap = props => {
     return (
         <div className="RouteMap" >
             <DetailsHeader icon={props.icon} label={props.label} />
-            <SimpleMap route={props.route} />
+            <SimpleMap2 route={props.route} />
         </div>
     );
 }

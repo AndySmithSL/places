@@ -2,13 +2,13 @@
     position: absolute;
     top: 50%;
     left: 50%;
-    width: 18px;
-    height: 18px;
+    width: 10px;
+    height: 10px;
     background-color: #000;
     border: 2px solid #fff;
     border-radius: 100%;
     user-select: none;
-    transform: translate(-50%, -50%);
+   // transform: translate(-50%, -50%);
     &:hover {
       z-index: 1;
     }

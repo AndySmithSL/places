@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import GoogleMapReact from 'google-map-react';
 import Marker from './Marker';
+import Polyline from './Polyline'
+import { styles } from './MapStyles';
 
 import './SimpleMap.scss';
 
@@ -10,7 +12,7 @@ const SimpleMap = props => {
       disableDefaultUI: true,
       mapTypeControl: true,
       streetViewControl: true,
-      styles: [{ featureType: 'poi', elementType: 'labels', stylers: [{ visibility: 'on' }] }],
+      styles: styles ,
     };
   };
 
@@ -18,7 +20,7 @@ const SimpleMap = props => {
   const markers = [];
 
   route.places.forEach(place => {
-    markers.push(<Marker lat={place.latitude} lng={place.longitude} name={place.name} color='red' key={place.id} />)
+    markers.push(<Marker lat={place.latitude} lng={place.longitude} name={place.name} color='black' key={place.id} />)
   })
 
   const [center, setCenter] = useState({lat: route.origin.latitude, lng: route.origin.longitude });
@@ -30,6 +32,7 @@ const SimpleMap = props => {
         defaultCenter={center}
         defaultZoom={zoom}
         options={getMapOptions}
+        onGoogleApiLoaded={({map, maps}) => this.onMapLoaded(map, maps)}>
       >
         {markers}
       </GoogleMapReact>
