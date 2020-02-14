@@ -1,7 +1,6 @@
-import React, { Component, useState } from 'react'
+import React, { Component } from 'react'
 import GoogleMap from 'google-map-react'
 
-import Marker2 from './Marker2'
 import Marker from './Marker'
 import Polyline from './Polyline'
 
@@ -21,7 +20,7 @@ class SimpleMap2 extends Component {
   }
 
   onMapLoaded (map, maps) {
-    this.fitBounds(map, maps)
+    //this.fitBounds(map, maps)
 
     this.setState({
       ...this.state,
@@ -44,33 +43,32 @@ class SimpleMap2 extends Component {
   afterMapLoadChanges () {
 
     const lines = []
-   // this.state.route.routeLegs.forEach(leg => {
-
-   //   console.log(leg.origin.latitude)
-
-   //   const markers = [];
-   //   markers.push({ lat: leg.origin.latitude, lng: leg.origin.longitude })
-   //   markers.push({ lat: leg.destination.latitude, lng: leg.destination.longitude })
-
-   //   lines.push(<Polyline
-   //     map={this.state.map}
-//maps={this.state.maps}
-//markers={markers} />)
-//})
-
-
     const { route } = this.props
 
-    const leg = route.routeLegs[0]
+    route.routeLegs.forEach(leg => {
+      const markers = [];
+      markers.push({ lat: leg.originLat, lng: leg.originLng })
+      markers.push({ lat: leg.destinationLat, lng: leg.destinationLng })
 
-    const markers = [];
-    markers.push({ lat: leg.origin.latitude, lng: leg.origin.longitude })
-    markers.push({ lat: 43.681583, lng: -79.61146 })
+      lines.push(<Polyline
+        map={this.state.map}
+        maps={this.state.maps}
+        markers={markers} />)
+    })
 
-    lines.push(<Polyline
-      map={this.state.map}
-      maps={this.state.maps}
-      markers={markers} />)
+    //const leg = route.routeLegs[0]
+
+    //console.log(leg.originLat)
+    //console.log(leg.originLng)
+
+    //const markers = [];
+    //markers.push({ lat: leg.originLat, lng: leg.originLng })
+    //markers.push({ lat: leg.destinationLat, lng: leg.destinationLng })
+
+    //lines.push(<Polyline
+    //  map={this.state.map}
+    //  maps={this.state.maps}
+    //  markers={markers} />)
 
     return (
       <div style={{display: 'none'}}>
@@ -82,9 +80,9 @@ class SimpleMap2 extends Component {
   render () {
 
     const { route } = this.props
-   // const [ centre ] = useState({lat: route.origin.latitude, lng: route.origin.longitude });
-    const centre = { lat: route.origin.latitude, lng: route.origin.longitude } 
-    const zoom = 6
+    //const [ centre ] = useState({lat: route.origin.latitude, lng: route.origin.longitude });
+    const centre = { lat: route.origin.latitude, lng: route.origin.longitude };
+    const zoom = 6;
 
     const markers = [];
     route.places.forEach(place => {
@@ -104,13 +102,6 @@ class SimpleMap2 extends Component {
       </div>
     )
   }
-}
-
-SimpleMap2.defaultProps = {
-  markers: [
-    {lat: 53.42728, lng: -6.24357},
-    {lat: 43.681583, lng: -79.61146}
-  ]
 }
 
 export default SimpleMap2
