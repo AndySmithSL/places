@@ -4,6 +4,8 @@ import GoogleMap from 'google-map-react'
 import Marker from './Marker'
 import Polyline from './Polyline'
 
+import { styles } from './MapStyles';
+
 class SimpleMap2 extends Component {
 
   constructor (props) {
@@ -21,7 +23,6 @@ class SimpleMap2 extends Component {
 
   onMapLoaded (map, maps) {
     //this.fitBounds(map, maps)
-
     this.setState({
       ...this.state,
       mapsLoaded: true,
@@ -56,20 +57,6 @@ class SimpleMap2 extends Component {
         markers={markers} />)
     })
 
-    //const leg = route.routeLegs[0]
-
-    //console.log(leg.originLat)
-    //console.log(leg.originLng)
-
-    //const markers = [];
-    //markers.push({ lat: leg.originLat, lng: leg.originLng })
-    //markers.push({ lat: leg.destinationLat, lng: leg.destinationLng })
-
-    //lines.push(<Polyline
-    //  map={this.state.map}
-    //  maps={this.state.maps}
-    //  markers={markers} />)
-
     return (
       <div style={{display: 'none'}}>
         {lines}
@@ -78,6 +65,15 @@ class SimpleMap2 extends Component {
   }
 
   render () {
+
+    const getMapOptions = maps => {
+      return {
+        disableDefaultUI: true,
+        mapTypeControl: true,
+        streetViewControl: true,
+        styles: styles ,
+      };
+    };
 
     const { route } = this.props
     //const [ centre ] = useState({lat: route.origin.latitude, lng: route.origin.longitude });
@@ -95,7 +91,8 @@ class SimpleMap2 extends Component {
           bootstrapURLKeys={{key: 'AIzaSyAiEv5RMy0d7cDM7fhZPHFrBD7weVs1DFc'}}
           defaultCenter={centre}
           defaultZoom={zoom}
-          onGoogleApiLoaded={({map, maps}) => this.onMapLoaded(map, maps)}>
+          onGoogleApiLoaded={({map, maps}) => this.onMapLoaded(map, maps)}
+          options={getMapOptions}>
           {markers}
           {this.state.mapsLoaded ? this.afterMapLoadChanges() : ''}
         </GoogleMap>
