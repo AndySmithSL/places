@@ -7,6 +7,7 @@ import { flags } from './flags';
 import { places } from './places';
 import { placeGroups } from './placeGroups';
 import { routes } from './routes';
+import { routeLegsMain } from './routeLegs';
 import { territoriesReducer } from './territories';
 import { territoryTypes } from './territoryTypes';
 
@@ -18,6 +19,7 @@ const rootReducer = combineReducers({
     places,
     placeGroups,
     routes,
+    routeLegsMain,
     territories: territoriesReducer,
     territoryTypes
  });
