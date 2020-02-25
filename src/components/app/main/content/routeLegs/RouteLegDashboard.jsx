@@ -2,13 +2,13 @@ import React from 'react';
 import { connect } from 'react-redux';
 
 import { DashboardHeader } from '../common/DashboardHeader';
-import { DetailsItem } from '../common/DetailsItem';
+//import { DetailsItem } from '../common/DetailsItem';
 
-import { RouteLegs } from './RouteLegs';
-import { RouteMap } from './RouteMap';
-import { getFullPathImage } from '../../../utils/ImageDetails';
+//import { RouteLegs } from './RouteLegs';
+//import { RouteMap } from './RouteMap';
+//import { getFullPathImage } from '../../../utils/ImageDetails';
 
-import './RouteDashboard.scss';
+import './RouteLegDashboard.scss';
 
 class RouteLegDashboard extends React.Component {
 
@@ -34,9 +34,9 @@ class RouteLegDashboard extends React.Component {
 
 const mapStateToProps = state => {
     return {
-       fetching: state.routeLegsMain.route.fetching,
+       fetching: state.routeLegsMain.routeLeg.fetching,
        routeLeg: state.routeLegsMain.routeLeg.item,
-       category: state.categories.categories.find(x => x.name === "RouteLegs")
+       category: state.categories.categories.find(x => x.name === "Route Legs")
     };
 };
 

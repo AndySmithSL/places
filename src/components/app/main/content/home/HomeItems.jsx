@@ -6,6 +6,7 @@ import HomeItemFlags from './HomeItemFlags';
 import HomeItemPlaces from './HomeItemPlaces';
 import HomeItemPlaceGroups from './HomeItemPlaceGroups';
 import HomeItemRoutes from './HomeItemRoutes';
+import HomeItemRouteLegs from './HomeItemRouteLegs';
 import HomeItemTerritories from './HomeItemTerritories';
 import HomeItemTerritoryTypes from './HomeItemTerritoryTypes';
 
@@ -20,6 +21,7 @@ export const HomeItems = () => {
             <HomeItemPlaces />
             <HomeItemPlaceGroups />
             <HomeItemRoutes />
+            <HomeItemRouteLegs />
             <HomeItemTerritories />
             <HomeItemTerritoryTypes />
         </div>

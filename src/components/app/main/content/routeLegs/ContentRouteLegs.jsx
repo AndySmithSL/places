@@ -1,8 +1,8 @@
 import React from 'react';
 import { connect } from 'react-redux';
 
-import ListRoutes from './ListRoutes';
-import RouteDashboard from './RouteDashboard';
+import ListRouteLegs from './ListRouteLegs';
+import RouteLegDashboard from './RouteLegDashboard';
 
 import '../Content.scss';
 
@@ -22,8 +22,8 @@ class ContentRouteLegs extends React.Component {
 
         return (
             <div className="ContentMain">
-                <ListRoutes />
-                <RouteDashboard />
+                <ListRouteLegs />
+                <RouteLegDashboard />
             </div>
         );
     }

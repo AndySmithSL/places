@@ -1,0 +1,41 @@
+@import '../../../../styles/variables/colors';
+
+.RouteLegDashboard {
+    display: flex;
+    flex-direction: column;
+    padding-left: 1vw;
+    padding-top: 1vh;
+    width: 100%;
+    height: inherit;
+    
+    .description {
+        display: flex;
+        flex-direction: column;
+        border-bottom: solid 1px $gray;
+    }
+
+    .row {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        height: min-content;
+
+        //height: 50vh;
+    }
+
+    .third {
+        width: calc(100%/3);
+    }
+
+    .half {
+        width: calc(100%/2);
+    }
+
+    .twothirds {
+        width: calc((100%/3)*2);
+    }
+
+    .whole {
+        width: 100%;
+    }
+}

@@ -2,8 +2,8 @@ import React from 'react';
 import { connect } from 'react-redux';
 
 import { FilterableContentList } from '../common/FilterableContentList';
-import { filterRouteLegs } from '../../../../reducers/routeLegs';
-import RouteLegTile from './RouteLegTile';
+import { filterRouteLegs, fetchRouteLegs } from '../../../../reducers/routeLegs';
+import RouteLegTile from './RouteLegTile'; 
 
 import './ListRouteLegs.scss';
 
@@ -24,11 +24,11 @@ class ListRouteLegs extends React.Component {
 
         routeLegs.forEach(routeLeg => {
             // Check if name is filtered out
-            if(routeLeg.route.name.toUpperCase().indexOf(filter.toUpperCase()) === -1) {
+            if(routeLeg.route.toUpperCase().indexOf(filter.toUpperCase()) === -1) {
                 return;
             }
 
-            items.push(<RouteLegTile routeLeg={routeLeg} key={route.id} />)
+            items.push(<RouteLegTile routeLeg={routeLeg} key={routeLeg.id} />)
         });
 
         return (

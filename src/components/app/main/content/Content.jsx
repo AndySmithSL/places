@@ -10,6 +10,7 @@ import ContentTerritoryTypes from './territoryTypes/ContentTerritoryTypes';
 import ContentTerritories from './territories/ContentTerritories';
 import ContentDrives from './drives/ContentDrives';
 import ContentRoutes from './routes/ContentRoutes';
+import ContentRouteLegs from './routeLegs/ContentRouteLegs';
 
 import './Content.scss';  
 import { Loading } from '../../utils/Loading';
@@ -37,6 +38,7 @@ class Content extends React.Component {
                 { category.name === 'Place Groups' && <ContentPlaceGroups category={category} /> } 
                 { category.name === 'Drives' && <ContentDrives category={category} /> } 
                 { category.name === 'Routes' && <ContentRoutes category={category} /> } 
+                { category.name === 'Route Legs' && <ContentRouteLegs category={category} /> } 
             </div>
         );
     }
