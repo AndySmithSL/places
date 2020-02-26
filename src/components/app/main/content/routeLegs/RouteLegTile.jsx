@@ -1,25 +1,52 @@
 import React from 'react';
+import { connect } from 'react-redux';
 
-import { getFullPathImage } from '../../../utils/ImageDetails';
+import { setCategory } from '../../../../reducers/categories';
+import { fetchRouteLeg } from '../../../../reducers/routeLegs';
 
 import './RouteLegTile.scss';
 
-const RouteLegTile = props => {
+class RouteLegTile extends React.Component {
 
-    const { routeLeg } = props;
+    constructor(props) {
+        super(props);
+        this.handleItemClick = this.handleItemClick.bind(this);
+    }
+
+    handleItemClick = (category, id) => {
+        this.props.fetchRouteLeg(id);
+        this.props.setCategory(category);
+    };
+
+    render() {
+
+        const { routeLeg, category } = this.props;
     
-    return (
-        <div className='RouteLegTile'>
-            <div>
-                <img src={getFullPathImage("journey")} className="image" alt={routeLeg.number} />
+        return (
+            <div className='RouteLegTile' onClick={ () => this.handleItemClick(category, routeLeg.id) } >
+                <div>
+                <img src={category.icon} className="image" alt={routeLeg.number} />
+                </div>
+                <div className='details'>
+                    <div className='title'>{routeLeg.route}: Leg {routeLeg.number}</div>
+                    <div className='subtitle'>{routeLeg.origin} : {routeLeg.destination}</div>
+                </div>
             </div>
-            <div className='details'>
-                <div className='title'>{routeLeg.route}: Leg {routeLeg.number}</div>
-                <div className='subtitle'>{routeLeg.origin} : {routeLeg.destination}</div>
-            </div>
-        </div>
-    );
-    
+        );
+    }
 }
 
-export default RouteLegTile;
+const mapStateToProps = state => {
+    return {
+        category: state.categories.categories.find(x => x.name === 'Route Legs')
+    };
+};
+
+const mapDispatchToProps = dispatch => {
+    return {
+        setCategory: category => dispatch(setCategory(category)),
+        fetchRouteLeg: id => dispatch(fetchRouteLeg(id))
+    };
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(RouteLegTile)

@@ -12,7 +12,7 @@ const categories = [
     { name: "Drives", icon: getFullPathImage("road") },
     { name: "Drive Legs", icon: getFullPathImage("route") },
     { name: "Routes", icon: getFullPathImage("airplane") },
-    { name: "Route Legs", icon: getFullPathImage("airplane-landing") },
+    { name: "Route Legs", icon: getFullPathImage("journey") },
 ];
 
 const updateObject = (oldObject, newValues) => Object.assign({}, oldObject, newValues);

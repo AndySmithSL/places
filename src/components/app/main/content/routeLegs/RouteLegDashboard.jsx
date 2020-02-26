@@ -2,11 +2,11 @@ import React from 'react';
 import { connect } from 'react-redux';
 
 import { DashboardHeader } from '../common/DashboardHeader';
-//import { DetailsItem } from '../common/DetailsItem';
+import { DetailsItem } from '../common/DetailsItem';
 
 //import { RouteLegs } from './RouteLegs';
-//import { RouteMap } from './RouteMap';
-//import { getFullPathImage } from '../../../utils/ImageDetails';
+import { RouteLegMapContent } from './RouteLegMapContent';
+import { getFullPathImage } from '../../../utils/ImageDetails';
 
 import './RouteLegDashboard.scss';
 
@@ -27,6 +27,14 @@ class RouteLegDashboard extends React.Component {
         return (
             <div className='RouteLegDashboard'>
                 <DashboardHeader title={routeLegName} icon={category.icon} />
+                <div className='description'>
+                    <DetailsItem label='Description' value={routeLeg.description} />
+                </div>
+                <div className='row'>
+                    <div className="row twothirds">
+                        <RouteLegMapContent routeLeg={routeLeg} label='Map' icon={getFullPathImage("world-map")} />
+                    </div>
+                </div>
             </div>
         );
     }
