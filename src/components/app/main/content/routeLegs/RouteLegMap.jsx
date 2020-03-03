@@ -76,10 +76,8 @@ class RouteLegMap extends Component {
 
     const { routeLeg } = this.props
     //const [ centre ] = useState({lat: route.origin.latitude, lng: route.origin.longitude });
-    const centre = { lat: routeLeg.origin.latitude, lng: routeLeg.origin.longitude };
-    const zoom = 6;
-
-    console.log(routeLeg.origin.latitude)
+    const centre = { lat: routeLeg.centreLatitude, lng: routeLeg.centreLongitude };
+    const zoom = routeLeg.zoom;
 
     const markers = [];
 

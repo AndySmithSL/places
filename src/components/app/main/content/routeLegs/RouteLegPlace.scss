@@ -1,0 +1,57 @@
+@import '../../../../styles/variables/colors';
+
+.RouteLegPlace {
+    display: flex;
+    flex-direction: column;
+    padding-top: 1vh;
+    margin-left: 1vw;
+    width: 100%;
+}
+
+.RouteLegPlaceHeader {
+    display: flex;
+    flex-direction: row;
+    margin-top: 1vh;
+    padding-left: 1vh;
+
+    .image {
+        height: 3vh;
+        width: 3vh;
+        object-fit: cover;
+        overflow: hidden;
+        opacity:0.4;
+        border-radius: 5px;
+
+        margin-top: 1vh;
+        margin-right: 1vw;
+        margin-bottom: 0.5vh;
+    }
+
+    .details {
+        display: flex;
+        flex-direction: column;
+    }
+  
+    .title {
+        font-size: 1.25rem;
+    }
+
+    .subtitle {
+        font-size: 0.75rem;
+        opacity: 0.5;
+    }
+}
+
+.RouteLegPlaceHeader:hover {
+    opacity: 0.5;
+    background-color: $gray;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.RouteLegPlaceDetails {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 100%;
+}

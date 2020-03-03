@@ -7,6 +7,7 @@ import { DetailsItem } from '../common/DetailsItem';
 //import { RouteLegs } from './RouteLegs';
 import { RouteLegMapContent } from './RouteLegMapContent';
 import { RouteLegDistance } from './RouteLegDistance';
+import RouteLegPlace from './RouteLegPlace';
 
 import { getFullPathImage } from '../../../utils/ImageDetails';
 
@@ -38,6 +39,8 @@ class RouteLegDashboard extends React.Component {
                     </div>
                     <div className="row third">
                         <RouteLegDistance distance={routeLeg.distanceLabel} label='Distance' icon={getFullPathImage("world-map")} />
+                        <RouteLegPlace place={routeLeg.origin} label='Origin' />
+                        <RouteLegPlace place={routeLeg.destination} label='Destination' />
                     </div>
                 </div>
             </div>
