@@ -1,0 +1,45 @@
+
+.PlaceWeather {
+    display: flex;
+    flex-direction: column;
+    padding-top: 1vh;
+    //padding-right: 1vw;
+    width: 100%;
+}
+
+.DailyWeather {
+    display: flex;
+    flex-direction: row;
+    padding-top: 1vh;
+
+    .dailyItemFirst {
+        padding-left: 1vw;
+        padding-right: 1vw;
+
+        .label {
+            //margin-left: 0.5vw;
+            font-size: 1.25rem;
+            font-weight: 700;
+        }
+
+    }
+
+    .dailyItem {
+        padding-left: 1vw;
+        padding-right: 1vw;
+        border-left: 1px solid white;
+
+        .label {
+            //margin-left: 0.5vw;
+            font-size: 1.25rem;
+            //font-weight: 700;
+        }
+    }
+
+}
+
+.HourlyWeather {
+    display: flex;
+    flex-direction: row;
+    padding-top: 1vh;
+}

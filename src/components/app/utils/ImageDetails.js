@@ -289,6 +289,14 @@ export const ImageDetails = {
             name: "waterfall",
             image: "waterfall.png"
         },
+        {   // Weather
+            name: "weather",
+            image: "weather.png"
+        },
+
+
+
+
     ]  
 };
 

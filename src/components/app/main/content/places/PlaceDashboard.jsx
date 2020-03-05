@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 import { PlaceHeader } from './PlaceHeader';
 import PlaceLinks from './PlaceLinks';
 import { PlaceDetails } from './PlaceDetails';
+import { PlaceWeather } from './PlaceWeather';
 import { PlaceMap } from './PlaceMap';
 import { getFullPathImage } from '../../../utils/ImageDetails';
 
@@ -33,6 +34,7 @@ class PlaceDashboard extends React.Component {
                     </div>
                     <div className='row third'>
                         <PlaceDetails item={item} />
+                        <PlaceWeather item={item} />
                     </div>
                 </div>
             </div>
