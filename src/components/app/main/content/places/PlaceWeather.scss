@@ -17,11 +17,10 @@
         padding-right: 1vw;
 
         .label {
-            //margin-left: 0.5vw;
+            margin-left: 0.25vw;
             font-size: 1.25rem;
             font-weight: 700;
         }
-
     }
 
     .dailyItem {
@@ -30,9 +29,45 @@
         border-left: 1px solid white;
 
         .label {
+            margin-left: 0.25vw;
+            font-size: 1.25rem;
+        }
+    }
+
+    .lowHigh{
+        display: flex;
+        flex-direction: row;
+
+        .image {
+            //margin-top: 0.65vh;
+            //margin-left: 0.25vw;
+            height: 3vh;
+        }
+
+        .lowHighLabel {
             //margin-left: 0.5vw;
             font-size: 1.25rem;
-            //font-weight: 700;
+        }
+    }
+
+    .current{
+        display: flex;
+        flex-direction: row;
+
+        .currentImage {
+            margin-top: 0.65vh;
+            margin-left: 0.5vw;
+            height: 6vh;
+        }
+
+        .currentLabel {
+            //margin-left: 0.5vw;
+            font-size: 2.5rem;
+        }
+
+        .currentSubLabel {
+            margin-top: 0.5vh;
+            font-size: 1.5rem;
         }
     }
 
@@ -42,4 +77,16 @@
     display: flex;
     flex-direction: row;
     padding-top: 1vh;
+
+    .label {
+        //margin-left: 0.5vw;
+        font-size: 1.25rem;
+        //font-weight: 700;
+    }
+
+    .image {
+        margin-top: 0.65vh;
+        margin-left: 0.25vw;
+        height: 2vh;
+    }
 }

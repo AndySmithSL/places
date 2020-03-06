@@ -289,14 +289,29 @@ export const ImageDetails = {
             name: "waterfall",
             image: "waterfall.png"
         },
+
+        // Weather
+
         {   // Weather
             name: "weather",
             image: "weather.png"
         },
+        {   // Down-arrow
+            name: "down-arrow",
+            image: "down-arrow.png"
+        },
+        {   // Up-arrow
+            name: "up-arrow",
+            image: "up-arrow.png"
+        },
+
+        {   // partly-cloudy-day
+            name: "partly-cloudy-day",
+            image: "partly-cloudy-day.png"
+        },
 
 
-
-
+        
     ]  
 };
 
