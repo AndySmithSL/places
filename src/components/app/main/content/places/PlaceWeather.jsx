@@ -59,36 +59,57 @@ export const PlaceWeather = props => {
             </div>
 
             <div className='HourlyWeather'>
-                <div>
-                    <div>18:00</div>
-                    <div>cloud</div>
-                    <div>10C  cloud</div>
+                <div className='hourlyItemFirst'>
+                    <div className='label'>18:00</div>
+                    <div>
+                        <img src={getFullPathImage("partly-cloudy-day")} className='image' alt='High' />
+                    </div>
+                    <div className='hourlyTemp'>
+                        <div className='label'>10</div>
+                        <div className='subLabel'>°C</div>
+                    </div>
                 </div>
-                <div>
-                    <div>19:00</div>
-                    <div>cloud</div>
-                    <div>10C  cloud</div>
+                <div className='hourlyItem'>
+                    <div className='label'>19:00</div>
+                    <div>
+                        <img src={getFullPathImage("partly-cloudy-day")} className='image' alt='High' />
+                    </div>
+                    <div className='hourlyTemp'>
+                        <div className='label'>10</div>
+                        <div className='subLabel'>°C</div>
+                    </div>
                 </div>
-                <div>
-                    <div>20:00</div>
-                    <div>cloud</div>
-                    <div>10C  cloud</div>
+                <div className='hourlyItem'>
+                    <div className='label'>20:00</div>
+                    <div>
+                        <img src={getFullPathImage("partly-cloudy-day")} className='image' alt='High' />
+                    </div>
+                    <div className='hourlyTemp'>
+                        <div className='label'>10</div>
+                        <div className='subLabel'>°C</div>
+                    </div>
                 </div>
-                <div>
-                    <div>21:00</div>
-                    <div>cloud</div>
-                    <div>10C  cloud</div>
+                <div className='hourlyItem'>
+                    <div className='label'>21:00</div>
+                    <div>
+                        <img src={getFullPathImage("partly-cloudy-day")} className='image' alt='High' />
+                    </div>
+                    <div className='hourlyTemp'>
+                        <div className='label'>10</div>
+                        <div className='subLabel'>°C</div>
+                    </div>
                 </div>
-                <div>
-                    <div>22:00</div>
-                    <div>cloud</div>
-                    <div>10C  cloud</div>
+                <div className='hourlyItem'>
+                    <div className='label'>22:00</div>
+                    <div>
+                        <img src={getFullPathImage("partly-cloudy-day")} className='image' alt='High' />
+                    </div>
+                    <div className='hourlyTemp'>
+                        <div className='label'>10</div>
+                        <div className='subLabel'>°C</div>
+                    </div>
                 </div>
-                    
             </div>
-
-
-
         </div>
     );
 }

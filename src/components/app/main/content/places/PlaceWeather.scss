@@ -76,17 +76,42 @@
 .HourlyWeather {
     display: flex;
     flex-direction: row;
-    padding-top: 1vh;
+    padding-top: 2vh;
+
+    .hourlyItemFirst {
+        padding-left: 1vw;
+        padding-right: 1vw;
+    }
+
+    .hourlyItem {
+        padding-left: 1vw;
+        padding-right: 1vw;
+        border-left: 1px solid white;
+    }
 
     .label {
-        //margin-left: 0.5vw;
+        margin-left: 0.25vw;
         font-size: 1.25rem;
-        //font-weight: 700;
     }
 
     .image {
         margin-top: 0.65vh;
-        margin-left: 0.25vw;
-        height: 2vh;
+        margin-left: 0.5vw;
+        height: 3.5vh;
+    }
+
+    .hourlyTemp{
+        display: flex;
+        flex-direction: row;
+
+        .label{
+            margin-left: 0.5vw;
+            font-size: 1.25rem;
+        }
+
+        .subLabel{
+            margin-top: 0.5vh;
+            font-size: 0.75rem;
+        }
     }
 }
