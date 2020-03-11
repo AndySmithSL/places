@@ -2,6 +2,7 @@ import React from 'react';
 
 import { DetailsHeader } from '../common/DetailsHeader';
 import { getFullPathImage } from '../../../utils/ImageDetails';
+import { HourlyItem } from '../../../utils/weather/HourlyItem';
 
 import './PlaceWeather.scss';
 
@@ -59,56 +60,11 @@ export const PlaceWeather = props => {
             </div>
 
             <div className='HourlyWeather'>
-                <div className='hourlyItemFirst'>
-                    <div className='label'>18:00</div>
-                    <div>
-                        <img src={getFullPathImage("partly-cloudy-day")} className='image' alt='High' />
-                    </div>
-                    <div className='hourlyTemp'>
-                        <div className='label'>10</div>
-                        <div className='subLabel'>°C</div>
-                    </div>
-                </div>
-                <div className='hourlyItem'>
-                    <div className='label'>19:00</div>
-                    <div>
-                        <img src={getFullPathImage("partly-cloudy-day")} className='image' alt='High' />
-                    </div>
-                    <div className='hourlyTemp'>
-                        <div className='label'>10</div>
-                        <div className='subLabel'>°C</div>
-                    </div>
-                </div>
-                <div className='hourlyItem'>
-                    <div className='label'>20:00</div>
-                    <div>
-                        <img src={getFullPathImage("partly-cloudy-day")} className='image' alt='High' />
-                    </div>
-                    <div className='hourlyTemp'>
-                        <div className='label'>10</div>
-                        <div className='subLabel'>°C</div>
-                    </div>
-                </div>
-                <div className='hourlyItem'>
-                    <div className='label'>21:00</div>
-                    <div>
-                        <img src={getFullPathImage("partly-cloudy-day")} className='image' alt='High' />
-                    </div>
-                    <div className='hourlyTemp'>
-                        <div className='label'>10</div>
-                        <div className='subLabel'>°C</div>
-                    </div>
-                </div>
-                <div className='hourlyItem'>
-                    <div className='label'>22:00</div>
-                    <div>
-                        <img src={getFullPathImage("partly-cloudy-day")} className='image' alt='High' />
-                    </div>
-                    <div className='hourlyTemp'>
-                        <div className='label'>10</div>
-                        <div className='subLabel'>°C</div>
-                    </div>
-                </div>
+                <HourlyItem time='9:00' image='partly-cloudy-day' temperature='10' first={true} />
+                <HourlyItem time='12:00' image='partly-cloudy-day' temperature='15' first={false} />
+                <HourlyItem time='15:00' image='partly-cloudy-day' temperature='17' first={false} />
+                <HourlyItem time='18:00' image='partly-cloudy-day' temperature='16' first={false} />
+                <HourlyItem time='21:00' image='partly-cloudy-day' temperature='13' first={false} />
             </div>
         </div>
     );

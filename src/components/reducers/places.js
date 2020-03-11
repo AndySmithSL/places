@@ -12,6 +12,9 @@ export const RECEIVE_PLACE = 'RECEIVE_PLACE';
 export const REQUEST_FEATURED_PLACE = 'REQUEST_FEATURED_PLACE';
 export const RECEIVE_FEATURED_PLACE = 'RECEIVE_FEATURED_PLACE';
 
+export const REQUEST_WEATHER = 'REQUEST_WEATHER';
+export const RECEIVE_WEATHER = 'RECEIVE_WEATHER';
+
 
 // action creators
 
@@ -47,6 +50,17 @@ export const requestFeaturedPlace = id => ({
 export const receiveFeaturedPlace = place => ({
     type: RECEIVE_FEATURED_PLACE,
     place
+});
+
+
+export const requestWeather = location => ({
+    type: REQUEST_WEATHER,
+    location
+});
+
+export const receiveWeather = weather => ({
+    type: RECEIVE_WEATHER,
+    weather
 });
 
 
@@ -124,6 +138,16 @@ export const fetchFeaturedPlace = id => {
         return fetch(`https://localhost:44324/api/place/${id}`)
             .then(response => response.json())
             .then(json => dispatch(receiveFeaturedPlace(json)))
+            .catch((error) => console.log(error))
+    }
+}
+
+export const fetchWeather = location => {
+    return dispatch => {
+        dispatch(requestWeather(location));
+        return fetch(`https://localhost:44324/api/place/${id}`)
+            .then(response => response.json())
+            .then(json => dispatch(receiveWeather(json)))
             .catch((error) => console.log(error))
     }
 }
