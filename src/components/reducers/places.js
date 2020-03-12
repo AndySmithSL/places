@@ -82,6 +82,12 @@ const requestFeaturedPlaceReducer = (state, action) => updateObject(state, { fet
 const receiveFeaturedPlaceReducer = (state, action) => updateObject(state, { fetching: false, item: action.place });
 
 
+const requestWeatherReducer = (state, action) => updateObject(state, { fetching: true, location: action.location });
+
+const receiveWeatherReducer = (state, action) => updateObject(state, { fetching: false, weather: action.weather });
+
+
+
 const placesReducer = createReducer({ fetching: false, items: [] }, {
     REQUEST_PLACES: requestPlacesReducer,
     RECEIVE_PLACES: receivePlacesReducer
@@ -101,11 +107,17 @@ const featuredPlaceReducer = createReducer({ fetching: false, id: null, item: nu
     RECEIVE_FEATURED_PLACE: receiveFeaturedPlaceReducer
 })
 
+const weatherReducer = createReducer({ fetching: false, location: null, weather: null }, {
+    REQUEST_WEATHER: requestWeatherReducer,
+    RECEIVE_WEATHER: receiveWeatherReducer
+})
+
 export const places = combineReducers ({
     places: placesReducer,
     filter: filterReducer,
     place: placeReducer,
-    featuredPlace: featuredPlaceReducer
+    featuredPlace: featuredPlaceReducer,
+    weather: weatherReducer
 });
 
 
@@ -144,8 +156,9 @@ export const fetchFeaturedPlace = id => {
 
 export const fetchWeather = location => {
     return dispatch => {
+        console.log(location);
         dispatch(requestWeather(location));
-        return fetch(`https://localhost:44324/api/place/${id}`)
+        return fetch(`http://api.openweathermap.org/data/2.5/weather?q=London,uk&APPID=c29694cf8c7aaa0a7463afb4cb872d50`)
             .then(response => response.json())
             .then(json => dispatch(receiveWeather(json)))
             .catch((error) => console.log(error))

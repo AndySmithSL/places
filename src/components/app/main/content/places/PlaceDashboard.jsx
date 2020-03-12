@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 import { PlaceHeader } from './PlaceHeader';
 import PlaceLinks from './PlaceLinks';
 import { PlaceDetails } from './PlaceDetails';
-import { PlaceWeather } from './PlaceWeather';
+import PlaceWeather from './PlaceWeather';
 import { PlaceMap } from './PlaceMap';
 import { getFullPathImage } from '../../../utils/ImageDetails';
 
