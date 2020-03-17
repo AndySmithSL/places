@@ -1,5 +1,6 @@
 import React from 'react';
 import { getFullPathImage } from '../ImageDetails';
+import { DailyItem } from './DailyItem'
 
 import './DailyWeather.scss';
 
@@ -8,63 +9,24 @@ export const DailyWeather = props => {
     const { weather, main } = props;
 
     if(weather && main) {
+
+        console.log(weather)
+        console.log(main)
+
+        var current = Math.round(main.temp - 273.15)
+        var temp_min = Math.round(main.temp_min - 273.15)
+        var temp_max = Math.round(main.temp_max - 273.15)
+       
         return (
-            <div className="TerritoryDashboard">
-                LOADING...
+            <div className='DailyWeather'>
+                <DailyItem label='NOW' high={temp_max} low={temp_min} current={current} image='partly-cloudy-day' first='true' />
             </div>
         );
     } else {
         return (
-            <div className="TerritoryDashboard">
+            <div className="DailyWeather">
                 No Data
             </div>
         );
     }
-
-    return (
-        <div className='DailyWeather'>
-            <div className='dailyItemFirst'>
-                <div className='label'>NOW</div>
-                <div className='lowHigh'>
-                    <img src={getFullPathImage("up-arrow")} className='image' alt='High' />
-                    <div className='lowHighLabel'>10</div>
-                    <img src={getFullPathImage("down-arrow")} className='image' alt='High' />
-                    <div className='lowHighLabel'>4</div>
-                </div>
-                <div className='current'>
-                    <div className='currentLabel'>10</div>
-                    <div className='currentSubLabel'>°C</div>
-                    <img src={getFullPathImage("partly-cloudy-day")} className='currentImage' alt='High' />
-                </div>
-            </div>
-            <div className='dailyItem'>
-                <div className='label'>FRIDAY</div>
-                <div className='lowHigh'>
-                    <img src={getFullPathImage("up-arrow")} className='image' alt='High' />
-                    <div className='lowHighLabel'>10</div>
-                    <img src={getFullPathImage("down-arrow")} className='image' alt='High' />
-                    <div className='lowHighLabel'>4</div>
-                </div>
-                <div className='current'>
-                    <div className='currentLabel'>10</div>
-                    <div className='currentSubLabel'>°C</div>
-                    <img src={getFullPathImage("partly-cloudy-day")} className='currentImage' alt='High' />
-                </div>
-            </div>
-            <div className='dailyItem'>
-                <div className='label'>SATURDAY</div>
-                <div className='lowHigh'>
-                    <img src={getFullPathImage("up-arrow")} className='image' alt='High' />
-                    <div className='lowHighLabel'>10</div>
-                    <img src={getFullPathImage("down-arrow")} className='image' alt='High' />
-                    <div className='lowHighLabel'>4</div>
-                </div>
-                <div className='current'>
-                    <div className='currentLabel'>10</div>
-                    <div className='currentSubLabel'>°C</div>
-                    <img src={getFullPathImage("partly-cloudy-day")} className='currentImage' alt='High' />
-                </div>
-            </div>
-        </div>
-    )
 };

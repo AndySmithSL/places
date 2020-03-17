@@ -158,7 +158,7 @@ export const fetchWeather = location => {
     return dispatch => {
         console.log(location);
         dispatch(requestWeather(location));
-        return fetch(`http://api.openweathermap.org/data/2.5/weather?q=London,uk&APPID=c29694cf8c7aaa0a7463afb4cb872d50`)
+        return fetch(`http://api.openweathermap.org/data/2.5/weather?q=${location}&APPID=c29694cf8c7aaa0a7463afb4cb872d50`)
             .then(response => response.json())
             .then(json => dispatch(receiveWeather(json)))
             .catch((error) => console.log(error))
