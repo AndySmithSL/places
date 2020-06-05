@@ -10,14 +10,16 @@
 
     .title {
       padding-left: 1vw;
+      margin-top: 0.75vh;
     }
 
     .clock {
       margin-left:auto; 
+      margin-top: 0.75vh;
     }
 
     .logo {
-      // animation: App-logo-spin infinite 20s linear;
+      animation: App-logo-spin infinite 20s linear;
       height: 5vh;
       pointer-events: none;
     }

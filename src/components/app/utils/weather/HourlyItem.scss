@@ -1,12 +1,12 @@
 .HourlyItemFirst {
-    padding-left: 1vw;
+    //@extend: 1vw;
     padding-right: 1vw;
 }
 
 .HourlyItem {
     padding-left: 1vw;
     padding-right: 1vw;
-    border-left: 1px solid white;
+    border-left: 2px solid white;
 }
 
 .HourlyLabel {

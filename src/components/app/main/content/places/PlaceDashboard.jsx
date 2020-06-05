@@ -5,6 +5,7 @@ import { PlaceHeader } from './PlaceHeader';
 import PlaceLinks from './PlaceLinks';
 import { PlaceDetails } from './PlaceDetails';
 import Weather  from '../../../utils/weather/Weather';
+import Time  from '../../../utils/time/Time';
 import { PlaceMap } from './PlaceMap';
 import { getFullPathImage } from '../../../utils/ImageDetails';
 
@@ -24,6 +25,8 @@ class PlaceDashboard extends React.Component {
             );
         }
 
+        console.log(item)
+
         return (
             <div className='PlaceDashboard'>
                 <PlaceHeader place={item} />
@@ -34,7 +37,8 @@ class PlaceDashboard extends React.Component {
                     </div>
                     <div className='row third'>
                         <PlaceDetails item={item} />
-                        <Weather />
+                        <Weather weather={item.weather} />
+                        <Time weather={item.weather} />
                     </div>
                 </div>
             </div>

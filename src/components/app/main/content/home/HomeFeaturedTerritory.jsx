@@ -66,16 +66,22 @@ class HomeFeaturedTerritory extends React.Component {
 
                 { territory && 
                     <div className='details'>
-                        <div className='half'>
+                        <div className='third'>
+                            <DetailsItem label='Full Name' value={territory.fullName} />
+                        </div>
+                        <div className='third'>
                             <DetailsItem label='Local Name' value={territory.nativeName} />
                         </div>
-                        <div className='half'>
+                        <div className='third'>
                             <DetailsItem className='half' label='Part of' value={territory.partOf} />
                         </div>
-                        <div className='half'>
+                        <div className='third'>
+                            <DetailsItem className='half' label='Type' value={territory.territoryType} />
+                        </div>
+                        <div className='third'>
                             <DetailsItem className='half' label='Area' value={territory.areaLabel} />
                         </div>
-                        <div className='half'>
+                        <div className='third'>
                             <DetailsItem className='half' label='Population' value={territory.populationLabel} />
                         </div>
                     </div>

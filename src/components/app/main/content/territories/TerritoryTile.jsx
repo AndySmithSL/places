@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 import { setCategory } from '../../../../reducers/categories';
 import { fetchTerritory } from '../../../../reducers/territories';
 import { getFullFlagImage } from '../../../utils/ImageDetails';
+import { isEmpty } from '../../../../reducers/commonFunctions';
 
 import './TerritoryTile.scss'
 
@@ -21,13 +22,14 @@ class TerritoryTile extends React.Component {
 
     render() {
 
-        const { territory, category } = this.props;
-        const flag = territory && getFullFlagImage(territory.flagImage);
-       
+        const { territory, flag, category } = this.props;
+        //const flag = territory && territory.flagImage;
+        const icon = isEmpty(flag) ? category.icon : getFullFlagImage(flag);
+        
         return (
             <div className='TerritoryTile' onClick={ () => this.handleItemClick(category, territory.id) } >
                 <div>
-                    <img src={flag} className="image" alt={territory.name} />
+                    <img src={icon} className="image" alt={territory.name} />
                 </div>
                 <div className="details">
                     <div className="title">{territory.name}</div>

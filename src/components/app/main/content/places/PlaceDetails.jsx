@@ -14,11 +14,11 @@ export const PlaceDetails = props => {
         <div className='PlaceDetails' >
             <DetailsHeader icon={getFullPathImage("information")} label='Details' />
             <div className='PlaceDetailsRow' >
-                <div className='PlaceDetailsItem whole'>
+                <div className='PlaceDetailsItem half'>
                     <div className="label">LOCAL NAME</div>
                     <div className="value">{ props.item ? props.item.localName ? props.item.localName : '--' : '--' }</div>
                 </div>
-                <div className="PlaceDetailsItem whole">
+                <div className="PlaceDetailsItem half">
                     <div className="label">{ item.territories.length > 1 ? 'TERRITORIES' : 'TERRITORY' }</div>
                     <div className="value">{ props.item ? territories : '--' }</div>
                 </div>
@@ -35,8 +35,8 @@ export const PlaceDetails = props => {
                     <div className="value">{ props.item ? props.item.id : '--' }</div>
                 </div>
                 <div className="PlaceDetailsItem half">
-                    <div className="label">DRIVES</div>
-                    <div className="value">{ '0' }</div>
+                    <div className="label">ELEVATION</div>
+                    <div className="value">{ item.elevation.results.length > 0 ? Math.round(item.elevation.results[0].elevation) + 'm' : '--' }</div>
                 </div>
             </div>
         </div>

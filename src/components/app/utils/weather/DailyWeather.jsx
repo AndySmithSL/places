@@ -1,25 +1,27 @@
 import React from 'react';
-import { getFullPathImage } from '../ImageDetails';
 import { DailyItem } from './DailyItem'
 
 import './DailyWeather.scss';
 
 export const DailyWeather = props => {
 
-    const { weather, main } = props;
+    const { current, daily } = props;
 
-    if(weather && main) {
+    if(current && daily) {
 
-        console.log(weather)
-        console.log(main)
+        let currentDay = daily.data[0]
+        let dayOne = daily.data[1]
+        let dayTwo = daily.data[2]
 
-        var current = Math.round(main.temp - 273.15)
-        var temp_min = Math.round(main.temp_min - 273.15)
-        var temp_max = Math.round(main.temp_max - 273.15)
-       
+        console.log(current.icon)
+        console.log(dayOne.icon)
+        console.log(dayTwo.icon)
+        
         return (
             <div className='DailyWeather'>
-                <DailyItem label='NOW' high={temp_max} low={temp_min} current={current} image='partly-cloudy-day' first='true' />
+                <DailyItem label='NOW' high={Math.round(currentDay.temperatureHigh.celsius)} low={Math.round(currentDay.temperatureLow.celsius)} current={Math.round(current.temperature.celsius)} image={current.icon} first={true} />
+                <DailyItem label={dayOne.time.dayOfWeek} high={Math.round(dayOne.temperatureHigh.celsius)} low={Math.round(dayOne.temperatureLow.celsius)} current={Math.round(dayOne.temperatureHigh.celsius)} image={dayOne.icon} first={false} />
+                <DailyItem label={dayTwo.time.dayOfWeek} high={Math.round(dayTwo.temperatureHigh.celsius)} low={Math.round(dayTwo.temperatureLow.celsius)} current={Math.round(dayTwo.temperatureHigh.celsius)} image={dayTwo.icon} first={false} />
             </div>
         );
     } else {

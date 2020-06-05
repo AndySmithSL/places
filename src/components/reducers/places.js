@@ -12,8 +12,10 @@ export const RECEIVE_PLACE = 'RECEIVE_PLACE';
 export const REQUEST_FEATURED_PLACE = 'REQUEST_FEATURED_PLACE';
 export const RECEIVE_FEATURED_PLACE = 'RECEIVE_FEATURED_PLACE';
 
-export const REQUEST_WEATHER = 'REQUEST_WEATHER';
-export const RECEIVE_WEATHER = 'RECEIVE_WEATHER';
+export const REQUEST_OPEN_WEATHER = 'REQUEST_OPEN_WEATHER';
+export const RECEIVE_OPEN_WEATHER = 'RECEIVE_OPEN_WEATHER';
+export const REQUEST_DARK_SKY_WEATHER = 'REQUEST_DARK_SKY_WEATHER';
+export const RECEIVE_DARK_SKY_WEATHER = 'RECEIVE_DARK_SKY_WEATHER';
 
 
 // action creators
@@ -53,14 +55,25 @@ export const receiveFeaturedPlace = place => ({
 });
 
 
-export const requestWeather = location => ({
-    type: REQUEST_WEATHER,
+export const requestOpenWeather = location => ({
+    type: REQUEST_OPEN_WEATHER,
     location
 });
 
-export const receiveWeather = weather => ({
-    type: RECEIVE_WEATHER,
+export const receiveOpenWeather = weather => ({
+    type: RECEIVE_OPEN_WEATHER,
     weather
+});
+
+export const requestDarkSkyWeather = (latitude, longitude) => ({
+    type: REQUEST_DARK_SKY_WEATHER,
+    latitude,
+    longitude
+});
+
+export const receiveDarkSkyWeather = results => ({
+    type: RECEIVE_DARK_SKY_WEATHER,
+    results
 });
 
 
@@ -82,9 +95,17 @@ const requestFeaturedPlaceReducer = (state, action) => updateObject(state, { fet
 const receiveFeaturedPlaceReducer = (state, action) => updateObject(state, { fetching: false, item: action.place });
 
 
-const requestWeatherReducer = (state, action) => updateObject(state, { fetching: true, location: action.location });
+const requestOpenWeatherReducer = (state, action) => updateObject(state, { fetching: true, location: action.location });
 
-const receiveWeatherReducer = (state, action) => updateObject(state, { fetching: false, weather: action.weather });
+const receiveOpenWeatherReducer = (state, action) => updateObject(state, { fetching: false, weather: action.weather });
+
+
+const requestDarkSkyWeatherReducer = (state, action) => updateObject(state, { fetching: true, latitude: action.latitude, longitude: action.longitude });
+
+const receiveDarkSkyWeatherReducer = (state, action) => updateObject(state, { fetching: false, results: action.results });
+
+
+
 
 
 
@@ -108,8 +129,10 @@ const featuredPlaceReducer = createReducer({ fetching: false, id: null, item: nu
 })
 
 const weatherReducer = createReducer({ fetching: false, location: null, weather: null }, {
-    REQUEST_WEATHER: requestWeatherReducer,
-    RECEIVE_WEATHER: receiveWeatherReducer
+    REQUEST_OPEN_WEATHER: requestOpenWeatherReducer,
+    RECEIVE_OPEN_WEATHER: receiveOpenWeatherReducer,
+    REQUEST_DARK_SKY_WEATHER: requestDarkSkyWeatherReducer,
+    RECEIVE_DARK_SKY_WEATHER: receiveDarkSkyWeatherReducer
 })
 
 export const places = combineReducers ({
@@ -154,13 +177,23 @@ export const fetchFeaturedPlace = id => {
     }
 }
 
-export const fetchWeather = location => {
+export const fetchOpenWeather = location => {
     return dispatch => {
         console.log(location);
-        dispatch(requestWeather(location));
+        dispatch(requestOpenWeather(location));
         return fetch(`http://api.openweathermap.org/data/2.5/weather?q=${location}&APPID=c29694cf8c7aaa0a7463afb4cb872d50`)
             .then(response => response.json())
-            .then(json => dispatch(receiveWeather(json)))
+            .then(json => dispatch(receiveOpenWeather(json)))
+            .catch((error) => console.log(error))
+    }
+}
+
+export const fetchDarkSkyWeather = (latitude, longitude) => {
+    return dispatch => {
+        dispatch(requestDarkSkyWeather(latitude, longitude));
+        return fetch(`https://api.darksky.net/forecast/8dda2a9a80c310895992eb7e8b4ec034/${latitude},${longitude}`, {mode: 'no-cors'})
+            .then(response => response.json())
+            .then(json => dispatch(receiveDarkSkyWeather(json)))
             .catch((error) => console.log(error))
     }
 }

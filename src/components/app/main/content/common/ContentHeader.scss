@@ -7,11 +7,12 @@
     border-bottom: solid 1px $gray;
 
     .image {
-        margin-top: 0.25vh;
+        //margin-top: 0.25vh;
         height: 3vh;
     }
 
     .label {
+        margin-top: 0.25vh;
         margin-left: 0.65vw;
         font-size: 1.5rem;
         font-weight: bold;

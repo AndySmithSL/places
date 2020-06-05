@@ -13,7 +13,7 @@ export const TerritoryRegions = props => {
     let items = [];
     
     territory.children.forEach(child => {
-        items.push(<TerritoryTile territory={child} flag={ child.flag && child.flag.image } key={child.id} />)
+        items.push(<TerritoryTile territory={child} flag={child.flag && child.flagImage} key={child.id} />)
     });
 
     return (

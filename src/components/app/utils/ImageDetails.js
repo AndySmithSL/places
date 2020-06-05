@@ -309,8 +309,45 @@ export const ImageDetails = {
             name: "partly-cloudy-day",
             image: "partly-cloudy-day.png"
         },
+        {   // partly-cloudy-night
+            name: "partly-cloudy-night",
+            image: "partly-cloudy-night.png"
+        },
+        {   // rain
+            name: "rain",
+            image: "rain.png"
+        },
+        {   // wind
+            name: "wind",
+            image: "wind.png"
+        },
+        {   // fog
+            name: "fog",
+            image: "fog.png"
+        },
 
+        {   // clear-day
+            name: "clear-day",
+            image: "clear-day.png"
+        },
+        {   // clear-night
+            name: "clear-night",
+            image: "clear-night.png"
+        },
+        {   // cloudy
+            name: "cloudy",
+            image: "cloudy.png"
+        },
+        {   // snow
+            name: "snow",
+            image: "snow.png"
+        },
 
+        // Time
+        {   // clock
+            name: "clock",
+            image: "clock.png"
+        },
         
     ]  
 };

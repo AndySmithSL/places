@@ -2,7 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 
 import { setCategory } from '../../../../reducers/categories';
-import { fetchPlace, fetchWeather } from '../../../../reducers/places';
+import { fetchPlace, fetchOpenWeather, fetchDarkSkyWeather } from '../../../../reducers/places';
 import { isEmpty } from '../../../../reducers/commonFunctions';
 import { getFullFlagImage } from '../../../utils/ImageDetails';
 
@@ -15,9 +15,10 @@ class PlaceTile extends React.Component {
         this.handleItemClick = this.handleItemClick.bind(this);
     }
 
-    handleItemClick = (category, id, location) => {
-        this.props.fetchPlace(id);
-        this.props.fetchWeather(location);
+    handleItemClick = (category, place) => {
+        this.props.fetchPlace(place.id);
+        //this.props.fetchOpenWeather(place.name);
+        //this.props.fetchDarkSkyWeather(place.latitude, place.longitude);
         this.props.setCategory(category);
     };
 
@@ -28,7 +29,7 @@ class PlaceTile extends React.Component {
         const icon = isEmpty(flag) ? category.icon : getFullFlagImage(flag);
 
         return (
-            <div className='PlaceTile' onClick={ () => this.handleItemClick(category, place.id, place.name) } >
+            <div className='PlaceTile' onClick={ () => this.handleItemClick(category, place) } >
                 <div>
                     <img src={icon} className='image' alt={place.name} />
                 </div>
@@ -51,7 +52,8 @@ const mapDispatchToProps = dispatch => {
     return {
         setCategory: category => dispatch(setCategory(category)),
         fetchPlace: id => dispatch(fetchPlace(id)),
-        fetchWeather: location => dispatch(fetchWeather(location))
+        fetchOpenWeather: location => dispatch(fetchOpenWeather(location)),
+        fetchDarkSkyWeather: (latitude, longitude) => dispatch(fetchDarkSkyWeather(latitude, longitude))
     };
 };
 

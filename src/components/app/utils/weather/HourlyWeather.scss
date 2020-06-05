@@ -1,10 +1,6 @@
-
-
-
-
-
 .HourlyWeather {
     display: flex;
     flex-direction: row;
+    overflow-x: auto;
     padding-top: 2vh;
 }

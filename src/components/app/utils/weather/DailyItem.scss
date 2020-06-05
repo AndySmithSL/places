@@ -1,5 +1,5 @@
 .DailyItemFirst {
-    padding-left: 1vw;
+    //padding-left: 1vw;
     padding-right: 1vw;
 
     .label {
@@ -12,7 +12,7 @@
 .DailyItem {
     padding-left: 1vw;
     padding-right: 1vw;
-    border-left: 1px solid white;
+    border-left: 3px solid white;
 
     .label {
         margin-left: 0.25vw;
@@ -27,7 +27,7 @@
     .image {
         //margin-top: 0.65vh;
         //margin-left: 0.25vw;
-        height: 3vh;
+        height: 2vh;
     }
 
     .lowHighLabel {
@@ -43,12 +43,12 @@
     .currentImage {
         margin-top: 0.65vh;
         margin-left: 0.5vw;
-        height: 6vh;
+        height: 5vh;
     }
 
     .currentLabel {
         //margin-left: 0.5vw;
-        font-size: 2.5rem;
+        font-size: 3rem;
     }
 
     .currentSubLabel {
