@@ -9,10 +9,6 @@ import './Weather.scss';
 
 class Weather extends React.Component {
 
-    constructor(props) {
-        super(props);
-    }
-
     render() {
 
         const { weather } = this.props;

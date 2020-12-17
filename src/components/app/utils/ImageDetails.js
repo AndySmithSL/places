@@ -290,6 +290,18 @@ export const ImageDetails = {
             image: "waterfall.png"
         },
 
+        {   // Food
+            name: "food",
+            image: "food.png"
+        },
+        {   // Passport and tickets
+            name: "passport-and-tickets",
+            image: "passport-and-tickets.png"
+        },
+
+
+        
+
         // Weather
 
         {   // Weather

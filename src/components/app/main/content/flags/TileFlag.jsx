@@ -3,7 +3,7 @@ import React from 'react';
 import '../common/ContentTile.scss';
 import './TileFlag.scss';
 
-function TileFlag(props) {
+function TileFlagx(props) {
     return (
         <div className="ContentTile TileFlag" onClick={ () => props.handleClick(props.item.id) } >
             <div>
@@ -20,4 +20,4 @@ function TileFlag(props) {
     );
 }
 
-export default TileFlag;
+export default TileFlagx;

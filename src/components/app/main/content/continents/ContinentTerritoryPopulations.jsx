@@ -8,12 +8,14 @@ export const ContinentTerritoryPopulations = props => {
     let data = [];
     data.push(['Territory', 'Population']);
 
-    continent.territories.forEach(territory => {
-        let item = [];
-        item.push(territory.name, territory.population);
-        data.push(item);
-    });
-
+    if (continent.totalTerritories) {
+        continent.totalTerritories.forEach(territory => {
+            let item = [];
+            item.push(territory.name, territory.population);
+            data.push(item);
+        });
+    }
+    
     return (
         <div>
             <PieChart data={data} icon={getFullPathImage("country")} label='Territory Population' />

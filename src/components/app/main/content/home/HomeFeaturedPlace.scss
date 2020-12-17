@@ -8,7 +8,7 @@
     .map{
         width: 20vw;
         height: 39vh;
-        margin-right: 1vw;
+        //margin-right: 1vw;
     }
 
     .details {
@@ -26,24 +26,26 @@
     display: flex;
     flex-direction: row;
     margin-top: 1vh;
+    margin-bottom: 1vh;
     padding-left: 1vh;
 
     .image {
-        height: 3vh;
-        width: 3vh;
+        height: 2.5vh;
+        width: 2.5vh;
         object-fit: cover;
         overflow: hidden;
-        opacity:0.4;
+        //opacity:0.4;
         border-radius: 5px;
 
-        margin-top: 1vh;
-        margin-right: 1vw;
+        margin-top: 0.75vh;
+        margin-right: 0.5vw;
         margin-bottom: 0.5vh;
     }
 
     .details {
         display: flex;
         flex-direction: column;
+        margin-top: 0.25vh;
     }
   
     .title {
@@ -60,5 +62,5 @@
     opacity: 0.5;
     background-color: $gray;
     cursor: pointer;
-    border-radius: 5px;
+    border-radius: 0px;
 }

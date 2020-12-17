@@ -8,7 +8,7 @@ export const ContinentTerritoryAreas = props => {
     let data = [];
     data.push(['Territory', 'Area']);
 
-    continent.territories.forEach(territory => {
+    continent.totalTerritories.forEach(territory => {
         let item = [];
         item.push(territory.name, territory.area);
         data.push(item);

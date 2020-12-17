@@ -10,7 +10,7 @@ export const ContinentPieChart = props => {
 
     continent.children.forEach(c => {
         let item = [];
-        item.push(c.name, c.territories);
+        item.push(c.name, c.totalTerritories);
         data.push(item);
     });
 
