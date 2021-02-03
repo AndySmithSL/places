@@ -3,7 +3,7 @@ import { combineReducers } from 'redux';
 import { updateObject, createReducer } from './commonFunctions';
 
 
-// actions
+// action constants
 export const REQUEST_PLACES = 'REQUEST_PLACES';
 export const RECEIVE_PLACES = 'RECEIVE_PLACES';
 export const FILTER_PLACES = 'FILTER_PLACES';
