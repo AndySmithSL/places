@@ -11,7 +11,7 @@ export const Header = () => (
             <img src={ getFullPathImage("around-the-globe") } className="logo" alt="logo" />
         </div>
         <div className="title">
-            Places+
+            Places
         </div>
         <div className="clock">
             <Clock />
