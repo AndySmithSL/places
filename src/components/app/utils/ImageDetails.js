@@ -217,10 +217,42 @@ export const ImageDetails = {
         },
 
 
-        
         {   // Heritage Site Cultural
             name: "pagoda",
             image: "pagoda.png"
+        },
+
+        {   // Castle / Palace
+            name: "palace",
+            image: "palace.png"
+        },
+        {   // Bridge
+            name: "bridge",
+            image: "bridge.png"
+        },
+        {   // Lake / Loch
+            name: "lake",
+            image: "lake.png"
+        },
+        {   // Mountain Pass
+            name: "mountain-pass",
+            image: "mountain-pass.png"
+        },
+        {   // Park / Garden
+            name: "park-bench",
+            image: "park-bench.png"
+        },
+        {   // Ski Resort
+            name: "skiing",
+            image: "skiing.png"
+        },
+        {   // Engineering Wonders
+            name: "engineering",
+            image: "engineering.png"
+        },
+        {   // Luggage
+            name: "luggage",
+            image: "luggage.png"
         },
 
 
