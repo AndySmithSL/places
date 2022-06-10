@@ -1,27 +1,26 @@
-@import '../../styles/variables/colors';
+@import "../../styles/variables/colors";
 
 .Header {
-    background-color: $dark;
-    display: flex;
-    flex-direction: row;
-    margin: 1vh;
-    border-bottom: solid 1px $off-white;
-    font-size: 2rem;
+  background-color: $dark;
+  display: flex;
+  flex-direction: row;
+  margin: 1vh;
+  border-bottom: solid 1px $off-white;
+  font-size: 2rem;
 
-    .title {
-      padding-left: 1vw;
-      margin-top: 0.75vh;
-    }
-
-    .clock {
-      margin-left:auto; 
-      margin-top: 0.75vh;
-    }
-
-    .logo {
-      animation: App-logo-spin infinite 20s linear;
-      height: 5vh;
-      pointer-events: none;
-    }
+  .title {
+    padding-left: 1vw;
+    margin-top: 0.75vh;
   }
-  
+
+  .clock {
+    margin-left: auto;
+    margin-top: 0.75vh;
+  }
+
+  .logo {
+    animation: App-logo-spin infinite 20s linear;
+    height: 5vh;
+    pointer-events: none;
+  }
+}
