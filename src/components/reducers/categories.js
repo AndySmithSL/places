@@ -14,10 +14,10 @@ const categories = [
   { name: "Route Legs", icon: getFullPathImage("journey") },
 ];
 
-const updateObject = (oldObject, newValues) =>
-  Object.assign({}, oldObject, newValues);
+//const updateObject = (oldObject, newValues) =>
+//  Object.assign({}, oldObject, newValues);
 
-// actions
+// action names
 const RECEIVE_CATEGORIES = "RECEIVE_CATEGORIES";
 const RECEIVE_CATEGORY = "RECEIVE_CATEGORY";
 
@@ -43,19 +43,22 @@ const initialState = {
 export const categoriesReducer = (state = initialState, action) => {
   switch (action.type) {
     case RECEIVE_CATEGORIES:
-      return receiveCategoriesReducer(state, action);
+      //return receiveCategoriesReducer(state, action);
+      return Object.assign({}, state, { categories: action.categories });
     case RECEIVE_CATEGORY:
-      return receiveCategoryReducer(state, action);
+      //return receiveCategoryReducer(state, action);
+      return Object.assign({}, state, { selectedCategory: action.category });
     default:
       return state;
   }
 };
 
-const receiveCategoriesReducer = (state, action) =>
-  updateObject(state, { categories: action.categories });
+//const receiveCategoriesReducer = (state, action) =>
+//  Object.assign({}, state, { categories: action.categories });
+//updateObject(state, { categories: action.categories });
 
-const receiveCategoryReducer = (state, action) =>
-  updateObject(state, { selectedCategory: action.category });
+//const receiveCategoryReducer = (state, action) =>
+//  updateObject(state, { selectedCategory: action.category });
 
 // thunks
 
